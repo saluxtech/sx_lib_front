@@ -1,0 +1,100 @@
+@import "../colors/ds-colors.scss";
+
+.sx-accordion {
+  &__title_normal {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle_normal {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 24px;
+  }
+
+  &__title_small {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle_small {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 0;
+  }
+
+  &__title_b {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle_b {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .title-container {
+    //width: 80% !important;
+    height: 60px;
+    white-space: nowrap;
+    /* Evita a quebra de linha */
+    overflow: hidden;
+    /* Esconde o conteúdo que excede a largura */
+    text-overflow: ellipsis;
+    /* Adiciona as reticências (...) ao final do texto */
+    //cursor: pointer;
+    /* Mostra o cursor de ponteiro para indicar que há um tooltip */
+  }
+
+  .icon-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    display: block;
+  }
+}
+
+.accordion {
+  .card {
+    box-shadow: none;
+
+    .card-header {
+      border-bottom: 1px solid $color-support-200;
+      padding: 16px;
+
+      button {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg.rotate {
+          transform: rotate(-180deg);
+          transition: transform 0.3s ease;
+        }
+
+        &.collapsed svg.rotate {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &:last-of-type .card-body,
+    .card-body {
+      padding: 16px;
+    }
+  }
+}

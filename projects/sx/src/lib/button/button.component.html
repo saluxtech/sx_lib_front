@@ -1,0 +1,14 @@
+<button
+  [type]="type"
+  [ngStyle]="hasPorcentageWidth !== '' ? { 'width': hasPorcentageWidth + '%; !important' } : { 'width': hasWidth + 'px' }"
+  class="sx-button {{ variation }} {{ color }} {{ size }} position-relative {{isLoading && 'sx-button--loading'}}"
+  [disabled]="disabled"
+>
+  <div class="sx-button-alignment">
+    <ng-content></ng-content>
+
+    <div *ngIf="isLoading" >
+      <sx-loader [color]="loaderColor" [size]="iconLoaderSize"></sx-loader>
+    </div>
+  </div>
+</button>

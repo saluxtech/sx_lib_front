@@ -1,0 +1,76 @@
+@import '../colors/ds-colors.scss';
+
+.basic-card {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 8px;
+  padding: 24px;
+  gap: 24px;
+  background: #ffffff;
+  width: 100%;
+  // margin-bottom: 20px;
+  
+  &--gray {
+    background: $color-support-150;
+  }
+
+  &--white {
+    background: #ffffff;
+  }
+
+  &--blue {
+    background: $color-primary-100;
+  }
+
+  &--blue-notification {
+    background-color: $color-primary-100;
+    padding: 24px;
+    border-radius: 8px;
+    border: solid 2px $color-primary-200;
+    margin-bottom: 30px;
+  }
+
+  &--p-0 {
+    padding: 0;
+  }
+
+  &--p-sm {
+    padding: 8px;
+  }
+
+  &--p-md {
+    padding: 16px;
+  }
+
+  &--p-lg {
+    padding: 24px;
+  }
+
+  &--mb-0 {
+    margin-bottom: 0;
+  }
+
+  &--mb-sm {
+    margin-bottom: 8px;
+  }
+
+  &--mb-md {
+    margin-bottom: 16px;
+  }
+
+  &--mb-lg {
+    margin-bottom: 24px;
+  }
+
+  &--mb-default {
+    margin-bottom: 20px;
+  }
+
+  &--radius-sm {
+    border-radius: 4px;
+  }
+
+  &--radius-md {
+    border-radius: 8px;
+  }
+}

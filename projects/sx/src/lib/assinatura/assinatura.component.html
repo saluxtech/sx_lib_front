@@ -1,0 +1,24 @@
+<div class="caixa-assinatura">
+    <div class="caixa-imagem">
+        <img [src]="logoHospital ? logoHospital :'assets/img/salux_fav.png'" alt="Logo hospital">
+    </div>
+    <div class="font-medium-assinatura w-100">
+      <span>
+        Assinado digitalmente por:
+      </span>
+      <div class="container-info-assinatura">
+        <div>
+          {{dadosProfissionalLogado?.Nome}}
+        </div>
+        <div>
+          CPF: {{dadosProfissionalLogado?.Cpf}}
+        </div>
+        <div>
+          {{dadosProfissionalLogado?.Conselho}}: {{dadosProfissionalLogado?.Crm}}
+        </div>
+      </div>
+      <div class="font-small-assinatura">
+        {{agora}} com seu certificado digital
+      </div>
+    </div>
+</div>

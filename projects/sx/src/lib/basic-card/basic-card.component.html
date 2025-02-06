@@ -1,0 +1,17 @@
+<div
+  [ngClass]="[
+    'basic-card',
+    'basic-card--' + colorVariation,
+    'basic-card--p-' + padding,
+    'basic-card--mb-' + margingBottom,
+    'basic-card--radius-' + radius,
+  ]"
+  [ngStyle]="{
+    'width.px': basicCardWidth ? basicCardWidth : '', 
+    'paddingBottom': !paddingBottom ? '0px' : '', 
+    'height.px': basicCardHeight ? basicCardHeight : '',
+    'border': borderColor ? '1px solid ' + borderColor : ''
+  }"
+>
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,154 @@
+@import "../colors/ds-colors";
+
+.sx-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  white-space: pre-line;
+
+  ::ng-deep span {
+    font-weight: bold;
+  }
+
+  &--content {
+    font-weight: 400;
+  }
+
+  &--title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &--title2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color:$color-support-500 !important;
+  }
+
+  &--body1-bold {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px!important;
+    font-weight: 600;
+    color: $color-support-500 !important;
+  }
+
+  &--body2-bold-pdf {
+    font-family: "Montserrat-Bold", sans-serif;
+    font-size: 14px;
+  }
+
+  &--body2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+  }
+
+  &--color-default {
+    color: $color-support-400;
+  }
+
+  &--color-color-health-red-dark {
+    color: $color-health-red-dark;
+  }
+
+  &--color-primary {
+    color: $color-primary-300;
+  }
+
+  &--color-error {
+    color: $color-error-200;
+  }
+
+  &--color-gray {
+    color: $color-support-300;
+  }
+
+  &--color-green {
+    color: $color-health-green;
+  }
+
+  &--color-yellow {
+    color: $color-health-yellow;
+  }
+
+  &--color-red {
+    color: $color-health-red;
+  }
+
+  &--color-black {
+    color: $color-support-500;
+  }
+
+  &--color-white {
+    color: white;
+  }
+}
+
+.sx-label-color-black {
+  color: $color-support-500;
+}
+
+.sx-label-size-default {
+  font-size: 14px;
+}
+
+.ds-label-body-regular {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.ds-label-color-default {
+  color: $color-support-400;
+}
+
+.ds-label-color-primary {
+  color: $color-primary-300;
+}
+
+.ds-label-color-error {
+  color: $color-error-200;
+}
+
+.ds-label-color-gray {
+  color: $color-support-300;
+}
+
+.ds-label-color-green {
+  color: $color-health-green;
+}
+
+.ds-label-color-yellow {
+  color: $color-health-yellow;
+}
+
+.ds-label-color-red {
+  color: $color-health-red;
+}
+
+.sx-label-size-small {
+  font-size: 12px;
+}
+
+.sx-label-size-medium {
+  font-size: 14px;
+}
+
+.sx-label-size-large {
+  font-size: 16px;
+}
+
+.sx-label-size-extra-large {
+  font-size: 20px;
+}
+
+.sx-label-weight-bold {
+  font-weight: 700;
+}
+
+.title-pdf {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-weight: bold;
+  word-spacing: 0.5px;
+  letter-spacing: 0.1px;
+}

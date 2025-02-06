@@ -1,0 +1,42 @@
+@import '../colors/ds-colors';
+
+.loader {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.loader::after {
+  content: "";
+  display: block;
+  width: var(--loader-size, 20px);  // Usar variáveis CSS para o tamanho
+  height: var(--loader-size, 20px); // Usar variáveis CSS para o tamanho
+  border: 2px solid $color-primary-200;
+  border-radius: 50%;
+  border-top: 4px solid transparent;
+  animation: spin 1s linear infinite;
+}
+
+.loader--primary::after {
+  border: 2px solid $color-primary-300;
+  border-top-color: transparent;
+} 
+
+.loader--secondary::after {
+  border: 2px solid $color-support-100;
+  border-top-color: transparent;
+} 
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
