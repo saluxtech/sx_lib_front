@@ -1,4 +1,4 @@
-@import "../colors/ds-colors";
+@use "../colors/ds-colors" as *;
 
 .sx-body {
   font-family: Montserrat;

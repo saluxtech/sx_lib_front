@@ -1,4 +1,4 @@
-@import '../colors/ds-colors';
+@use "../colors/ds-colors" as *;
 
 .button-action-badge-card {
   border-left: $color-support-150 1px solid;

@@ -1,0 +1,158 @@
+@use "../colors/ds-colors" as *;
+
+:host {
+  display: block;
+}
+
+.typeahead-label {
+  all: unset;
+}
+.icon {
+  position: absolute;
+  top: 40%;
+  right: 16px;
+}
+input.open {
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color-primary-300;
+  border-radius: 4px;
+}
+
+input.ng-invalid.ng-touched {
+  border: $color-error-200 solid 1px;
+}
+
+input.ng-invalid.ng-dirty {
+  border: $color-error-200 solid 1px;
+}
+
+.dropdown-menu {
+  border-width: 2px;
+  border-style: solid;
+  border-color: $color-primary-300;
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top: none;
+  width: 100%;
+  margin-top: -3px;
+  max-height: 40vh;
+    overflow-y: visible;
+    overflow-x: hidden;
+
+  .dropdown-item {
+    border-radius: 1px;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: break-spaces;
+  }
+
+  .dropdown-item.active,
+  .dropdown-item.active:hover {
+
+    background: $color-support-150;
+    color: $color-support-500;
+  }
+
+}
+
+
+
+
+// - TODO: Remover essas classes quando passar a usar o sx-input
+
+input {
+  background-color: $color-support-100;
+  color: $color-support-500;
+  font-family: 'Montserrat', sans-serif;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px 16px;
+  width: 100%;
+  border: none;
+}
+
+input:focus {
+  border: 2px solid $color-primary-300;
+}
+
+.required-label {
+  display: none;
+  transition: all ease .2s;
+}
+
+.required-suffix {
+  color: $color-error-200;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+.sx-input-color-light {
+  background-color: $color-support-100;
+}
+
+.sx-input-color-dark {
+  background-color: $color-support-150;
+}
+
+.custom-input{
+  padding-right: 35px;
+}
+
+form label {
+  text-transform: none !important;
+}
+
+.input-container {
+  position: relative;
+  /* outros estilos necessários */
+}
+
+.prefix,
+.suffix {
+  position: absolute;
+  /* ajuste top, left, right conforme necessário */
+}
+
+.prefix {
+  left: 10px;
+  top: 11px;
+  color: $color-support-500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.suffix {
+  right: 11px;
+  top: 11px;
+  color: $color-support-500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.padding-prefix {
+  padding-left: 35px;
+}
+
+.padding-suffix {
+  padding-right: 35px;
+}
+
+.required-label {
+  color: $color-error-200;
+}
+.loading {
+  position: absolute;
+  top: 25%;
+  right: 15px;
+}
+
+.field-complete-search {
+  background-image: url('../../assets/img/icons/lupa.svg');
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: calc(.75em + 2.25em) calc(.75em + .75em);
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+}

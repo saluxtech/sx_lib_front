@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { BadgesComponent } from "./badges.component";
-import { IconSvgModule } from "../icon-svg/icon-svg.module";
+import { BadgesComponent, IconSvgModule } from "sx";
 
 @NgModule({
   declarations: [ BadgesComponent ],

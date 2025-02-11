@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './button.component';
-import { LoaderComponent } from '../loader/loader.component';
-import { IconSvgModule } from '../icon-svg/icon-svg.module';
+import { ButtonComponent, IconSvgModule, LoaderModule } from 'sx';
 
 @NgModule({
   declarations: [
@@ -10,7 +8,7 @@ import { IconSvgModule } from '../icon-svg/icon-svg.module';
   ],
   imports: [
     CommonModule,
-    LoaderComponent,
+    LoaderModule,
     IconSvgModule
   ],
   exports: [
