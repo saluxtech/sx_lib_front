@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BasicCardComponent } from './basic-card.component';
-
+import { BasicCardComponent } from 'sx';
 @NgModule({
-  declarations: [BasicCardComponent],
-  imports: [CommonModule],
-  exports: [BasicCardComponent],
+  declarations: [ BasicCardComponent ],
+  imports: [ CommonModule ],
+  exports: [ BasicCardComponent ],
 })
 export class BasicCardModule {}

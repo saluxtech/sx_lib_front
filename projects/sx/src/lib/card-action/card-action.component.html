@@ -1,0 +1,20 @@
+<sx-basic-card [colorVariation]="temaCard">
+  <div class="row">
+    <div class="col-10">
+      <ng-content></ng-content>
+    </div>
+    <div class="col-2 divider d-flex align-items-center row">
+      <ng-container *ngIf="iconeSecundario">
+        <div (click)="acaoSecundaria.emit($event?.target)" class="container-icone col-lg-6">
+          <img [src]="iconeSecundario" alt="icone de ação" />
+        </div>
+      </ng-container>
+      <div
+        (click)="botaoAcao.emit($event?.target)"
+        class="container-icone"
+        [ngClass]="iconeSecundario ? 'col-lg-6' : 'col-lg-12'">
+        <img [src]="icone" alt="icone de ação" />
+      </div>
+    </div>
+  </div>
+</sx-basic-card>

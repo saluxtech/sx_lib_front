@@ -1,0 +1,16 @@
+<span 
+  class="sx-badges sx-badges-{{ type }} sx-badges-{{ size }} sx-badges-width-{{ width }} font-pdf-{{isPDF}}"
+  [ngStyle]="styles" 
+>
+  <div 
+    class="sx-badges__icone"
+    *ngIf="withIcone"
+  >
+    <sx-icon-svg
+      [path_fill]="icon.path_fill"
+      [iconeSize]="icon.iconeSize"
+      [path_d]="icon.path_d"
+    ></sx-icon-svg>
+  </div>
+  <ng-content></ng-content>
+</span>

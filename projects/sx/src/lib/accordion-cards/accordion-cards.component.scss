@@ -1,0 +1,45 @@
+.accordion {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.accordion-content {
+  padding: 15px;
+  width: 100%;
+}
+
+.limit {
+  padding-bottom: 0;
+}
+
+.extended {
+  overflow-y: hidden;
+}
+
+.accordion-footer {
+  background-color: #FFFFFF;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    padding: 16px 8px !important;
+
+    .btn-label-accordion {
+      font-weight: 600;
+      color: #50688C;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.no-hover:hover {
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow: none;
+}
