@@ -1,4 +1,10 @@
 import { Component, Input } from "@angular/core";
+import {
+  BasicCardColorVariation,
+  BasicCardMargingBottom,
+  BasicCardPadding,
+  BasicCardRadius
+} from './basic-card.types';
 
 @Component({
   selector: "sx-basic-card",
@@ -7,10 +13,10 @@ import { Component, Input } from "@angular/core";
   standalone: false
 })
 export class BasicCardComponent {
-  @Input() colorVariation: 'white' | 'gray' | 'blue' | 'blue-notification' = 'white';
-  @Input() padding: '0' | 'sm' | 'md' | 'lg' = 'lg';
-  @Input() margingBottom: '0' | 'sm' | 'md' | 'lg' | 'default' = 'default'
-  @Input() radius: 'sm' | 'md' = 'md';
+  @Input() colorVariation: BasicCardColorVariation = 'white';
+  @Input() padding: BasicCardPadding = 'lg';
+  @Input() margingBottom: BasicCardMargingBottom = 'default'
+  @Input() radius: BasicCardRadius = 'md';
   @Input() width100: boolean = false;
   @Input() basicCardWidth!: string;
   @Input() basicCardHeight: string | undefined;

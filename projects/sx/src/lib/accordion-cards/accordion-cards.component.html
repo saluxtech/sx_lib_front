@@ -1,0 +1,31 @@
+<div #verMais
+    class="accordion"
+    [style.background-color]="background"
+    [style.width]="widthCard + 'px'"
+    [style.height]="quantidadeAtual <= limiteCards ? 'auto' : heightCard + 'px'">
+    <div
+        class="accordion-content"
+        [ngClass]="quantidadeAtual > limiteCards ? 'extended' : 'limit'">
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="footerText && mostrandoTodosValores" class="w-100 bg-white d-flex justify-content-end mt-1 p-1">
+      <sx-text [innerHtml]="footerText"></sx-text>
+    </div>
+  <div class="accordion-footer" *ngIf="quantidadeAtual > limiteCards">
+    <button
+      type="button"
+      class="btn btn-link w-100 no-hover"
+      (click)="verMaisOuMenos()"
+    >
+      <span class="btn-label-accordion">{{ mostrandoTodosValores ? 'Ver menos' : 'Ver mais'}}</span>
+      <img
+        [style.transform]="mostrandoTodosValores ? 'rotate(90deg)' : 'rotate(270deg)'"
+        class="ml-1"
+        [src]="'assets/img/icons/menu/chevron-left.svg'"
+        alt=""
+        width="25"
+      />
+    </button>
+  </div>
+</div>
+

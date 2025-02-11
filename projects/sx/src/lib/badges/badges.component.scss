@@ -1,0 +1,67 @@
+@import "../colors/ds-colors";
+
+.sx-badges {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.sx-badges-default {
+  color: $color-support-500;
+  background-color: $color-primary-100;
+}
+
+.sx-badges-sucess {
+  color: $color-feedback-sucess-200;
+  background-color: $color-feedback-sucess-100;
+}
+
+.sx-badges-alert {
+  color: $color-support-500;
+  background-color: $color-feedback-alert-100;
+}
+
+.sx-badges-error {
+  color: $color-feedback-error-200;
+  background-color: $color-feedback-error-100;
+}
+
+.sx-badges-large {
+  width: max-content;
+  min-height: 36px;
+  top: 144px;
+  left: 50px;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  .sx-badges__icone{
+    // padding-right:8px;
+  }
+}
+
+.sx-badges-width-100{
+  width: 100%;
+}
+.sx-badges-width-50{
+  width: 50%;
+}
+
+.font-pdf-false {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-pdf-true {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-weight: bold;
+  word-spacing: 0.5px;
+  letter-spacing: 0.1px;
+}

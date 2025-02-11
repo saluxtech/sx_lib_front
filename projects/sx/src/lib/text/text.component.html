@@ -1,0 +1,5 @@
+<div [matTooltip]="whithTooltip ? tooltipContent : null">
+  <p class="sx-body sx-body--{{variation}} {{color}}" [ngClass]="{'limit-width': limitWidth}">
+    <ng-content></ng-content>
+  </p>
+</div>
