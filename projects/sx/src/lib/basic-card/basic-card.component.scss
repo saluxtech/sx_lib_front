@@ -1,4 +1,4 @@
-@import '../colors/ds-colors.scss';
+@use "../colors/ds-colors" as *;
 
 .basic-card {
   width: fit-content;

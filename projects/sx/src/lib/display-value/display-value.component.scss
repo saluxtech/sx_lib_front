@@ -1,0 +1,27 @@
+@use "../colors/ds-colors" as *;
+
+.container-text {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse o contêiner */
+    text-overflow: ellipsis; /* Adiciona "..." no final do texto que foi truncado */
+}
+
+::ng-deep .mat-tooltip {
+    font-family: 'Montserrat', sans-serif;
+    background: $color-primary-300;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+
+::ng-deep .mat-tooltip {
+    white-space: pre-line;
+    text-align: center;
+}
+
+.margin-value {
+    margin-left: 25px;
+}

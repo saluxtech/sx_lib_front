@@ -1,0 +1,40 @@
+<div
+    #textElement
+    *ngIf="view.type != 'divide'"
+    class="container-text"
+    [matTooltip]="showTooltip ? tooltipText : ''"
+>
+    <div *ngIf="view.label" class="d-flex w-100 justify-content-sm-between">
+        <div>
+            <img class="mr-1" *ngIf="showIcon" src="assets/img/icons/{{view?.labelIcon}}" alt="hospital">
+            <sx-label [size]="view.labelSize" [color]="view.labelColor" [type]="view.labelType ? view.labelType : 'title'">
+                {{view.cantBreakLine ? labelFormatterTruncated : view.label}}
+            </sx-label>
+        </div>
+        <img *ngIf="showTooltip" src="assets/img/icons/header/circle-info-primary.svg" alt="Informação">
+    </div>
+    <ng-container *ngIf="showValue">
+        <div
+            *ngFor="let itemValueFormatter of valueFormatterList; let i = index"
+            class="d-flex justify-content-{{view?.justifyContent ? view.justifyContent : 'start'}}"
+            [ngClass]="{'margin-value': showIcon}"
+        >
+            <ng-container *ngIf="view.type != 'badges'">
+                <sx-label [size]="view.valueSize" color="black" [type]="view.valueType">
+                    {{view.cantBreakLine ? valueFormatterTruncatedList[i] : itemValueFormatter}}
+                </sx-label>
+            </ng-container>
+            <ng-container *ngIf="view.type == 'badges'">
+                <sx-badges type="sucess" class="mt-1">
+                    {{view.cantBreakLine ? valueFormatterTruncatedList[i] : itemValueFormatter}}
+                </sx-badges>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>
+<div *ngIf="view.type == 'divide'">
+    <h6 style="margin-bottom: -8px; text-transform: uppercase">
+        {{view.label}} {{view?.usingIndexItem ? indexItem + 1 : null}}
+    </h6>
+    <hr>
+</div>
