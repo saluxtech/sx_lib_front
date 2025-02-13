@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { AccordionComponent, BasicCardModule, IconSvgModule } from 'sx';
+import { AccordionComponent } from './accordion.component';
+import { BasicCardModule } from '../basic-card/basic-card.module';
+import { IconSvgModule } from '../icon-svg/icon-svg.module';
 
 @NgModule({
+  declarations: [AccordionComponent],
   imports: [
     CommonModule,
     NgbAccordionModule,
@@ -11,6 +14,5 @@ import { AccordionComponent, BasicCardModule, IconSvgModule } from 'sx';
     IconSvgModule,
   ],
   exports: [AccordionComponent],
-  declarations: [AccordionComponent],
 })
-export class SxAccordionModule {}
+export class AccordionModule {}

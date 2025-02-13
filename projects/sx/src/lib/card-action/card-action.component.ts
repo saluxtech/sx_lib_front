@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CardActionAbstract } from 'sx';
+import { CardActionAbstract } from './card-action.abstract';
 
 @Component({
   selector: 'sx-card-action',

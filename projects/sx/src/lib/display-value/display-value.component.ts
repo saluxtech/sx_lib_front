@@ -10,7 +10,8 @@ import {
 } from '@angular/core';
 import { ViewModel } from './model/view.model';
 import { CurrencyPipe, DatePipe } from "@angular/common";
-import { cpfCnpjPipe, TruncatePipe } from 'sx';
+import { cpfCnpjPipe } from '../pipes/cpf-cnpj.pipe';
+import { TruncatePipe  } from "../pipes/truncate.pipe";
 
 @Component({
   selector: 'sx-display-value',

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LabelComponent } from 'sx';
+import { LabelComponent } from './label.component';
 
 @NgModule({
   declarations: [
