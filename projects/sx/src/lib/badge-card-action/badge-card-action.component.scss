@@ -1,0 +1,14 @@
+@use "../colors/ds-colors" as *;
+
+.button-action-badge-card {
+  border-left: $color-support-150 1px solid;
+}
+
+.container-icone {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}

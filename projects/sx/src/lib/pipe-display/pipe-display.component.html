@@ -1,0 +1,11 @@
+<div>
+    <sx-label [color]="color" *ngIf="pipe == 'currency'" [type]="type">
+        {{ value | currency }}
+    </sx-label>
+    <sx-label [color]="color" *ngIf="pipe == 'date'" [type]="type">
+        {{ value | date: 'dd/MM/yyy'}}
+    </sx-label>
+    <sx-label [color]="color" *ngIf="!pipe" [type]="type">
+        {{ value }}
+    </sx-label>
+</div>

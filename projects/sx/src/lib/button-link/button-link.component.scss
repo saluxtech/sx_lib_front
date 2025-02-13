@@ -1,0 +1,148 @@
+@use "../colors/ds-colors" as *;
+
+button {
+  font-family: "Montserrat", sans-serif;
+  background: none;
+  min-width: 70px;
+}
+
+// Sizes
+.lg {
+  height: 56px;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.md {
+  height: 45px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.sm {
+  height: 35px;
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+// Colors button with no animation
+.btn-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  .default-color {
+    color: $color-primary-300;
+    &:hover {
+      color: $color-primary-200;
+    }
+  }
+
+  .primary-color {
+    color: $color-primary-200;
+    &:hover {
+      color: #52bced;
+    }
+  }
+
+  .warn-color {
+    color: rgb(252, 196, 53);
+    &:hover {
+      color: rgba(255, 220, 23, 0.843);
+    }
+  }
+}
+
+// Colors button with animation
+.arrow-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  .default-color {
+    color: $color-primary-300;
+  }
+  .default-color::before,
+  .default-color::after {
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    background-color: $color-primary-300;
+    height: 1px;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    width: 0;
+  }
+
+  .primary-color {
+    color: $color-primary-200;
+  }
+  .primary-color::before,
+  .primary-color::after {
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    background-color: $color-primary-200;
+    height: 1px;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    width: 0;
+  }
+
+  .warn-color {
+    color: rgb(252, 222, 53);
+  }
+  .warn-color::before,
+  .warn-color::after {
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    background-color: rgb(252, 222, 53);
+    height: 1px;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    width: 0;
+  }
+}
+
+.btn-link > .no-arrows-animation {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+}
+
+// Animação das linhas saindo do centro para as laterais
+.arrow-inline > .arrows-animation {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.arrow-inline > .arrows-animation::before {
+  left: 51%;
+  transform: translateX(-100%);
+}
+
+.arrow-inline > .arrows-animation::after {
+  right: 51%;
+  transform: translateX(100%);
+}
+
+.arrow-inline > .arrows-animation:hover::before {
+  width: calc(100% - 5px);
+}
+
+.arrow-inline > .arrows-animation:hover::after {
+  width: calc(100% - 5px);
+}
