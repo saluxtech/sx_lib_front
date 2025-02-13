@@ -15,14 +15,13 @@ import {
   ControlContainer,
   ControlValueAccessor,
   FormControl,
-  ValidatorFn,
   Validators
 } from '@angular/forms';
 import {
   NgbTypeahead,
   NgbTypeaheadSelectItemEvent
 } from '@ng-bootstrap/ng-bootstrap';
-import { merge, Observable, of, OperatorFunction, Subject } from 'rxjs';
+import { merge, Observable, of, Subject } from 'rxjs';
 import {
   catchError,
   debounceTime,
@@ -33,6 +32,11 @@ import {
 } from 'rxjs/operators';
 import { ViewModel } from '../display-value/model/view.model';
 
+interface AutoCompleteOptions {
+  CODIGO: string;
+  DESCRICAO: string;
+}
+
 interface ResultTemplateContext {
 	result: any;
 
@@ -41,29 +45,20 @@ interface ResultTemplateContext {
 	formatter: (result: any) => string;
 }
 
-interface AutoCompleteOptions {
-  CODIGO: string;
-  DESCRICAO: string;
-  CODIGO_DESCRICAO: string;
-}
-
 @Component({
-  selector: 'sx-autocomplete',
-  templateUrl: './autocomplete.component.html',
-  styleUrls: ['./autocomplete.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  selector: 'sx-autocomplete-tag',
   standalone: false,
+  templateUrl: './autocomplete-tag.component.html',
+  styleUrls: ['./autocomplete-tag.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AutocompleteComponent implements ControlValueAccessor, OnInit {
-  formater = (result: string): string => {
-    if(!this.IsCodeDescription){
-      return this.options?.find((item: any) => item?.CODIGO?.trim() == result)?.DESCRICAO || result;
-    }else{
-      return this.options?.find((item: any) => item?.CODIGO?.trim() == result)?.CODIGO_DESCRICAO || result;
-    }    
+export class AutocompleteTagComponent implements ControlValueAccessor, OnInit {
+  formater = (result): string => {
+    return this.options?.find(item => item?.CODIGO?.trim() == result)?.DESCRICAO || result;
   }
   @Output() onSelectItem = new EventEmitter<any>();
-  @Input() searchFunction: ((term: string) => Observable<any[]>) | any;
+  @Output() onRemoveTag = new EventEmitter<{item: string, index: number}>();
+  @Input() searchFunction: (term: string) => Observable<any[]>;
   @Input() label: string = 'Selecione';
   @Input() placeholder: string = '';
   @Input() editable: boolean = false;
@@ -71,31 +66,30 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
   @Input() inputFormatter: (item: any) => string = this.formater;
   @Input() resultFormatter: (item: any) => string = this.formater;
   @Input() formControlName: string = 'defaultFormControlName';
-  @Input() resultTemplate: TemplateRef<ResultTemplateContext> | any;
-  @Input() options: AutoCompleteOptions[] | any;
-  @Input() isLupa: boolean = false
-  @Input() IsCodeDescription: boolean = false;
-  @Input() limitOfCharactersToSearch: number = 2;
+  @Input() resultTemplate: TemplateRef<ResultTemplateContext>;
+  @Input() options: AutoCompleteOptions[];
+  @Input() tagList: string[];
 
-  @ViewChild('inputField') inputField: ElementRef | any;
+  @ViewChild('inputField') inputField: ElementRef;
   searching = false;
   private selectedItem = false;
 
   viewLabel: ViewModel = { label: '', type: 'text' };
 
-  @ViewChild('instance', { static: true }) instance: NgbTypeahead | any;
+  @ViewChild('instance', { static: true }) instance: NgbTypeahead;
   focus$ = new Subject<string>();
   click$ = new Subject<string>();
   onChange: any = () => {};
   onTouch: any = () => {};
 
   controlContainer = inject(ControlContainer) as any;
-  validators: any = Validators;
+  validators = Validators;
   control: FormControl = new FormControl();
-  value: string | any;
+  value: string;
 
   constructor(private rf: ChangeDetectorRef) {}
 
+  isListEmpty: boolean = false
   ngOnInit(): void {
     this.setControlFromOutside();
 
@@ -114,7 +108,7 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  search(text$: Observable<string>): Observable<any> {
+  search = (text$: Observable<string>) => {
     const focusAndClick$ = merge(this.focus$, this.click$);
     return merge(text$, focusAndClick$).pipe(
       debounceTime(200),
@@ -124,18 +118,12 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
           this.selectedItem = false;
           return of([]);
         }
-
-        if(term.length <= this.limitOfCharactersToSearch){
-          this.selectedItem = false;
-          return of([])
-        }
-
         this.searching = true;
         return this.searchFunction(term).pipe(
           tap((data) => {
             this.options = data;
           }),
-          map((data: any) => data.map((item: any) => item?.CODIGO?.trim() || item)),
+          map(data => data.map(item => item?.CODIGO?.trim() || item)),
           catchError(() => {
             return of([]);
           }),
@@ -153,6 +141,7 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
 
   selectItem(event: NgbTypeaheadSelectItemEvent) {
     this.onSelectItem.emit(event);
+
     if (this.inputField && this.inputField.nativeElement) {
       this.inputField.nativeElement.blur();
     }
@@ -161,13 +150,13 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
     this.instance.dismissPopup();
   }
 
-  onClick($event: any) {
+  onClick($event) {
     if (!this.searching) {
       this.click$.next($event.target.value || '');
     }
   }
 
-  onFocus($event: any) {
+  onFocus($event) {
     if (!this.searching) {
       this.focus$.next($event.target.value || '');
     }
@@ -190,4 +179,8 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
   }
 
   setDisabledState?(isDisabled: boolean): void {}
+
+  removerItemLista(item: string, index: number){
+    this.onRemoveTag.emit({item, index})
+  }
 }

@@ -1,0 +1,77 @@
+<sx-text [variation]="'body2'" *ngIf="label">
+  <sx-display-value
+    [showValue]="false"
+    [view]="{
+      label:
+        label +
+        (control && control.hasValidator(validators?.required) ? '*' : ''),
+      type: 'text',
+      labelType: 'content',
+      cantBreakLine: true
+    }"
+  ></sx-display-value>
+</sx-text>
+<div class="sx-autocomplete-tag-ajustment">
+  <div class="sx-autocomplete-sx-tag" *ngFor="let item of tagList; let i = index">
+    <sx-tag 
+      [label]="item" 
+      [tagSize]="'sm'" 
+      (onSelectTag)="removerItemLista(item, i)"
+      *ngIf="item"
+      ></sx-tag>
+  </div>
+  
+  <div class="input-container position-relative placeholder-arrow-style">
+    <label class="typeahead-label">
+      <input
+        type="text"
+        [formControl]="control"
+        [ngbTypeahead]="search"
+        (focus)="onFocus($event)"
+        (click)="onClick($event)"
+        (selectItem)="selectItem($event)"
+        [resultTemplate]="resultTemplate"
+        [resultFormatter]="!resultTemplate && resultFormatter"
+        [inputFormatter]="inputFormatter"
+        [placeholder]="placeholder"
+        [editable]="editable"
+        class="sx-input-color-{{ theme }}"
+        #instance="ngbTypeahead"
+        #inputField
+        [ngClass]="{
+          'ng-invalid': (control?.touched || control?.dirty) && control?.invalid
+        }"
+        [placeholder]="placeholder"
+      />
+  
+      <!-- TODO: Substituir pelo sx-icon-svg -->
+      <ng-container *ngIf="!searching; else loading">
+        <svg
+          class="icon"
+          width="14"
+          height="8"
+          viewBox="0 0 14 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7 7.125C6.75391 7.125 6.53516 7.04297 6.37109 6.87891L1.12109 1.62891C0.765625 1.30078 0.765625 0.726562 1.12109 0.398438C1.44922 0.0429688 2.02344 0.0429688 2.35156 0.398438L7 5.01953L11.6211 0.398438C11.9492 0.0429688 12.5234 0.0429688 12.8516 0.398438C13.207 0.726562 13.207 1.30078 12.8516 1.62891L7.60156 6.87891C7.4375 7.04297 7.21875 7.125 7 7.125Z"
+            fill="#50688C"
+          />
+        </svg>
+      </ng-container>
+    </label>
+  </div>
+</div>
+
+<sx-text
+  class="required-label {{ control.invalid && control.touched && 'd-block' }}"
+  [variation]="'body2'"
+>
+  Preencher esse campo.
+</sx-text>
+<ng-template #loading>
+  <div class="loading">
+    <sx-loader></sx-loader>
+  </div>
+</ng-template>

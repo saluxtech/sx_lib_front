@@ -1,0 +1,30 @@
+<div class="card-table">
+    <div class="card-header">
+        <div class="d-flex flex-row">
+            <ng-container *ngFor="let header of arrayHeader">
+            <div class="col-{{header?.col}}">
+                <sx-label type="title">{{ header?.header }}</sx-label>
+            </div>
+        </ng-container>
+        </div>
+        
+    </div>
+    <ng-container *ngFor="let data of arrayData">
+        <div class="card-container">
+            <div class="d-flex flex-row">
+              <div *ngFor="let header of arrayHeader" class="col-{{header?.col}}">
+                <sx-pipe-display 
+                    [value]="data?.[header?.content]"
+                    [pipe]="header?.pipe"
+                    *ngIf="header?.type == 'text' || header?.type == 'title'">
+                </sx-pipe-display>
+                <sx-badges
+                    [type]="getType(data?.[header?.content])"
+                    *ngIf="header?.type == 'badges' && data?.[header?.content]">
+                    {{data?.[header?.content]}}
+                </sx-badges>
+              </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

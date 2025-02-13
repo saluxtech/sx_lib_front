@@ -1,0 +1,37 @@
+<sx-basic-card>
+  <div class="row">
+    <div class="col-lg-2">
+      <sx-badges [type]="statusBadge?.badgeType">
+        {{statusBadge?.badgeLabel}}
+      </sx-badges>
+    </div>
+    <div class="col-lg-{{columnSize}}">
+      <div class="d-flex flex-direction-columns">
+        <sx-label size="large" type="title">
+          {{firstTitleText}}
+        </sx-label>
+        <sx-label size="large">
+          {{firstContentText}}
+        </sx-label>
+      </div>
+    </div>
+    <div class="col-lg-{{columnSize}}">
+      <div class="d-flex flex-direction-columns">
+        <sx-label size="large" type="title">
+          {{secondTitleText}}
+        </sx-label>
+        <sx-label size="large">
+          {{secondContentText}}
+        </sx-label>
+      </div>
+    </div>
+    <div *ngIf="actionType" class="col-lg-2 button-action-badge-card">
+      <div class="container-icone" (click)="action.emit()">
+        <sx-text *ngIf="customButton; else default" [variation]="'body2-bold-pdf'" [color]="'primary-300'">{{customButton}}</sx-text>
+        <ng-template #default>
+          <img src="../../../../../assets/img/icons/trash.svg" alt="delete icon">
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</sx-basic-card>
