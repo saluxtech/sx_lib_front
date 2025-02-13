@@ -1,0 +1,5 @@
+<div class="form-check d-flex align-items-center">
+    <input class="form-check-input mt-0 cursor-pointer" type="checkbox"
+    [checked]="isChecked" (change)="toggleCheckbox()" [id]="id" [disabled]="disabled">
+    <sx-label class="form-check-label cursor-pointer" [for]="id">{{label}}</sx-label>
+</div>
