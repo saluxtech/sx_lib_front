@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  AccordionCardsComponent,
-  BasicCardModule,
-  CardActionModule,
-  LabelModule,
-  TextModule
-} from 'sx';
+import { AccordionCardsComponent } from './accordion-cards.component';
+import { CardActionModule } from '../card-action/card-action.module';
+import { LabelModule } from '../label/label.module';
+import { BasicCardModule } from "../basic-card/basic-card.module";
+import { TextModule } from "../text/text.module";
 
 @NgModule({
   declarations: [

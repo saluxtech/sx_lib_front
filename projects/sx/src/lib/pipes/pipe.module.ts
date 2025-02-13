@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CepPipe, cpfCnpjPipe, DateInputPipe, TruncatePipe } from 'sx';
+import { CepPipe } from "../pipes/cep.pipe";
+import { cpfCnpjPipe } from "../pipes/cpf-cnpj.pipe";
+import { DateInputPipe } from "../pipes/date-input.pipe";
+import { TruncatePipe } from "../pipes/truncate.pipe";
 
 @NgModule({
   declarations: [

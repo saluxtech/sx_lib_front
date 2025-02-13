@@ -1,8 +1,12 @@
 import { forwardRef, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule, JsonPipe } from '@angular/common';
+import { FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
-import { AutocompleteComponent, DisplayValueModule, IconSvgModule, LoaderModule, TextModule } from 'sx';
+import { AutocompleteComponent } from './autocomplete.component';
+import { IconSvgModule } from "../icon-svg/icon-svg.module";
+import { TextModule } from "../text/text.module";
+import { LoaderModule } from '../loader/loader.module';
+import { DisplayValueModule } from "../display-value/display-value.module";
 
 @NgModule({
   declarations: [
@@ -10,6 +14,8 @@ import { AutocompleteComponent, DisplayValueModule, IconSvgModule, LoaderModule,
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    JsonPipe,
     ReactiveFormsModule,
     NgbTypeaheadModule,
     IconSvgModule,

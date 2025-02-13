@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { IconSvgComponent } from "sx";
+import { IconSvgComponent } from "./icon-svg.component";
 
 @NgModule({
   declarations: [IconSvgComponent],

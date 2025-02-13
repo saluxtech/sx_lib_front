@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AssinaturaComponent } from 'sx';
+import { AssinaturaComponent } from './assinatura.component';
 
 @NgModule({
   declarations: [

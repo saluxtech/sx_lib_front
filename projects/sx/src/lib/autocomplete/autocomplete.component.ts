@@ -15,13 +15,14 @@ import {
   ControlContainer,
   ControlValueAccessor,
   FormControl,
+  ValidatorFn,
   Validators
 } from '@angular/forms';
 import {
   NgbTypeahead,
   NgbTypeaheadSelectItemEvent
 } from '@ng-bootstrap/ng-bootstrap';
-import { merge, Observable, of, Subject } from 'rxjs';
+import { merge, Observable, of, OperatorFunction, Subject } from 'rxjs';
 import {
   catchError,
   debounceTime,
@@ -89,7 +90,7 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
   onTouch: any = () => {};
 
   controlContainer = inject(ControlContainer) as any;
-  validators = Validators;
+  validators: any = Validators;
   control: FormControl = new FormControl();
   value: string | any;
 
@@ -113,7 +114,16 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-  search = (text$: Observable<string>) => {
+  // OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
+	// 	text$.pipe(
+	// 		debounceTime(200),
+	// 		distinctUntilChanged(),
+	// 		map((term) =>
+	// 			term.length < 2 ? [] : states.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10),
+	// 		),
+	// 	);
+
+  search(text$: Observable<string>): Observable<any> {
     const focusAndClick$ = merge(this.focus$, this.click$);
     return merge(text$, focusAndClick$).pipe(
       debounceTime(200),
