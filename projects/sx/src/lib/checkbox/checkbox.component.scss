@@ -1,0 +1,23 @@
+@use "../colors/ds-colors" as *;
+
+:host {
+  display: block;
+}
+
+.form-check {
+  padding-left: 25px;
+}
+.form-check-input {
+  border-color: $color-primary-300;
+  border-width: 2px;
+
+  &:focus {
+    border-color: $color-primary-300;
+    box-shadow: 0 0 0 0.2rem rgba($color-primary-300, 0.25);
+  }
+
+  &:checked {
+    background-color: $color-primary-300;
+    border-color: $color-primary-300;
+  }
+}
