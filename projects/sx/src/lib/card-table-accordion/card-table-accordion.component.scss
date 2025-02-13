@@ -1,0 +1,78 @@
+.accordion {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: 6em;
+  height: auto;
+  border-radius: 8px;
+  padding: 20px 10px 25px 25px;
+}
+
+.accordion-content {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.limit {
+  padding-bottom: 0;
+}
+
+.extended {
+  overflow-y: hidden;
+}
+
+.no-hover:hover {
+  box-shadow: none;
+}
+
+.header {
+  width: 100%;
+  padding-left: 0.5rem;
+
+  div {
+    padding-left: 0.5%;
+  }
+
+  .header-accordion-btn {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.card-container {
+  border-radius: 8px;
+  padding: 25px 10px 25px 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+}
+
+.container-content {
+  max-width: 250px;
+}
+.ajuste-estoque {
+  width: auto;
+  display: flex;
+  margin-top: 12px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.change-edit {
+  height: 20px;
+}
+ .item-menu {
+  border: none;
+  background-color: inherit;
+  color: #50688C;
+  font-weight: 600;
+  font-size: 14px;
+
+ }
