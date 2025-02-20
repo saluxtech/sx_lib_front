@@ -1,0 +1,640 @@
+{
+  "pipes": [],
+  "interfaces": [],
+  "injectables": [],
+  "guards": [],
+  "interceptors": [],
+  "classes": [],
+  "directives": [],
+  "components": [],
+  "modules": [],
+  "miscellaneous": {
+    "variables": [
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<AccordionComponent>",
+        "defaultValue": "{\r\n  title: 'Accordion',\r\n  component: AccordionComponent,\r\n  tags: ['autodocs'],\r\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<AssinaturaComponent>",
+        "defaultValue": "{\r\n  title: 'Assinatura',\r\n  component: AssinaturaComponent,\r\n  tags: ['autodocs'],\r\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<BasicCardComponent>",
+        "defaultValue": "{\r\n  title: 'Basic Card',\r\n  component: BasicCardComponent,\r\n  tags: ['autodocs'],\r\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<ButtonComponent>",
+        "defaultValue": "{\r\n  title: 'Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/label.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<LabelComponent>",
+        "defaultValue": "{\r\n  title: 'Label',\r\n  component: LabelComponent,\r\n  tags: ['autodocs'],\r\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<LoaderComponent>",
+        "defaultValue": "{\r\n  title: 'Loader',\r\n  component: LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+      },
+      {
+        "name": "preview",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/.storybook/preview.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Preview",
+        "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  }\r\n\r\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\r\n  name: 'Accordion',\r\n  args: {\r\n    title: 'Header text',\r\n    colorTitle: '#000', \r\n    subtitle: 'Subtitle text',\r\n    colorSubtitle: '#000',\r\n    titleB: '',\r\n    colorTitleB: '',\r\n    subtitleB: '',\r\n    colorSubtitleB: '',\r\n    pathIcon: '',\r\n    pathFillIcon: '',\r\n    viewBoxIcon: '',\r\n    sizeTitle: 'normal',\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `\r\n      <sx-accordion\r\n        [title]=\"'${args.title}'\"\r\n        [subtitle]=\"'${args.subtitle}'\"\r\n        colorSubtitle=\"'${args.colorSubtitle}'\"\r\n      >\r\n        <div class=\"col-md-7 col-sm-12\">\r\n          <p class=\"title\">Lorem Ipsum</p>\r\n          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>\r\n        </div>\r\n\r\n        <div class=\"col-md-5 col-sm-12\">\r\n          <p class=\"title\">Lorem Ipsum</p>\r\n          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>\r\n        </div>\r\n      </sx-accordion>\r\n    `\r\n  })\r\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\r\n  name: 'Assinatura',\r\n  args: {\r\n    dadosProfissionalLogado: {\r\n      Nome: 'Fulano de Tal',\r\n      Conselho: 'Conselheiro',\r\n      Cpf: '123.123.123-05',\r\n      Crm: '78548759582',\r\n      Funcao: 'Medico',\r\n    },\r\n    logoHospital: 'https://cdn-icons-png.flaticon.com/512/1728/1728914.png'\r\n  },\r\n  render: (args: any) => ({    \r\n    props: args,\r\n    template: `<sx-assinatura\r\n      [dadosProfissionalLogado]=\"dadosProfissionalLogado\"\r\n      [logoHospital]=\"logoHospital\">\r\n    </sx-assinatura>`,\r\n  })\r\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\r\n  name: 'Basic Card',\r\n  argTypes: {\r\n    colorVariation: {\r\n      description: 'Variação de cor',\r\n      control: 'radio',\r\n      options: ['white', 'gray', 'blue', 'blue-notification'],\r\n      type: 'string',\r\n      defaultValue: 'white',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'white' },\r\n      },\r\n    },\r\n    padding: {\r\n      description: 'Espaçamento interno',\r\n      control: 'radio',\r\n      options: ['0', 'sm', 'md', 'lg'],\r\n      type: 'string',\r\n      defaultValue: 'lg',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'lg' },\r\n      },\r\n    },\r\n    margingBottom: {\r\n      description: 'Margem inferior',\r\n      control: 'radio',\r\n      options: ['0', 'sm', 'md', 'lg', 'default'],\r\n      type: 'string',\r\n      defaultValue: 'default',\r\n      table: {\r\n        type: { summary: 'default' },\r\n        defaultValue: { summary: 'lg' },\r\n      },\r\n    },\r\n    width100: {\r\n      description: 'Espaçamento completo',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      defaultValue: false,\r\n      table: {\r\n        type: { summary: 'default' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    basicCardWidth: {\r\n      description: 'Largura do card',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: false,\r\n    },\r\n    basicCardHeight: {\r\n      description: 'Altura do card',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: false,\r\n    },\r\n    paddingBottom: {\r\n      description: 'Espaçamento interno inferior do card',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      defaultValue: true,\r\n      table: {\r\n        type: { summary: 'default' },\r\n        defaultValue: { summary: 'true' },\r\n      },\r\n    },\r\n    borderColor: {\r\n      description: 'Cor da borda do card',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: false,\r\n    },\r\n  },\r\n  args: {\r\n    colorVariation: 'white',\r\n    padding: 'lg',\r\n    margingBottom: 'default',\r\n    radius: 'md',\r\n    width100: false,\r\n    basicCardWidth: '',\r\n    basicCardHeight: '',\r\n    paddingBottom: true,\r\n    borderColor: '',\r\n  },\r\n\r\n  render: (args: any) => ({    \r\n    template: `\r\n      <sx-basic-card\r\n        [colorVariation]=\"'${args.colorVariation}'\"\r\n        [padding]=\"'${args.padding}'\"\r\n        [margingBottom]=\"'${args.margingBottom}'\"\r\n        [radius]=\"'${args.radius}'\"\r\n        [width100]=\"${args.width100}\"\r\n        [basicCardWidth]=\"'${args.basicCardWidth}'\"\r\n        [basicCardHeight]=\"'${args.basicCardHeight}'\"\r\n        [paddingBottom]=\"${args.paddingBottom}\"\r\n        [borderColor]=\"'${args.borderColor}'\"\r\n      >\r\n        Basic Card\r\n      </sx-basic-card>\r\n    `\r\n  })\r\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\r\n  name: 'Button',\r\n  argTypes: {\r\n    type: {\r\n      description: 'Tipo do botão',\r\n      control: 'radio',\r\n      options: ['button', 'submit', 'reset'],\r\n      type: 'string',\r\n      defaultValue: 'button',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'button' },\r\n      },\r\n    },\r\n    variation: {\r\n      description: 'Variação do botão',\r\n      control: 'radio',\r\n      options: ['raised', 'stroked', 'ghost'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'raised' },\r\n      },\r\n    },\r\n    color: {\r\n      description: 'Cor do botão',\r\n      control: 'radio',\r\n      options: ['primary', 'warn', 'cancel', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do botão',\r\n      control: 'radio',\r\n      options: ['md', 'large', 'sm'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'md' },\r\n      },\r\n    },\r\n    isLoading: {\r\n      description: 'Mostra ou não o feedback de \"lendo...\"',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    disabled: {\r\n      description: 'desabilita / habilita o botão',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    isWithIcon: {\r\n      description: 'Mostra ou não um ícone',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    hasWidth: {\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    hasPorcentageWidth: {\r\n      description: 'Atribui um tamanho em porcentagem ao botão',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    loaderColor: {\r\n      description: 'Lê a cor que será atribuída ao botão',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'select' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    iconLoaderSize: {\r\n      description: 'Lê tamanho do icone que será atribuído ao botão',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    type: 'button',\r\n    variation: 'raised',\r\n    color: 'primary',\r\n    size: 'md',\r\n    isLoading: false,\r\n    disabled: false,\r\n    isWithIcon: false,\r\n    hasWidth: 'auto',\r\n    hasPorcentageWidth: 'auto',\r\n    loaderColor: 'primary',\r\n    iconLoaderSize: 20\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-button\r\n      [type]=\"'${args.type}'\"\r\n      [variation]=\"'${args.variation}'\"\r\n      [color]=\"'${args.color}'\"\r\n      [size]=\"'${args.size}'\"\r\n      [isLoading]=\"${args.isLoading}\"\r\n      [disabled]=\"${args.disabled}\"\r\n      [isWithIcon]=\"${args.isWithIcon}\"\r\n      [hasWidth]=\"'${args.hasWidth}'\"\r\n      [hasPorcentageWidth]=\"'${args.hasPorcentageWidth}'\"\r\n      [loaderColor]=\"'${args.loaderColor}'\">\r\n        Button\r\n      </sx-button>`\r\n  })\r\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/label.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\r\n  name: 'Label',\r\n  argTypes: {\r\n    type: {\r\n      description: 'Tipo do label',\r\n      control: 'radio',\r\n      options: ['content', 'title', 'body1-bold', 'body2-bold-pdf', 'body2'],\r\n      type: 'string',\r\n      defaultValue: 'content',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'content' },\r\n      },\r\n    },\r\n    color: {\r\n      description: 'Cor do label',\r\n      control: 'radio',\r\n      options: [\"default\", \"primary\", \"error\", \"green\", \"yellow\", \"red\", \"black\", \"gray\", \"white\"],\r\n      type: 'string',\r\n      defaultValue: 'default',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'default' },\r\n      },\r\n    },\r\n    for: {\r\n      description: 'Tamanho do label',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: '',\r\n      table: {\r\n        type: { summary: 'string' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do label',\r\n      control: 'radio',\r\n      options: [\"default\", \"small\", \"large\"],\r\n      type: 'string',\r\n      defaultValue: 'default',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'default' },\r\n      },\r\n    },\r\n    isPDF: {\r\n      description: 'Label no PDF',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      defaultValue: 'false',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    weight: {\r\n      description: 'Largura do label',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    type: 'content',\r\n    color: 'default',\r\n    for: '',\r\n    size: 'default',\r\n    isPDF: false,\r\n    weight: ''\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `\r\n      <sx-label\r\n        [type]=\"'${args.type}'\"\r\n        [color]=\"'${args.color}'\"\r\n        [size]=\"'${args.size}'\"\r\n        [for]=\"'${args.for}'\"\r\n        [isPDF]=\"${args.isPDF}\"\r\n        [weight]=\"${args.weight}\">\r\n        Label text\r\n      </sx-label>\r\n    `\r\n  })\r\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>`\r\n  })\r\n}"
+      }
+    ],
+    "functions": [],
+    "typealiases": [
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<AccordionComponent>",
+        "file": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      },
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<AssinaturaComponent>",
+        "file": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      },
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<BasicCardComponent>",
+        "file": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      },
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<ButtonComponent>",
+        "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      },
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<LabelComponent>",
+        "file": "projects/sx_lib_front/src/stories/label.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      },
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "StoryObj<LoaderComponent>",
+        "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      }
+    ],
+    "enumerations": [],
+    "groupedVariables": {
+      "projects/sx_lib_front/src/stories/accordion.stories.ts": [
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<AccordionComponent>",
+          "defaultValue": "{\r\n  title: 'Accordion',\r\n  component: AccordionComponent,\r\n  tags: ['autodocs'],\r\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\r\n  name: 'Accordion',\r\n  args: {\r\n    title: 'Header text',\r\n    colorTitle: '#000', \r\n    subtitle: 'Subtitle text',\r\n    colorSubtitle: '#000',\r\n    titleB: '',\r\n    colorTitleB: '',\r\n    subtitleB: '',\r\n    colorSubtitleB: '',\r\n    pathIcon: '',\r\n    pathFillIcon: '',\r\n    viewBoxIcon: '',\r\n    sizeTitle: 'normal',\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `\r\n      <sx-accordion\r\n        [title]=\"'${args.title}'\"\r\n        [subtitle]=\"'${args.subtitle}'\"\r\n        colorSubtitle=\"'${args.colorSubtitle}'\"\r\n      >\r\n        <div class=\"col-md-7 col-sm-12\">\r\n          <p class=\"title\">Lorem Ipsum</p>\r\n          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>\r\n        </div>\r\n\r\n        <div class=\"col-md-5 col-sm-12\">\r\n          <p class=\"title\">Lorem Ipsum</p>\r\n          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>\r\n        </div>\r\n      </sx-accordion>\r\n    `\r\n  })\r\n}"
+        }
+      ],
+      "projects/sx_lib_front/src/stories/assinatura.stories.ts": [
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<AssinaturaComponent>",
+          "defaultValue": "{\r\n  title: 'Assinatura',\r\n  component: AssinaturaComponent,\r\n  tags: ['autodocs'],\r\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\r\n  name: 'Assinatura',\r\n  args: {\r\n    dadosProfissionalLogado: {\r\n      Nome: 'Fulano de Tal',\r\n      Conselho: 'Conselheiro',\r\n      Cpf: '123.123.123-05',\r\n      Crm: '78548759582',\r\n      Funcao: 'Medico',\r\n    },\r\n    logoHospital: 'https://cdn-icons-png.flaticon.com/512/1728/1728914.png'\r\n  },\r\n  render: (args: any) => ({    \r\n    props: args,\r\n    template: `<sx-assinatura\r\n      [dadosProfissionalLogado]=\"dadosProfissionalLogado\"\r\n      [logoHospital]=\"logoHospital\">\r\n    </sx-assinatura>`,\r\n  })\r\n}"
+        }
+      ],
+      "projects/sx_lib_front/src/stories/basic-card.stories.ts": [
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<BasicCardComponent>",
+          "defaultValue": "{\r\n  title: 'Basic Card',\r\n  component: BasicCardComponent,\r\n  tags: ['autodocs'],\r\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\r\n  name: 'Basic Card',\r\n  argTypes: {\r\n    colorVariation: {\r\n      description: 'Variação de cor',\r\n      control: 'radio',\r\n      options: ['white', 'gray', 'blue', 'blue-notification'],\r\n      type: 'string',\r\n      defaultValue: 'white',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'white' },\r\n      },\r\n    },\r\n    padding: {\r\n      description: 'Espaçamento interno',\r\n      control: 'radio',\r\n      options: ['0', 'sm', 'md', 'lg'],\r\n      type: 'string',\r\n      defaultValue: 'lg',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'lg' },\r\n      },\r\n    },\r\n    margingBottom: {\r\n      description: 'Margem inferior',\r\n      control: 'radio',\r\n      options: ['0', 'sm', 'md', 'lg', 'default'],\r\n      type: 'string',\r\n      defaultValue: 'default',\r\n      table: {\r\n        type: { summary: 'default' },\r\n        defaultValue: { summary: 'lg' },\r\n      },\r\n    },\r\n    width100: {\r\n      description: 'Espaçamento completo',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      defaultValue: false,\r\n      table: {\r\n        type: { summary: 'default' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    basicCardWidth: {\r\n      description: 'Largura do card',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: false,\r\n    },\r\n    basicCardHeight: {\r\n      description: 'Altura do card',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: false,\r\n    },\r\n    paddingBottom: {\r\n      description: 'Espaçamento interno inferior do card',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      defaultValue: true,\r\n      table: {\r\n        type: { summary: 'default' },\r\n        defaultValue: { summary: 'true' },\r\n      },\r\n    },\r\n    borderColor: {\r\n      description: 'Cor da borda do card',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: false,\r\n    },\r\n  },\r\n  args: {\r\n    colorVariation: 'white',\r\n    padding: 'lg',\r\n    margingBottom: 'default',\r\n    radius: 'md',\r\n    width100: false,\r\n    basicCardWidth: '',\r\n    basicCardHeight: '',\r\n    paddingBottom: true,\r\n    borderColor: '',\r\n  },\r\n\r\n  render: (args: any) => ({    \r\n    template: `\r\n      <sx-basic-card\r\n        [colorVariation]=\"'${args.colorVariation}'\"\r\n        [padding]=\"'${args.padding}'\"\r\n        [margingBottom]=\"'${args.margingBottom}'\"\r\n        [radius]=\"'${args.radius}'\"\r\n        [width100]=\"${args.width100}\"\r\n        [basicCardWidth]=\"'${args.basicCardWidth}'\"\r\n        [basicCardHeight]=\"'${args.basicCardHeight}'\"\r\n        [paddingBottom]=\"${args.paddingBottom}\"\r\n        [borderColor]=\"'${args.borderColor}'\"\r\n      >\r\n        Basic Card\r\n      </sx-basic-card>\r\n    `\r\n  })\r\n}"
+        }
+      ],
+      "projects/sx_lib_front/src/stories/button.stories.ts": [
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<ButtonComponent>",
+          "defaultValue": "{\r\n  title: 'Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\r\n  name: 'Button',\r\n  argTypes: {\r\n    type: {\r\n      description: 'Tipo do botão',\r\n      control: 'radio',\r\n      options: ['button', 'submit', 'reset'],\r\n      type: 'string',\r\n      defaultValue: 'button',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'button' },\r\n      },\r\n    },\r\n    variation: {\r\n      description: 'Variação do botão',\r\n      control: 'radio',\r\n      options: ['raised', 'stroked', 'ghost'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'raised' },\r\n      },\r\n    },\r\n    color: {\r\n      description: 'Cor do botão',\r\n      control: 'radio',\r\n      options: ['primary', 'warn', 'cancel', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do botão',\r\n      control: 'radio',\r\n      options: ['md', 'large', 'sm'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'md' },\r\n      },\r\n    },\r\n    isLoading: {\r\n      description: 'Mostra ou não o feedback de \"lendo...\"',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    disabled: {\r\n      description: 'desabilita / habilita o botão',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    isWithIcon: {\r\n      description: 'Mostra ou não um ícone',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    hasWidth: {\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    hasPorcentageWidth: {\r\n      description: 'Atribui um tamanho em porcentagem ao botão',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    loaderColor: {\r\n      description: 'Lê a cor que será atribuída ao botão',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'select' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    iconLoaderSize: {\r\n      description: 'Lê tamanho do icone que será atribuído ao botão',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    type: 'button',\r\n    variation: 'raised',\r\n    color: 'primary',\r\n    size: 'md',\r\n    isLoading: false,\r\n    disabled: false,\r\n    isWithIcon: false,\r\n    hasWidth: 'auto',\r\n    hasPorcentageWidth: 'auto',\r\n    loaderColor: 'primary',\r\n    iconLoaderSize: 20\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-button\r\n      [type]=\"'${args.type}'\"\r\n      [variation]=\"'${args.variation}'\"\r\n      [color]=\"'${args.color}'\"\r\n      [size]=\"'${args.size}'\"\r\n      [isLoading]=\"${args.isLoading}\"\r\n      [disabled]=\"${args.disabled}\"\r\n      [isWithIcon]=\"${args.isWithIcon}\"\r\n      [hasWidth]=\"'${args.hasWidth}'\"\r\n      [hasPorcentageWidth]=\"'${args.hasPorcentageWidth}'\"\r\n      [loaderColor]=\"'${args.loaderColor}'\">\r\n        Button\r\n      </sx-button>`\r\n  })\r\n}"
+        }
+      ],
+      "projects/sx_lib_front/src/stories/label.stories.ts": [
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/label.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<LabelComponent>",
+          "defaultValue": "{\r\n  title: 'Label',\r\n  component: LabelComponent,\r\n  tags: ['autodocs'],\r\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/label.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\r\n  name: 'Label',\r\n  argTypes: {\r\n    type: {\r\n      description: 'Tipo do label',\r\n      control: 'radio',\r\n      options: ['content', 'title', 'body1-bold', 'body2-bold-pdf', 'body2'],\r\n      type: 'string',\r\n      defaultValue: 'content',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'content' },\r\n      },\r\n    },\r\n    color: {\r\n      description: 'Cor do label',\r\n      control: 'radio',\r\n      options: [\"default\", \"primary\", \"error\", \"green\", \"yellow\", \"red\", \"black\", \"gray\", \"white\"],\r\n      type: 'string',\r\n      defaultValue: 'default',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'default' },\r\n      },\r\n    },\r\n    for: {\r\n      description: 'Tamanho do label',\r\n      control: 'text',\r\n      type: 'string',\r\n      defaultValue: '',\r\n      table: {\r\n        type: { summary: 'string' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do label',\r\n      control: 'radio',\r\n      options: [\"default\", \"small\", \"large\"],\r\n      type: 'string',\r\n      defaultValue: 'default',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'default' },\r\n      },\r\n    },\r\n    isPDF: {\r\n      description: 'Label no PDF',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      defaultValue: 'false',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    weight: {\r\n      description: 'Largura do label',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    type: 'content',\r\n    color: 'default',\r\n    for: '',\r\n    size: 'default',\r\n    isPDF: false,\r\n    weight: ''\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `\r\n      <sx-label\r\n        [type]=\"'${args.type}'\"\r\n        [color]=\"'${args.color}'\"\r\n        [size]=\"'${args.size}'\"\r\n        [for]=\"'${args.for}'\"\r\n        [isPDF]=\"${args.isPDF}\"\r\n        [weight]=\"${args.weight}\">\r\n        Label text\r\n      </sx-label>\r\n    `\r\n  })\r\n}"
+        }
+      ],
+      "projects/sx_lib_front/src/stories/loader.stories.ts": [
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<LoaderComponent>",
+          "defaultValue": "{\r\n  title: 'Loader',\r\n  component: LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>`\r\n  })\r\n}"
+        }
+      ],
+      "projects/sx_lib_front/.storybook/preview.ts": [
+        {
+          "name": "preview",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/sx_lib_front/.storybook/preview.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Preview",
+          "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  }\r\n\r\n}"
+        }
+      ]
+    },
+    "groupedFunctions": {},
+    "groupedEnumerations": {},
+    "groupedTypeAliases": {
+      "projects/sx_lib_front/src/stories/accordion.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<AccordionComponent>",
+          "file": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ],
+      "projects/sx_lib_front/src/stories/assinatura.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<AssinaturaComponent>",
+          "file": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ],
+      "projects/sx_lib_front/src/stories/basic-card.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<BasicCardComponent>",
+          "file": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ],
+      "projects/sx_lib_front/src/stories/button.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<ButtonComponent>",
+          "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ],
+      "projects/sx_lib_front/src/stories/label.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<LabelComponent>",
+          "file": "projects/sx_lib_front/src/stories/label.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ],
+      "projects/sx_lib_front/src/stories/loader.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<LoaderComponent>",
+          "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ]
+    }
+  },
+  "routes": [],
+  "coverage": {
+    "count": 0,
+    "status": "low",
+    "files": [
+      {
+        "filePath": "projects/sx_lib_front/.storybook/preview.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "preview",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/accordion.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/assinatura.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/basic-card.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/button.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/button.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/button.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/label.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/label.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/label.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/loader.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/loader.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/sx_lib_front/src/stories/loader.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      }
+    ]
+  }
+}

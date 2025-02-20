@@ -3,54 +3,51 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sx": {
+    "sx_lib_front": {
       "projectType": "library",
-      "root": "projects/sx",
-      "sourceRoot": "projects/sx/src",
+      "root": "projects/sx_lib_front",
+      "sourceRoot": "projects/sx_lib_front/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "options": {
-            "project": "projects/sx/ng-package.json"
+            "project": "projects/sx_lib_front/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/sx/tsconfig.lib.prod.json"
+              "tsConfig": "projects/sx_lib_front/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/sx/tsconfig.lib.json"
+              "tsConfig": "projects/sx_lib_front/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production",
           "stylePreprocessorOptions": {
             "sass": {
-              "silenceDeprecations": ["color-functions", "global-builtin", "import", "mixed-decls"]
+              "silenceDeprecations": [
+                "color-functions",
+                "global-builtin",
+                "import",
+                "mixed-decls"
+              ]
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/sx/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "tsConfig": "projects/sx_lib_front/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "projects/sx/.storybook",
-            "browserTarget": "sx:build",
+            "configDir": "projects/sx_lib_front/.storybook",
+            "browserTarget": "sx_lib_front:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/sx"
-            ],
+            "compodocArgs": ["-e", "json", "-d", "projects/sx_lib_front"],
             "port": 6006
           }
         },
@@ -58,15 +55,10 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "tsConfig": "tsconfig.json",
-            "configDir": "projects/sx/.storybook",
-            "browserTarget": "sx:build",
+            "configDir": "projects/sx_lib_front/.storybook",
+            "browserTarget": "sx_lib_front:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/sx"
-            ],
+            "compodocArgs": ["-e", "json", "-d", "projects/sx_lib_front"],
             "outputDir": "docs"
           }
         }
