@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { LoaderComponent } from '../lib/loader/loader.component';
+import { LoaderComponent } from 'sx_lib_front';
 
 const meta: Meta<LoaderComponent> = {
   title: 'Loader',

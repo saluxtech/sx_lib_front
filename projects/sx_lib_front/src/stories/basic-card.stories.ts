@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import { BasicCardComponent } from '../lib/basic-card/basic-card.component';
+import { BasicCardComponent } from 'sx_lib_front';
 
 const meta: Meta<BasicCardComponent> = {
   title: 'Basic Card',

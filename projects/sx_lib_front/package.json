@@ -1,5 +1,5 @@
 {
-  "name": "sx_lib_front",
+  "name": "salux_ds_lib",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^19.1.0",

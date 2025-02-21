@@ -25,6 +25,7 @@ export * from './lib/label/label.component';
 export * from './lib/label/label.module';
 export * from './lib/loader/loader.component';
 export * from './lib/loader/loader.module';
+export * from './lib/tab-group/tab-group.component';
 export * from './lib/text/text.component';
 export * from './lib/text/text.module';
 export * from './lib/view-list/view-list.component';
@@ -38,3 +39,6 @@ export * from './lib/pipes/date-input.pipe';
 export * from './lib/pipes/pipe.module';
 export * from './lib/pipes/sanitize.pipe';
 export * from './lib/pipes/truncate.pipe';
+
+export * from './lib/models/icone.interface';
+export * from './lib/models/tab-group.interface';
