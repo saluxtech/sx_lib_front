@@ -12,7 +12,6 @@ import { TextModule } from '../text/text.module';
 import { IconSvgModule } from '../icon-svg/icon-svg.module';
 import { Tab } from '../models/tab-group.interface';
 import { CommonModule } from '@angular/common';
-import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 @Component({
@@ -20,7 +19,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
   templateUrl: './tab-group.component.html',
   styleUrls: ['./tab-group.component.scss'],
   imports: [CommonModule, TextModule, MatTabsModule, IconSvgModule],
-  providers: [provideAnimations()]
+  providers: []
 })
 export class TabGroupComponent {
   
@@ -54,9 +53,7 @@ export class TabGroupComponent {
         let maxWidthPixel: string = maxWidth.toString() + 'px';
 
         this.renderer.setStyle(label, 'maxWidth', maxWidthPixel);
-        this.renderer.addClass(label, 'custom-tab-label');
       });
-    } else {
     }
   }
 }

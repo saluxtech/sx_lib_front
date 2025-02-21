@@ -40,5 +40,5 @@ export * from './lib/pipes/pipe.module';
 export * from './lib/pipes/sanitize.pipe';
 export * from './lib/pipes/truncate.pipe';
 
-export * from './lib/models/icone.interface';
-export * from './lib/models/tab-group.interface';
+export * from './lib/models';
+

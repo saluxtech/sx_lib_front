@@ -1,12 +1,12 @@
 <mat-tab-group
   (selectedTabChange)="changeIndexMethod($event.index)"
   [disableRipple]="false"
-  animationDuration="0ms"
+  animationDuration="0.5s"
   fitInkBarToContent
 >
   <mat-tab *ngFor="let tab of tabs; let i = index">
     <ng-template mat-tab-label>
-      <div class="me-2" *ngIf="tab.icone !== undefined">
+      <div class="icon" *ngIf="tab.icone !== undefined">
         <sx-icon-svg
           [path_d]="tab.icone.path_d"
           [iconeSize]="tab.icone.iconeSize"

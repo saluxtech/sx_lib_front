@@ -1,44 +1,33 @@
-
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
+@use "../colors/ds-colors" as *;
 
 // Customize the entire app. Change :root to your selector if you want to scope the styles.
 :host {
-  @include mat.tabs-overrides((
-    active-indicator-height: 0,
-    divider-height: 0
-  ));
+  @include mat.tabs-overrides(
+    (
+      divider-color: $color-support-200,
+      pagination-icon-color: $color-primary-300,
+      active-indicator-color: $color-primary-300,
+      active-hover-indicator-color: $color-primary-300,
+    )
+  );
 }
 
-
-.custom-tab-label {
-  max-width: 285px;
-  opacity: 1;
+.icon {
+  margin-right: 8px;
 }
 
-::ng-deep{
-    * {
-        font-family: 'Montserrat', sans-serif !important;
+:host ::ng-deep {
+  * {
+    font-family: "Montserrat", sans-serif !important;
+  }
+
+  .mdc-tab-indicator--active, .cdk-focused {
+    .mdc-tab-indicator {
+      .mdc-tab-indicator__content {
+       border: 2px solid $color-primary-300 !important;
+       border-radius: 2px;
+      }
     }
-}
-
-::ng-deep .mat-tab-label.custom-tab-label {
-  max-width: 285px;
-  opacity: 1;
-}
-::ng-deep .mat-tab-group .mat-tab-label:first-child {
-  min-width: 100px;
-}
-
-::ng-deep .mat-ripple.mat-tab-label.mat-focus-indicator.ng-star-inserted.mat-tab-label {
-  padding-left: 0;
-  justify-content: left;
-  //   max-width: 170px;
-}
-
-::ng-deep .mat-ripple.mat-tab-label.mat-focus-indicator.ng-star-inserted.mat-tab-label:first-child {
-  padding-right: 0;
-}
-
-::ng-deep .mat-tab-labels {
-  gap: 30px !important;
+  }
 }
