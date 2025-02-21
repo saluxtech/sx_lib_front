@@ -1,0 +1,27 @@
+<mat-tab-group
+  (selectedTabChange)="changeIndexMethod($event.index)"
+  [disableRipple]="false"
+  animationDuration="0ms"
+  fitInkBarToContent
+>
+  <mat-tab *ngFor="let tab of tabs; let i = index">
+    <ng-template mat-tab-label>
+      <div class="me-2" *ngIf="tab.icone !== undefined">
+        <sx-icon-svg
+          [path_d]="tab.icone.path_d"
+          [iconeSize]="tab.icone.iconeSize"
+          [path_fill]="tab.icone.path_fill"
+          [viewBox]="tab.icone.viewBox ?? '0 0 24 24'"
+        ></sx-icon-svg>
+      </div>
+      <sx-text
+        [variation]="selectedIndex === i ? 'title-tab-selected' : 'title-tab'"
+      >
+        {{ tab.label }}
+      </sx-text>
+    </ng-template>
+    <div *ngIf="tab.content !== undefined">
+      <ng-container *ngTemplateOutlet="tab.content"></ng-container>
+    </div>
+  </mat-tab>
+</mat-tab-group>

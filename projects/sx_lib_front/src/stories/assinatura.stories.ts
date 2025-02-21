@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import { AssinaturaComponent } from 'sx';
+import { AssinaturaComponent } from 'sx_lib_front';
 
 const meta: Meta<AssinaturaComponent> = {
   title: 'Assinatura',

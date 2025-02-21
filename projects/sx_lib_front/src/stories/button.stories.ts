@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { ButtonComponent } from '../lib/button/button.component';
+import { ButtonComponent } from 'sx_lib_front';
 
 const meta: Meta<ButtonComponent> = {
   title: 'Button',

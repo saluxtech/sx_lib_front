@@ -27,7 +27,9 @@ export class TextComponent implements AfterViewInit {
     | 'body1-bold1'
     | 'body3'
     | 'body4'
-    | 'caption-bold' = 'body1'
+    | 'caption-bold' 
+    | 'title-tab-selected'
+    | 'title-tab' = 'body1'
 
     @Input() limitWidth: boolean = false;
 

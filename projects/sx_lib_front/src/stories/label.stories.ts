@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import { LabelComponent } from '../lib/label/label.component';
+import { LabelComponent } from 'sx_lib_front';
 
 const meta: Meta<LabelComponent> = {
   title: 'Label',
