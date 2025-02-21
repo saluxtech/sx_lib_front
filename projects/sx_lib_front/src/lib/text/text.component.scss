@@ -124,17 +124,6 @@
     color: $color-primary-300;
   }
 
-  &--title-tab-selected::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -5px;
-    height: 3px;
-    background-color: $color-primary-300;
-    border-radius: 2px;
-  }
-
   &--title-tab {
     font-size: 16px;
     line-height: 16px;
