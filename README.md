@@ -1,7 +1,8 @@
-# SX Library
+# sx_lib_front Library
 
 ## Introdução
-Esta é uma biblioteca Angular chamada `sx`, desenvolvida dentro de um workspace Angular. Ela foi projetada para ser reutilizável e modular.
+
+Esta é uma biblioteca Angular chamada `sx_lib_front`, desenvolvida dentro de um workspace Angular. Ela foi projetada para ser reutilizável e modular.
 
 ## Instalação
 
@@ -16,10 +17,10 @@ npm install
 Para compilar a biblioteca, utilize o comando:
 
 ```sh
-ng build sx
+ng build sx_lib_front
 ```
 
-Isso gerará os arquivos compilados na pasta `dist/sx`.
+Isso gerará os arquivos compilados na pasta `dist/sx_lib_front`.
 
 ## Testes
 
@@ -34,7 +35,7 @@ ng test
 A biblioteca possui suporte ao Compodoc. Para gerar a documentação, use:
 
 ```sh
-npx compodoc -p projects/sx/tsconfig.lib.json -s
+npx compodoc -p projects/sx_lib_front/tsconfig.lib.json -s
 ```
 
 Isso iniciará um servidor local com a documentação gerada.
@@ -55,10 +56,10 @@ npm run build-storybook
 
 ## Estrutura do Projeto
 
-- `projects/sx/src/lib/` - Contém os componentes e serviços da biblioteca.
-- `projects/sx/src/public-api.ts` - Define os elementos exportados pela biblioteca.
-- `projects/sx/tsconfig.lib.json` - Configuração do TypeScript específica da biblioteca.
-- `projects/sx/ng-package.json` - Configuração para empacotamento da biblioteca.
+- `projects/sx_lib_front/src/lib/` - Contém os componentes e serviços da biblioteca.
+- `projects/sx_lib_front/src/public-api.ts` - Define os elementos exportados pela biblioteca.
+- `projects/sx_lib_front/tsconfig.lib.json` - Configuração do TypeScript específica da biblioteca.
+- `projects/sx_lib_front/ng-package.json` - Configuração para empacotamento da biblioteca.
 
 ## Contribuição
 

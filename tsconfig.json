@@ -10,10 +10,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "sx": [
-        "./dist/lib",
-        "./projects/sx/src/public-api"
-      ],
+      "sx_lib_front": ["./dist/lib", "./projects/sx/src/public-api"]
     },
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -30,5 +27,8 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "include": ["./projects/sx/src/**/*.stories.ts", "./projects/sx/.storybook/preview.ts"],
+  "include": [
+    "./projects/sx_lib_front/src/**/*.stories.ts",
+    "./projects/sx_lib_front/.storybook/preview.ts"
+  ]
 }
