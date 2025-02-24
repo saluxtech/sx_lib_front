@@ -1,0 +1,121 @@
+@use "../colors/ds-colors" as *;
+
+sx-text {
+  display: block;
+  margin-bottom: 5px; // Adicione uma margem inferior para espaçamento entre o label e o input
+  font-size: 14px;
+}
+
+.required-suffix {
+  color: $color-error-200;
+  margin-left: 2px; // Adicione um pequeno espaço entre o label e o asterisco
+}
+
+.input-container {
+  position: relative;
+  /* outros estilos necessários */
+}
+
+input {
+  background-color: $color-support-100;
+  color: $color-support-500;
+  font-family: "Montserrat", sans-serif;
+  height: 45px;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px 16px;
+  width: 100%;
+  border: 1px solid transparent;
+  transition: all ease 0.2s;
+
+  &.padding-prefix-icon {
+    padding-left: 50px;
+  }
+}
+
+.required-label {
+  display: block;
+  margin-bottom: -30px;
+  transition: all ease 0.2s;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid $color-error-200;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+.sx-input-color-light {
+  background-color: $color-support-100;
+}
+
+.sx-input-color-light2 {
+  background-color: $color-support-100;
+}
+
+.sx-input-color-dark {
+  background-color: $color-support-150;
+}
+
+form label {
+  text-transform: none !important;
+}
+
+.prefix,
+.suffix {
+  position: absolute;
+  /* ajuste top, left, right conforme necessário */
+}
+
+.prefix {
+  left: 10px;
+  top: 11px;
+  color: $color-support-500;
+  font-family: "Montserrat", sans-serif;
+
+  &.padding-prefix-icon {
+    left: 15px;
+  }
+}
+
+.suffix {
+  right: 11px;
+  color: $color-support-500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.padding-prefix {
+  padding-left: 35px;
+
+  &.padding-prefix-icon {
+    padding-left: 50px;
+
+    &::placeholder {
+      color: $color-support-300;
+    }
+  }
+}
+
+.padding-suffix {
+  padding-right: 35px;
+}
+
+.loading {
+  position: absolute;
+  top: 25%;
+  right: 15px;
+}
+
+.sm {
+  height: 45px;
+}
+
+.lg {
+  height: 56px;
+}
+
+.sx-input-placeholder-light2::placeholder {
+  color: $color-support-300;
+}
