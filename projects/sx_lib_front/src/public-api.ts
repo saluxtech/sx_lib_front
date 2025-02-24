@@ -21,6 +21,7 @@ export * from './lib/display-value/display-value.component';
 export * from './lib/display-value/display-value.module';
 export * from './lib/icon-svg/icon-svg.component';
 export * from './lib/icon-svg/icon-svg.module';
+export * from './lib/input/input.component';
 export * from './lib/label/label.component';
 export * from './lib/label/label.module';
 export * from './lib/loader/loader.component';
