@@ -74,6 +74,26 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CheckboxComponent>",
+                "defaultValue": "{\r\n  title: 'CheckBox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputComponent>",
+                "defaultValue": "{\r\n  title: 'Input',\r\n  component: InputComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ReactiveFormsModule, FormsModule],\r\n      providers: [provideNgxMask()],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    label: { control: 'text', description: 'Label do input' },\r\n    type: { \r\n      control: 'select', \r\n      options: [\r\n        'text', 'password', 'email', 'number', 'tel', 'url', 'search', 'color', \r\n        'date', 'datetime-local', 'month', 'week', 'time', 'file', 'hidden'\r\n      ], \r\n      description: 'Tipo do input' \r\n    },\r\n    placeholder: { control: 'text', description: 'Placeholder do input' },\r\n    mask: { control: 'text', description: 'Máscara do input' },\r\n    dropSpecialCharacters: { control: 'boolean', description: 'Remove caracteres especiais' },\r\n    theme: { control: 'select', options: ['light', 'dark', 'light-2'], description: 'Tema do input' },\r\n    prefix: { control: 'boolean', description: 'Prefixo do input' },\r\n    suffix: { control: 'boolean', description: 'Sufixo do input' },\r\n    isReadonly: { control: 'boolean', description: 'Input somente leitura' },\r\n    maxLength: { control: 'number', description: 'Comprimento máximo do input' },\r\n    isLoading: { control: 'boolean', description: 'Estado de carregamento' },\r\n    prefixIcon: { control: 'boolean', description: 'Ícone de prefixo' },\r\n    formControlName: { control: 'text', description: 'Nome do controle de formulário' },\r\n    height: { control: 'select', options: ['sm', 'lg'], description: 'Altura do input' },\r\n    errorMessage: { control: 'text', description: 'Mensagem de erro' },\r\n    marginField: { control: 'number', description: 'Margem do campo' },\r\n    showAsterisco: { control: 'boolean', description: 'Mostrar asterisco' },\r\n    validation: { control: 'boolean', description: 'Validação do input' },\r\n    variationLabel: { \r\n      control: 'select', \r\n      options: [\r\n        'body1', 'body1-bold', 'body2', 'body2-bold-pdf', 'caption', \r\n        'h3-title', 'label-input', 'caption-bold'\r\n      ], \r\n      description: 'Variação do label' \r\n    },\r\n    limitWidth: { control: 'boolean', description: 'Limitar largura' },\r\n    textColor: { control: 'text', description: 'Cor do texto' },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/sx_lib_front/src/stories/label.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -149,6 +169,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  name: 'Button',\r\n  argTypes: {\r\n    type: {\r\n      description: 'Tipo do botão',\r\n      control: 'radio',\r\n      options: ['button', 'submit', 'reset'],\r\n      type: 'string',\r\n      defaultValue: 'button',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'button' },\r\n      },\r\n    },\r\n    variation: {\r\n      description: 'Variação do botão',\r\n      control: 'radio',\r\n      options: ['raised', 'stroked', 'ghost'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'raised' },\r\n      },\r\n    },\r\n    color: {\r\n      description: 'Cor do botão',\r\n      control: 'radio',\r\n      options: ['primary', 'warn', 'cancel', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do botão',\r\n      control: 'radio',\r\n      options: ['md', 'large', 'sm'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'md' },\r\n      },\r\n    },\r\n    isLoading: {\r\n      description: 'Mostra ou não o feedback de \"lendo...\"',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    disabled: {\r\n      description: 'desabilita / habilita o botão',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    isWithIcon: {\r\n      description: 'Mostra ou não um ícone',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    hasWidth: {\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    hasPorcentageWidth: {\r\n      description: 'Atribui um tamanho em porcentagem ao botão',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    loaderColor: {\r\n      description: 'Lê a cor que será atribuída ao botão',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'select' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    iconLoaderSize: {\r\n      description: 'Lê tamanho do icone que será atribuído ao botão',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    type: 'button',\r\n    variation: 'raised',\r\n    color: 'primary',\r\n    size: 'md',\r\n    isLoading: false,\r\n    disabled: false,\r\n    isWithIcon: false,\r\n    hasWidth: 'auto',\r\n    hasPorcentageWidth: 'auto',\r\n    loaderColor: 'primary',\r\n    iconLoaderSize: 20\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-button\r\n      [type]=\"'${args.type}'\"\r\n      [variation]=\"'${args.variation}'\"\r\n      [color]=\"'${args.color}'\"\r\n      [size]=\"'${args.size}'\"\r\n      [isLoading]=\"${args.isLoading}\"\r\n      [disabled]=\"${args.disabled}\"\r\n      [isWithIcon]=\"${args.isWithIcon}\"\r\n      [hasWidth]=\"'${args.hasWidth}'\"\r\n      [hasPorcentageWidth]=\"'${args.hasPorcentageWidth}'\"\r\n      [loaderColor]=\"'${args.loaderColor}'\">\r\n        Button\r\n      </sx-button>`\r\n  })\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'CheckBox',\r\n  args: {\r\n    label: 'Checkbox',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Texto do checkbox',\r\n      control: 'text',\r\n      type: 'string',\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Input',\r\n  args: {\r\n    label: 'Nome',\r\n    type: 'text',\r\n    placeholder: 'Digite seu nome',\r\n    mask: null,\r\n    dropSpecialCharacters: true,\r\n    theme: 'dark',\r\n    prefix: false,\r\n    suffix: false,\r\n    isReadonly: false,\r\n    maxLength: 9999,\r\n    isLoading: false,\r\n    prefixIcon: false,\r\n    formControlName: 'defaultFormControlName',\r\n    height: 'sm',\r\n    errorMessage: 'Campo obrigatório',\r\n    marginField: 0,\r\n    showAsterisco: true,\r\n    validation: true,\r\n    variationLabel: 'label-input',\r\n    limitWidth: false,\r\n    textColor: '',\r\n  },\r\n  render: (args: any) => ({\r\n    props: args,\r\n    template: `\r\n      <form [formGroup]=\"form\">\r\n        <div style=\"max-width: 50%;\">\r\n          <sx-input\r\n            [label]=\"label\"\r\n            [type]=\"type\"\r\n            [placeholder]=\"placeholder\"\r\n            [mask]=\"mask\"\r\n            [dropSpecialCharacters]=\"dropSpecialCharacters\"\r\n            [theme]=\"theme\"\r\n            [prefix]=\"prefix\"\r\n            [suffix]=\"suffix\"\r\n            [isReadonly]=\"isReadonly\"\r\n            [maxLength]=\"maxLength\"\r\n            [isLoading]=\"isLoading\"\r\n            [prefixIcon]=\"prefixIcon\"\r\n            [formControlName]=\"formControlName\"\r\n            [height]=\"height\"\r\n            [errorMessage]=\"errorMessage\"\r\n            [marginField]=\"marginField\"\r\n            [showAsterisco]=\"showAsterisco\"\r\n            [validation]=\"validation\"\r\n            [variationLabel]=\"variationLabel\"\r\n            [limitWidth]=\"limitWidth\"\r\n            [textColor]=\"textColor\"\r\n            [isCalendar]=\"isCalendar\"\r\n          ></sx-input>\r\n        </div>\r\n      </form>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Primary",
@@ -232,6 +272,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
                 "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CheckboxComponent>",
+                "file": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "projects/sx_lib_front/src/stories/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -413,6 +475,50 @@
                     "defaultValue": "{\r\n  name: 'Button',\r\n  argTypes: {\r\n    type: {\r\n      description: 'Tipo do botão',\r\n      control: 'radio',\r\n      options: ['button', 'submit', 'reset'],\r\n      type: 'string',\r\n      defaultValue: 'button',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'button' },\r\n      },\r\n    },\r\n    variation: {\r\n      description: 'Variação do botão',\r\n      control: 'radio',\r\n      options: ['raised', 'stroked', 'ghost'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'raised' },\r\n      },\r\n    },\r\n    color: {\r\n      description: 'Cor do botão',\r\n      control: 'radio',\r\n      options: ['primary', 'warn', 'cancel', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do botão',\r\n      control: 'radio',\r\n      options: ['md', 'large', 'sm'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'md' },\r\n      },\r\n    },\r\n    isLoading: {\r\n      description: 'Mostra ou não o feedback de \"lendo...\"',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    disabled: {\r\n      description: 'desabilita / habilita o botão',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    isWithIcon: {\r\n      description: 'Mostra ou não um ícone',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n      table: {\r\n        type: { summary: 'boolean' },\r\n        defaultValue: { summary: 'false' },\r\n      },\r\n    },\r\n    hasWidth: {\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    hasPorcentageWidth: {\r\n      description: 'Atribui um tamanho em porcentagem ao botão',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'auto' },\r\n      },\r\n    },\r\n    loaderColor: {\r\n      description: 'Lê a cor que será atribuída ao botão',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'select' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    iconLoaderSize: {\r\n      description: 'Lê tamanho do icone que será atribuído ao botão',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    type: 'button',\r\n    variation: 'raised',\r\n    color: 'primary',\r\n    size: 'md',\r\n    isLoading: false,\r\n    disabled: false,\r\n    isWithIcon: false,\r\n    hasWidth: 'auto',\r\n    hasPorcentageWidth: 'auto',\r\n    loaderColor: 'primary',\r\n    iconLoaderSize: 20\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-button\r\n      [type]=\"'${args.type}'\"\r\n      [variation]=\"'${args.variation}'\"\r\n      [color]=\"'${args.color}'\"\r\n      [size]=\"'${args.size}'\"\r\n      [isLoading]=\"${args.isLoading}\"\r\n      [disabled]=\"${args.disabled}\"\r\n      [isWithIcon]=\"${args.isWithIcon}\"\r\n      [hasWidth]=\"'${args.hasWidth}'\"\r\n      [hasPorcentageWidth]=\"'${args.hasPorcentageWidth}'\"\r\n      [loaderColor]=\"'${args.loaderColor}'\">\r\n        Button\r\n      </sx-button>`\r\n  })\r\n}"
                 }
             ],
+            "projects/sx_lib_front/src/stories/checkbox.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CheckboxComponent>",
+                    "defaultValue": "{\r\n  title: 'CheckBox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'CheckBox',\r\n  args: {\r\n    label: 'Checkbox',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Texto do checkbox',\r\n      control: 'text',\r\n      type: 'string',\r\n    },\r\n  },\r\n}"
+                }
+            ],
+            "projects/sx_lib_front/src/stories/input.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputComponent>",
+                    "defaultValue": "{\r\n  title: 'Input',\r\n  component: InputComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ReactiveFormsModule, FormsModule],\r\n      providers: [provideNgxMask()],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    label: { control: 'text', description: 'Label do input' },\r\n    type: { \r\n      control: 'select', \r\n      options: [\r\n        'text', 'password', 'email', 'number', 'tel', 'url', 'search', 'color', \r\n        'date', 'datetime-local', 'month', 'week', 'time', 'file', 'hidden'\r\n      ], \r\n      description: 'Tipo do input' \r\n    },\r\n    placeholder: { control: 'text', description: 'Placeholder do input' },\r\n    mask: { control: 'text', description: 'Máscara do input' },\r\n    dropSpecialCharacters: { control: 'boolean', description: 'Remove caracteres especiais' },\r\n    theme: { control: 'select', options: ['light', 'dark', 'light-2'], description: 'Tema do input' },\r\n    prefix: { control: 'boolean', description: 'Prefixo do input' },\r\n    suffix: { control: 'boolean', description: 'Sufixo do input' },\r\n    isReadonly: { control: 'boolean', description: 'Input somente leitura' },\r\n    maxLength: { control: 'number', description: 'Comprimento máximo do input' },\r\n    isLoading: { control: 'boolean', description: 'Estado de carregamento' },\r\n    prefixIcon: { control: 'boolean', description: 'Ícone de prefixo' },\r\n    formControlName: { control: 'text', description: 'Nome do controle de formulário' },\r\n    height: { control: 'select', options: ['sm', 'lg'], description: 'Altura do input' },\r\n    errorMessage: { control: 'text', description: 'Mensagem de erro' },\r\n    marginField: { control: 'number', description: 'Margem do campo' },\r\n    showAsterisco: { control: 'boolean', description: 'Mostrar asterisco' },\r\n    validation: { control: 'boolean', description: 'Validação do input' },\r\n    variationLabel: { \r\n      control: 'select', \r\n      options: [\r\n        'body1', 'body1-bold', 'body2', 'body2-bold-pdf', 'caption', \r\n        'h3-title', 'label-input', 'caption-bold'\r\n      ], \r\n      description: 'Variação do label' \r\n    },\r\n    limitWidth: { control: 'boolean', description: 'Limitar largura' },\r\n    textColor: { control: 'text', description: 'Cor do texto' },\r\n  },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Input',\r\n  args: {\r\n    label: 'Nome',\r\n    type: 'text',\r\n    placeholder: 'Digite seu nome',\r\n    mask: null,\r\n    dropSpecialCharacters: true,\r\n    theme: 'dark',\r\n    prefix: false,\r\n    suffix: false,\r\n    isReadonly: false,\r\n    maxLength: 9999,\r\n    isLoading: false,\r\n    prefixIcon: false,\r\n    formControlName: 'defaultFormControlName',\r\n    height: 'sm',\r\n    errorMessage: 'Campo obrigatório',\r\n    marginField: 0,\r\n    showAsterisco: true,\r\n    validation: true,\r\n    variationLabel: 'label-input',\r\n    limitWidth: false,\r\n    textColor: '',\r\n  },\r\n  render: (args: any) => ({\r\n    props: args,\r\n    template: `\r\n      <form [formGroup]=\"form\">\r\n        <div style=\"max-width: 50%;\">\r\n          <sx-input\r\n            [label]=\"label\"\r\n            [type]=\"type\"\r\n            [placeholder]=\"placeholder\"\r\n            [mask]=\"mask\"\r\n            [dropSpecialCharacters]=\"dropSpecialCharacters\"\r\n            [theme]=\"theme\"\r\n            [prefix]=\"prefix\"\r\n            [suffix]=\"suffix\"\r\n            [isReadonly]=\"isReadonly\"\r\n            [maxLength]=\"maxLength\"\r\n            [isLoading]=\"isLoading\"\r\n            [prefixIcon]=\"prefixIcon\"\r\n            [formControlName]=\"formControlName\"\r\n            [height]=\"height\"\r\n            [errorMessage]=\"errorMessage\"\r\n            [marginField]=\"marginField\"\r\n            [showAsterisco]=\"showAsterisco\"\r\n            [validation]=\"validation\"\r\n            [variationLabel]=\"variationLabel\"\r\n            [limitWidth]=\"limitWidth\"\r\n            [textColor]=\"textColor\"\r\n            [isCalendar]=\"isCalendar\"\r\n          ></sx-input>\r\n        </div>\r\n      </form>\r\n    `,\r\n  }),\r\n}"
+                }
+            ],
             "projects/sx_lib_front/src/stories/label.stories.ts": [
                 {
                     "name": "meta",
@@ -519,6 +625,32 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
                     "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/sx_lib_front/src/stories/checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CheckboxComponent>",
+                    "file": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/sx_lib_front/src/stories/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "projects/sx_lib_front/src/stories/input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -693,6 +825,66 @@
             },
             {
                 "filePath": "projects/sx_lib_front/src/stories/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/input.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",

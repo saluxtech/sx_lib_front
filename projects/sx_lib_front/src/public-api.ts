@@ -17,6 +17,7 @@ export * from './lib/button/button.component';
 export * from './lib/button/button.module';
 export * from './lib/card-action/card-action.component';
 export * from './lib/card-action/card-action.module';
+export * from './lib/checkbox/checkbox.component';
 export * from './lib/display-value/display-value.component';
 export * from './lib/display-value/display-value.module';
 export * from './lib/icon-svg/icon-svg.component';

@@ -1,27 +1,54 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewEncapsulation,
-} from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { LoaderModule } from '../loader/loader.module';
+
 
 @Component({
-  selector: "sx-checkbox",
-  standalone: false,
-  templateUrl: "./sx-checkbox.component.html",
-  styleUrls: ["./sx-checkbox.component.scss"],
-  encapsulation: ViewEncapsulation.None,
+  selector: 'sx-checkbox',
+  templateUrl: './checkbox.component.html',
+  styleUrls: ['./checkbox.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [LoaderModule],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => CheckboxComponent),
+      multi: true
+    }
+  ]
 })
-export class CheckboxComponent {
+export class CheckboxComponent implements ControlValueAccessor {
+
   @Input() label: string = "";
-  @Input() checked: boolean = false;
-  @Output() onChange = new EventEmitter<boolean>();
+  @Input() disabled: boolean = false;
+  @Output() checkboxChange = new EventEmitter<boolean>();
 
-  constructor() {}
+  isChecked: boolean = false;
+  id: string = 'sxCheckbox' + Math.random();
 
-  toggleChecked(event) {
-    this.checked = !this.checked;
-    this.onChange.emit(this.checked);
+  onChange: any = () => {};
+  onTouched: any = () => {};
+
+  writeValue(value: any): void {
+    this.isChecked = value;
   }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+  
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  toggleCheckbox() {
+    this.isChecked = !this.isChecked;
+    this.onChange(this.isChecked);
+    this.onTouched();
+  }
+
+  onMark(event: any) {
+    this.checkboxChange.emit(event.checked);
+  }
+
 }
