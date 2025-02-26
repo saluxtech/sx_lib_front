@@ -27,6 +27,7 @@ export * from './lib/label/label.component';
 export * from './lib/label/label.module';
 export * from './lib/loader/loader.component';
 export * from './lib/loader/loader.module';
+export * from './lib/select/select.component';
 export * from './lib/tab-group/tab-group.component';
 export * from './lib/text/text.component';
 export * from './lib/text/text.module';

@@ -1,0 +1,16 @@
+<label>{{label}} <span *ngIf="isRequired">*</span></label>
+<div class="select-container">
+  <input type="text" placeholder="{{placeholder}}" [(ngModel)]="search"
+    (blur)="onBlur()" (focus)="onSearch()" [ngClass]="{'sx-input-color-dark': theme === 'dark', 'error': hasErrors}" />
+  <div *ngIf="showOptions" class="options">
+    <p *ngFor="let opt of displayOptions" (click)="selectItem(opt)">{{opt.label}}</p>
+  </div>
+  <sx-text [variation]="'body2'" *ngIf="hasErrors">
+    {{errorMessage}}
+  </sx-text>
+  <ng-container *ngIf="multiple">
+    <div class="d-flex justify-content-start mt-2" *ngFor="let item of selectedOptions; let i = index">
+      <sx-tag [label]="item.label"  (onSelectTag)="removeItem(i)"></sx-tag>
+    </div>
+  </ng-container>
+</div>

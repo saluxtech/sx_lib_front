@@ -1,0 +1,72 @@
+@use "../colors/ds-colors" as *;
+@use "../fonts/fonts.scss" as *;
+
+* {
+  font-family: $font-primary;
+}
+
+.select-container {
+  position: relative;
+
+  input {
+    background-color: $color-support-150;
+    color: $color-support-500;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px 16px;
+    width: 100%;
+    border: 1px solid transparent;
+    outline: none;
+
+    &.padding-prefix-icon {
+      padding-left: 50px;
+    }
+
+    &:focus {
+      border: 2px solid $color-primary-300;
+    }
+  }
+
+  .error {
+    border: 1px solid $color-error-200;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/img/icons/select-arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+}
+
+.options {
+  position: absolute;
+  z-index: 99;
+  background: $color-support-100;
+  right: 0;
+  left: 0;
+  
+  border: 2px solid $color-primary-300;
+  border-top: none;
+
+  & :first-child {
+    background-color: $color-support-150;
+  }
+
+  p {
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-support-200;
+    }
+  }
+}

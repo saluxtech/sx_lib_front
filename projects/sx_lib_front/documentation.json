@@ -114,11 +114,31 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SelectComponent>",
+                "defaultValue": "{\r\n  title: 'Select',\r\n  component: SelectComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ReactiveFormsModule, FormsModule],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/sx_lib_front/src/stories/tab-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TabGroupComponent>",
                 "defaultValue": "{\r\n  title: 'TabGroup',\r\n  component: TabGroupComponent,\r\n  decorators: [\r\n    applicationConfig({\r\n      providers: [provideAnimations()],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "optionsTiposEnderecos",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "OptionModel[]",
+                "defaultValue": "[\r\n  { label: 'Residencial', value: 'residencial' },\r\n  { label: 'Comercial', value: 'comercial' },\r\n  { label: 'Outro', value: 'outro' },\r\n]"
             },
             {
                 "name": "preview",
@@ -178,7 +198,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'CheckBox',\r\n  args: {\r\n    label: 'Checkbox',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Texto do checkbox',\r\n      control: 'text',\r\n      type: 'string',\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  name: 'CheckBox',\r\n  args: {\r\n    label: 'Checkbox',\r\n    disabled: false,\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Texto do checkbox',\r\n      control: 'text',\r\n      type: 'string',\r\n    },\r\n    disabled: {\r\n      description: 'Desabilita o checkbox',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n    }\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -209,6 +229,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>`\r\n  })\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    options: optionsTiposEnderecos,\r\n    label: 'Select',\r\n  },\r\n  render: (args: any) => {\r\n    const formGroup = new FormGroup({\r\n      selectControl: new FormControl(''),\r\n    });\r\n\r\n    return {\r\n      props: {\r\n        ...args,\r\n        formGroup,\r\n      },\r\n      template: `\r\n        <div style=\"max-width: 70%; height: 300px;\">\r\n          <form [formGroup]=\"formGroup\">\r\n            <sx-select\r\n              [label]=\"label\"\r\n              [options]=\"options\"\r\n              formControlName=\"selectControl\"\r\n            ></sx-select>\r\n          </form>\r\n        </div>\r\n      `,\r\n    };\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -316,6 +346,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<LoaderComponent>",
                 "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SelectComponent>",
+                "file": "projects/sx_lib_front/src/stories/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -494,7 +535,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'CheckBox',\r\n  args: {\r\n    label: 'Checkbox',\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Texto do checkbox',\r\n      control: 'text',\r\n      type: 'string',\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  name: 'CheckBox',\r\n  args: {\r\n    label: 'Checkbox',\r\n    disabled: false,\r\n  },\r\n  argTypes: {\r\n    label: {\r\n      description: 'Texto do checkbox',\r\n      control: 'text',\r\n      type: 'string',\r\n    },\r\n    disabled: {\r\n      description: 'Desabilita o checkbox',\r\n      control: 'boolean',\r\n      type: 'boolean',\r\n    }\r\n  },\r\n}"
                 }
             ],
             "projects/sx_lib_front/src/stories/input.stories.ts": [
@@ -561,6 +602,38 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>`\r\n  })\r\n}"
+                }
+            ],
+            "projects/sx_lib_front/src/stories/select.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SelectComponent>",
+                    "defaultValue": "{\r\n  title: 'Select',\r\n  component: SelectComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ReactiveFormsModule, FormsModule],\r\n    }),\r\n  ],\r\n}"
+                },
+                {
+                    "name": "optionsTiposEnderecos",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "OptionModel[]",
+                    "defaultValue": "[\r\n  { label: 'Residencial', value: 'residencial' },\r\n  { label: 'Comercial', value: 'comercial' },\r\n  { label: 'Outro', value: 'outro' },\r\n]"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    options: optionsTiposEnderecos,\r\n    label: 'Select',\r\n  },\r\n  render: (args: any) => {\r\n    const formGroup = new FormGroup({\r\n      selectControl: new FormControl(''),\r\n    });\r\n\r\n    return {\r\n      props: {\r\n        ...args,\r\n        formGroup,\r\n      },\r\n      template: `\r\n        <div style=\"max-width: 70%; height: 300px;\">\r\n          <form [formGroup]=\"formGroup\">\r\n            <sx-select\r\n              [label]=\"label\"\r\n              [options]=\"options\"\r\n              formControlName=\"selectControl\"\r\n            ></sx-select>\r\n          </form>\r\n        </div>\r\n      `,\r\n    };\r\n  },\r\n}"
                 }
             ],
             "projects/sx_lib_front/.storybook/preview.ts": [
@@ -677,6 +750,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<LoaderComponent>",
                     "file": "projects/sx_lib_front/src/stories/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/sx_lib_front/src/stories/select.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SelectComponent>",
+                    "file": "projects/sx_lib_front/src/stories/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -945,6 +1031,46 @@
             },
             {
                 "filePath": "projects/sx_lib_front/src/stories/loader.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "optionsTiposEnderecos",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/select.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
