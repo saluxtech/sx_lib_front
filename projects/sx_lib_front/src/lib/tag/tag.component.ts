@@ -3,8 +3,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 type typeTagSiz = 'sm' | 'md' | 'lg' | ''
 @Component({
   selector: 'sx-tag',
-  templateUrl: './sx-tag.component.html',
-  styleUrls: ['./sx-tag.component.scss'],
+  templateUrl: './tag.component.html',
+  styleUrls: ['./tag.component.scss'],
   standalone: false
 })
 export class TagComponent {
