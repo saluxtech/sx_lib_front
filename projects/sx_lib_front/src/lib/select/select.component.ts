@@ -1,11 +1,5 @@
 import { CommonModule, NgClass } from '@angular/common';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   ControlValueAccessor,
   FormsModule,
@@ -25,7 +19,7 @@ import { TagModule } from '../tag/tag.module';
     TextModule,
     TagModule,
     NgClass,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
@@ -39,10 +33,10 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() theme: string = 'dark';
   @Output() change = new EventEmitter<any>();
 
-  public showOptions = false;
-  public value: any = '';
-  public search = '';
-  public selectedOptions: OptionModel[] = [];
+  showOptions = false;
+  value: any = '';
+  search = '';
+  selectedOptions: OptionModel[] = [];
   private onChange: (value: any) => void = () => {};
   private onTouched: () => void = () => {};
 
@@ -126,6 +120,8 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   }
 
   get isRequired(): boolean {
-    return this.formControl?.control?.hasValidator(Validators.required) ?? false;
+    return (
+      this.formControl?.control?.hasValidator(Validators.required) ?? false
+    );
   }
 }
