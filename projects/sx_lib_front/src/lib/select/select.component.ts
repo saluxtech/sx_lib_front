@@ -1,4 +1,4 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -7,9 +7,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { LabelModule } from '../label/label.module';
 import { OptionModel } from '../models/select.model';
-import { TextModule } from '../text/text.module';
 import { TagModule } from '../tag/tag.module';
+import { TextModule } from '../text/text.module';
 
 @Component({
   selector: 'sx-select',
@@ -18,8 +19,8 @@ import { TagModule } from '../tag/tag.module';
     ReactiveFormsModule,
     TextModule,
     TagModule,
+    LabelModule,
     NgClass,
-    CommonModule,
   ],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
@@ -31,6 +32,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() errorMessage: string = 'Preencher esse campo.';
   @Input() multiple = false;
   @Input() theme: string = 'dark';
+  @Input() limitWidth: boolean = false;
   @Output() change = new EventEmitter<any>();
 
   showOptions = false;

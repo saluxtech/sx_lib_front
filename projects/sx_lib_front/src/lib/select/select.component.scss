@@ -12,7 +12,6 @@
     background-color: $color-support-150;
     color: $color-support-500;
     height: 45px;
-    font-size: 16px;
     border-radius: 4px;
     padding: 10px 16px;
     width: 100%;
@@ -69,4 +68,9 @@
       background-color: $color-support-200;
     }
   }
+}
+
+.required-suffix {
+  color: $color-error-200;
+  margin-left: 2px;
 }
