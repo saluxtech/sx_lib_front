@@ -1,10 +1,5 @@
 @use "../colors/ds-colors" as *;
-
-sx-text {
-  display: block;
-  margin-bottom: 5px; // Adicione uma margem inferior para espaçamento entre o label e o input
-  font-size: 14px;
-}
+@use "../fonts/fonts.scss" as *;
 
 .required-suffix {
   color: $color-error-200;
@@ -19,24 +14,22 @@ sx-text {
 input {
   background-color: $color-support-100;
   color: $color-support-500;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
   height: 45px;
   font-size: 16px;
   border-radius: 4px;
   padding: 10px 16px;
   width: 100%;
   border: 1px solid transparent;
-  transition: all ease 0.2s;
-
+  outline: none;
+  
   &.padding-prefix-icon {
     padding-left: 50px;
   }
-}
 
-.required-label {
-  display: block;
-  margin-bottom: -30px;
-  transition: all ease 0.2s;
+  &:focus {
+    border: 2px solid $color-primary-300;
+  }
 }
 
 input.ng-invalid.ng-touched {
@@ -73,7 +66,7 @@ form label {
   left: 10px;
   top: 11px;
   color: $color-support-500;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
 
   &.padding-prefix-icon {
     left: 15px;
@@ -83,7 +76,7 @@ form label {
 .suffix {
   right: 11px;
   color: $color-support-500;
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
 }
 
 .padding-prefix {
