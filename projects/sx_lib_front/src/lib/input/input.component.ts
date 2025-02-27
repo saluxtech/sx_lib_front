@@ -1,4 +1,4 @@
-import { CommonModule, TitleCasePipe } from '@angular/common';
+import { NgClass, NgStyle, TitleCasePipe } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -19,20 +19,24 @@ import {
 } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { Subscription } from 'rxjs';
+import { LabelModule } from '../label/label.module';
 import { LoaderModule } from '../loader/loader.module';
 import { SxInputVariation } from '../models/input.model';
 import { TextModule } from '../text/text.module';
+
 
 @Component({
   selector: 'sx-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     LoaderModule,
     TextModule,
     NgxMaskDirective,
+    LabelModule,
+    NgStyle,
+    NgClass
   ],
   providers: [
     TitleCasePipe,
@@ -60,7 +64,6 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   @Input() formControlName: string = 'defaultFormControlName';
   @Input() height: 'sm' | 'lg' = 'sm';
   @Input() errorMessage: string = 'Campo obrigatório';
-  @Input() marginField: number = 0;
   @Input() showAsterisco: boolean = true;
   @Input() validation: boolean = true;
   @Input() variationLabel: SxInputVariation = 'label-input';
@@ -137,4 +140,10 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   }
 
   setDisabledState?(isDisabled: boolean): void {}
+
+  get isRequired(): boolean {
+    return (
+      this.control?.hasValidator(Validators.required) ?? false
+    );
+  }
 }
