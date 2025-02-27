@@ -1,42 +1,49 @@
-<label>
+@if(label){
+<sx-label>
   {{ label }}
-  <span *ngIf="isRequired">*</span>
-</label>
+
+  @if(isRequired) {
+  <span class="required-suffix">*</span>
+  }
+</sx-label>
+}
+
 <div class="select-container">
   <input
     type="text"
-    placeholder="{{ placeholder }}"
+    autocomplete="off"
+    autofill="off"
+    [placeholder]="placeholder"
     (blur)="onBlur()"
     (focus)="onSearch()"
     [ngClass]="{ 'sx-input-color-dark': theme === 'dark', error: hasErrors }"
     [(ngModel)]="search"
   />
-  <div 
-    *ngIf="showOptions" 
-    class="options"
-  >
-    <p 
-      *ngFor="let opt of displayOptions" 
-      (click)="selectItem(opt)"
-    >
+  @if(showOptions){
+    <div class="options">
+    @for(opt of displayOptions; track opt.value ){
+    <p (mousedown)="selectItem(opt)">
       {{ opt.label }}
     </p>
+    }
   </div>
-  <sx-text 
-    *ngIf="hasErrors" 
-    [variation]="'body2'" 
-  >
-    {{ errorMessage }}
-  </sx-text>
-  <ng-container *ngIf="multiple">
-    <div
-      *ngFor="let item of selectedOptions; let i = index"
-      class="d-flex justify-content-start mt-2"
-    >
-      <sx-tag 
-        [label]="item.label" 
-        (onSelectTag)="removeItem(i)"
-      />
+  } 
+  
+  @if(multiple){ 
+    @for(item of selectedOptions; track item.value){
+    <div class="d-flex justify-content-start mt-2">
+      <sx-tag [label]="item.label" (onSelectTag)="removeItem($index)" />
     </div>
-  </ng-container>
+    } 
+  } 
 </div>
+
+@if(hasErrors) {
+<sx-text
+  class="required-label"
+  [variation]="'body2'"
+  color="feedback-error-200"
+>
+  {{ errorMessage }}
+</sx-text>
+}
