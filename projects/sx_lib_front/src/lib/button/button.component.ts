@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import {sxButtonColorType, sxButtonSizeType, sxButtonTypeType as sxButtonVariationType} from "./button.types";
 
 @Component({
@@ -18,7 +18,8 @@ export class ButtonComponent implements OnInit {
   @Input() isWithIcon: boolean = false;
   @Input() hasWidth: string = 'auto';
   @Input() hasPorcentageWidth: string = 'auto';
-  @Input() iconLoaderSize: number = 20
+  @Input() iconLoaderSize: number = 20;
+  @Output() handleClick = new EventEmitter<any>();
   loaderColor: "primary" | "secondary" = 'primary';
 
   constructor() { }

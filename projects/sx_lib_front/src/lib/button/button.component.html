@@ -3,6 +3,7 @@
   [ngStyle]="hasPorcentageWidth !== '' ? { 'width': hasPorcentageWidth + '%; !important' } : { 'width': hasWidth + 'px' }"
   class="sx-button {{ variation }} {{ color }} {{ size }} position-relative {{isLoading && 'sx-button--loading'}}"
   [disabled]="disabled"
+  (click)="handleClick.emit()"
 >
   <div class="sx-button-alignment">
     <ng-content></ng-content>
