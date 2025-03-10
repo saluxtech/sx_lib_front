@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { StorageEnum } from '../../enums/storage.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,15 @@ export class AuthService {
   constructor() {}
 
   private loadToken(): string | null {
-    return sessionStorage.getItem('jwtToken');
+    return sessionStorage.getItem(StorageEnum.JWT_TOKEN);
   }
 
   setToken(token: string | null): void {
     if (token) {
-      sessionStorage.setItem('jwtToken', token);
+      sessionStorage.setItem(StorageEnum.JWT_TOKEN, token);
       this.jwtSubject.next(token);
     } else {
-      sessionStorage.removeItem('jwtToken');
+      sessionStorage.removeItem(StorageEnum.JWT_TOKEN);
       this.jwtSubject.next(null);
     }
   }
