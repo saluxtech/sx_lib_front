@@ -19,15 +19,25 @@
   >
     @if(showCustomizeText){
     <div class="button-container">
-      <button type="button" class="bold" (click)="formatText('bold')">B</button>
-      <button type="button" class="italic" (click)="formatText('italic')">
+      <button
+        type="button"
+        class="bold"
+        (click)="formatText(textStyleEnum.Bold)"
+      >
+        B
+      </button>
+      <button
+        type="button"
+        class="italic"
+        (click)="formatText(textStyleEnum.Italic)"
+      >
         <i>i</i>
       </button>
       <button
         type="button"
         class="underline"
         [class.selected]="isUnderline"
-        (click)="formatText('underline')"
+        (click)="formatText(textStyleEnum.Underline)"
       >
         U
       </button>
@@ -35,7 +45,7 @@
         type="button"
         class="strikethrough"
         [class.selected]="isStrikethrough"
-        (click)="formatText('strikethrough')"
+        (click)="formatText(textStyleEnum.StrikeThrough)"
       >
         S
       </button>

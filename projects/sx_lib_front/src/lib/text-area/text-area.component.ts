@@ -23,6 +23,7 @@ import {
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { LabelModule } from './../label/label.module';
+import { TextStyleEnum } from './../models/text-area.model';
 import { TextModule } from './../text/text.module';
 
 @Component({
@@ -71,11 +72,11 @@ export class TextareaComponent
   selectedArea: string = '';
   textWithTag: string = '';
   validators = Validators;
-
   isBold: boolean = false;
   isItalic: boolean = false;
   isUnderline: boolean = false;
   isStrikethrough: boolean = false;
+  textStyleEnum = TextStyleEnum;
 
   ngOnInit(): void {
     this.controlSubscribe();
@@ -107,7 +108,8 @@ export class TextareaComponent
       this.textArea.nativeElement.innerText = currentValue;
     }
 
-    currentValue = currentValue.split('&')[0];
+    const [value] = currentValue.split('&');
+    currentValue = value;
 
     this.control.setValue(currentValue === '' ? null : currentValue);
     this.stringCount = currentValue.length.toString();
@@ -143,22 +145,22 @@ export class TextareaComponent
     return this.control.errors;
   }
 
-  formatText(textClass: string) {
+  formatText(textStyle: TextStyleEnum) {
     this.focusTextArea(() => {
-      switch (textClass) {
-        case 'bold':
+      switch (textStyle) {
+        case this.textStyleEnum.Bold:
           this.isBold = !this.isBold;
           document.execCommand('bold');
           break;
-        case 'italic':
+        case this.textStyleEnum.Italic:
           this.isItalic = !this.isItalic;
           document.execCommand('italic');
           break;
-        case 'underline':
+        case this.textStyleEnum.Underline:
           this.isUnderline = !this.isUnderline;
           document.execCommand('underline');
           break;
-        case 'strikethrough':
+        case this.textStyleEnum.StrikeThrough:
           this.isStrikethrough = !this.isStrikethrough;
           document.execCommand('strikeThrough');
           break;
