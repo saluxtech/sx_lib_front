@@ -1,0 +1,64 @@
+<div
+  class="sx-textarea-container"
+  (mouseenter)="changeBorder()"
+  (mouseleave)="changeBorder()"
+>
+  @if(label){
+  <sx-label>
+    {{ label }}
+
+    @if(isRequired) {
+    <span class="required-suffix">*</span>
+    }
+  </sx-label>
+  }
+
+  <div
+    #textAreaContainer
+    class="textarea-container sx-textarea-color-{{ theme }}"
+  >
+    @if(showCustomizeText){
+    <div class="button-container">
+      <button type="button" class="bold" (click)="formatText('bold')">B</button>
+      <button type="button" class="italic" (click)="formatText('italic')">
+        <i>i</i>
+      </button>
+      <button
+        type="button"
+        class="underline"
+        [class.selected]="isUnderline"
+        (click)="formatText('underline')"
+      >
+        U
+      </button>
+      <button
+        type="button"
+        class="strikethrough"
+        [class.selected]="isStrikethrough"
+        (click)="formatText('strikethrough')"
+      >
+        S
+      </button>
+    </div>
+    }
+    <div
+      #textArea
+      [style.width]="textareaWidth ?? '100%'"
+      [style.height]="textareaHeight ?? '180px'"
+      contenteditable="true"
+      class="text-area sx-textarea-{{ theme }}"
+      (mouseleave)="getSelectedText()"
+      (keyup)="setControlValue()"
+      data-placeholder=""
+      (keypress)="limiteCaractere($event)"
+      tabindex="0"
+      (blur)="emitBlur()"
+      (paste)="onPaste($event)"
+    ></div>
+  </div>
+  @if(!disableMaxLength){
+  <sx-text variation="caption" class="string-count">
+    {{ stringCount }} / {{ maxLength }} caracteres
+  </sx-text>
+  }
+</div>

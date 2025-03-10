@@ -1,0 +1,230 @@
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  forwardRef,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  FormControl,
+  FormsModule,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  ReactiveFormsModule,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { LabelModule } from './../label/label.module';
+import { TextModule } from './../text/text.module';
+
+@Component({
+  selector: 'sx-textarea',
+  templateUrl: './text-area.component.html',
+  styleUrls: ['./text-area.component.scss'],
+  imports: [TextModule, LabelModule, FormsModule, ReactiveFormsModule],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TextareaComponent),
+      multi: true,
+    },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: forwardRef(() => TextareaComponent),
+      multi: true,
+    },
+  ],
+})
+export class TextareaComponent
+  implements ControlValueAccessor, OnInit, OnDestroy, AfterViewInit
+{
+  @ViewChild('textArea') textArea!: ElementRef;
+  @ViewChild('textAreaContainer') textAreaContainer!: ElementRef;
+
+  @Input() cols: string = '';
+  @Input() rows: string = '';
+  @Input() textareaHeight: string | null = null;
+  @Input() textareaWidth: string | null = null;
+  @Input() label: string = '';
+  @Input() labelError: string = '';
+  @Input() placeholder: string = '';
+  @Input() theme: 'light' | 'dark' | 'white' = 'light';
+  @Input() showCustomizeText: boolean = true;
+  @Input() disableMaxLength: boolean = false;
+  @Input() maxLength: number = 1000;
+  @Output() blur = new EventEmitter<any>();
+  @Input() required = false;
+
+  control: FormControl = new FormControl('');
+  controlFromOutside!: AbstractControl;
+  subscriptions: Subscription[] = [];
+  stringCount: string = '0';
+  textAreaValue: string = '';
+  selectedArea: string = '';
+  textWithTag: string = '';
+  validators = Validators;
+
+  isBold: boolean = false;
+  isItalic: boolean = false;
+  isUnderline: boolean = false;
+  isStrikethrough: boolean = false;
+
+  ngOnInit(): void {
+    this.controlSubscribe();
+  }
+
+  ngAfterViewInit(): void {
+    this.textArea.nativeElement.setAttribute(
+      'data-placeholder',
+      this.placeholder
+    );
+  }
+
+  controlSubscribe() {
+    const subscription = this.control.valueChanges.subscribe((valor) => {
+      if (valor) {
+        this.stringCount = valor.length.toString();
+      } else {
+        this.stringCount = '0';
+      }
+    });
+    this.subscriptions.push(subscription);
+  }
+
+  setControlValue() {
+    let currentValue = this.textArea.nativeElement.innerText.trim();
+
+    if (currentValue.length > this.maxLength && !this.disableMaxLength) {
+      currentValue = currentValue.substring(0, this.maxLength);
+      this.textArea.nativeElement.innerText = currentValue;
+    }
+
+    currentValue = currentValue.split('&')[0];
+
+    this.control.setValue(currentValue === '' ? null : currentValue);
+    this.stringCount = currentValue.length.toString();
+  }
+
+  writeValue(value: any): void {
+    if (value && value.length > this.maxLength && !this.disableMaxLength) {
+      value = value.substring(0, this.maxLength);
+    }
+    this.control.setValue(value);
+    setTimeout(() => {
+      this.textArea.nativeElement.innerHTML = value;
+      this.stringCount = value ? value.length.toString() : '0';
+    }, 200);
+  }
+
+  registerOnChange(fn: any): void {
+    const subscription = this.control.valueChanges.subscribe(fn);
+    this.subscriptions.push(subscription);
+  }
+
+  registerOnTouched(fn: any): void {
+    const subscription = this.control.valueChanges.subscribe(fn);
+    this.subscriptions.push(subscription);
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    isDisabled ? this.control.disable() : this.control.enable();
+  }
+
+  validate(control: AbstractControl): ValidationErrors | null {
+    this.controlFromOutside = control;
+    return this.control.errors;
+  }
+
+  formatText(textClass: string) {
+    this.focusTextArea(() => {
+      switch (textClass) {
+        case 'bold':
+          this.isBold = !this.isBold;
+          document.execCommand('bold');
+          break;
+        case 'italic':
+          this.isItalic = !this.isItalic;
+          document.execCommand('italic');
+          break;
+        case 'underline':
+          this.isUnderline = !this.isUnderline;
+          document.execCommand('underline');
+          break;
+        case 'strikethrough':
+          this.isStrikethrough = !this.isStrikethrough;
+          document.execCommand('strikeThrough');
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
+  getTextWithTag() {
+    const selection = window.getSelection();
+    this.selectedArea = selection ? selection.toString() : '';
+  }
+
+  getSelectedText() {
+    const selection = window.getSelection();
+    this.selectedArea = selection ? selection.toString() : '';
+  }
+
+  emitBlur() {
+    this.blur.emit();
+  }
+
+  changeBorder() {
+    this.textAreaContainer.nativeElement.classList.toggle('border');
+  }
+
+  limiteCaractere(event: KeyboardEvent) {
+    const inputElement = event.target as HTMLDivElement;
+    const textLength = inputElement.innerText.length;
+    const selection = window.getSelection();
+    const selectedTextLength = selection ? selection.toString().length : 0;
+
+    if (
+      textLength - selectedTextLength >= this.maxLength &&
+      !this.disableMaxLength
+    ) {
+      event.preventDefault();
+    }
+  }
+
+  onPaste(event: ClipboardEvent): void {
+    const inputElement = event.target as HTMLDivElement;
+    const textLength = inputElement.innerText.length;
+    const selection = window.getSelection();
+    const selectedTextLength = selection ? selection.toString().length : 0;
+    if (
+      textLength - selectedTextLength >= this.maxLength &&
+      !this.disableMaxLength
+    ) {
+      event.preventDefault();
+    }
+  }
+
+  focusTextArea(callback: Function) {
+    this.textArea.nativeElement.focus();
+    setTimeout(() => {
+      callback();
+    }, 0);
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
+  }
+
+  get isRequired(): boolean {
+    return this.control?.hasValidator(Validators.required) ?? false;
+  }
+}
