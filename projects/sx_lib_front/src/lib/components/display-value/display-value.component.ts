@@ -11,8 +11,10 @@ import {
 import { ViewModel } from './view.model';
 import { CurrencyPipe, DatePipe, NgClass, NgFor, NgIf } from "@angular/common";
 import { cpfCnpjPipe } from '../../pipes/cpf-cnpj.pipe';
-import { BadgesComponent, LabelComponent, TruncatePipe } from 'sx_lib_front';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LabelComponent } from '../label/label.component';
+import { BadgesComponent } from '../badges';
+import { TruncatePipe } from '../../pipes/truncate.pipe';
 
 @Component({
   selector: 'sx-display-value',

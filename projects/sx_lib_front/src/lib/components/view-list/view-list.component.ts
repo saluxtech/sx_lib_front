@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ViewListModel } from './view-list.model';
 import { NgFor, NgIf } from '@angular/common';
-import { DisplayValueComponent } from 'sx_lib_front';
+import { DisplayValueComponent } from '../display-value';
 
 @Component({
   selector: 'sx-view-list',

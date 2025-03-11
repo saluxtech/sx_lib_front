@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { badgesType } from './bagdges.type';
 import { NgIf, NgStyle } from '@angular/common';
-import { IconSvgComponent } from 'sx_lib_front';
+import { IconSvgComponent } from '../icon-svg/icon-svg.component';
 
 @Component({
   selector: 'sx-badges',

@@ -9,7 +9,9 @@ import {
 } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
-import { IconSvgComponent, Tab, TextComponent } from 'sx_lib_front';
+import { TextComponent } from '../text/text.component';
+import { IconSvgComponent } from '../icon-svg/icon-svg.component';
+import { Tab } from '../../models/tab-group.interface';
 
 
 @Component({

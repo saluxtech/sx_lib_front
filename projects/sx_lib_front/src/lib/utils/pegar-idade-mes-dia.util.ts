@@ -1,5 +1,5 @@
 import { IdadeModel } from "./idade.model";
-import { PacienteModel } from "./paciente.model";
+import { PacienteModel } from "../models/paciente.model";
 
 export function pegarIdadeMesesDias(): IdadeModel | null {
   const paciente: PacienteModel = JSON.parse(sessionStorage.getItem("CD_PACIENTE")!) || null;

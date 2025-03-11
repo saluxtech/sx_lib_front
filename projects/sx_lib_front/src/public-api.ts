@@ -1,6 +1,3 @@
-/*
- * Public API Surface of sx_lib_front
- */
 export * from './lib/services';
 export * from './lib/components';
 export * from './lib/models';

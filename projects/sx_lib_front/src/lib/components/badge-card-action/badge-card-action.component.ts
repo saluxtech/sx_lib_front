@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { badgesType } from '../badges/bagdges.type';
 import { statusBadgeSoap } from '../../utils';
-import { BadgesComponent, BasicCardComponent, LabelComponent, TextComponent } from 'sx_lib_front';
 import { NgIf } from '@angular/common';
+import { BasicCardComponent } from '../basic-card';
+import { BadgesComponent } from '../badges';
+import { LabelComponent } from '../label';
+import { TextComponent } from '../text';
 
 @Component({
   selector: 'sx-badge-card-action',

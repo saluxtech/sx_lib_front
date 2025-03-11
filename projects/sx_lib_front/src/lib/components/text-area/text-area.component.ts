@@ -22,7 +22,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { LabelComponent, TextComponent, TextStyleEnum } from 'sx_lib_front';
+import { LabelComponent } from '../label/label.component';
+import { TextComponent } from '../text/text.component';
+import { TextStyleEnum } from '../../models/text-area.model';
 
 @Component({
   selector: 'sx-textarea',

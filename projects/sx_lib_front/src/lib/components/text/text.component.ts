@@ -1,7 +1,7 @@
 import { Component, Input, ElementRef, AfterViewInit } from '@angular/core';
-import { SxTextColor, SxTextVariation } from 'sx_lib_front';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgClass } from '@angular/common';
+import { SxTextColor, SxTextVariation } from '../../models/text.model';
 
 @Component({
   selector: 'sx-text',

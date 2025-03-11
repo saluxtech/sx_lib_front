@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { LabelComponent, labelType } from 'sx_lib_front';
 import { CurrencyPipe, DatePipe } from '@angular/common';
+import { LabelComponent } from '../label/label.component';
+import { labelType } from '../label/label.type';
 
 @Component({
   selector: 'sx-pipe-display',

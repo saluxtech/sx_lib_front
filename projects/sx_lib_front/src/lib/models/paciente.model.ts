@@ -1,3 +1,6 @@
+import { GeneroEnum } from "../enums/genero.enum";
+import { TipoEnum } from "../enums/tipo.enum";
+
 export interface PacienteModel {
   ALERGIAS: string[];
   ANO_FIA_BAA: number;
@@ -45,8 +48,8 @@ export interface PacienteModel {
   QT_MINUTOS_TRIAGEM: string;
   QT_TEMPO_SETOR: string;
   SC_UNIDADE_HOSPITALAR: string;
-  SEXO: "FEMININO" | "MASCULINO";
-  TIPO: "BAA" | "FIA";
+  SEXO: GeneroEnum;
+  TIPO: TipoEnum;
   TIPO_PROFISSIONAL: string;
   CPF?: string;
   EMAIL?: string;
