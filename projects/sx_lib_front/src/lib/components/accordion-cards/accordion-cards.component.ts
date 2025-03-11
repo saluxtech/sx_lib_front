@@ -1,16 +1,14 @@
+import { NgClass, NgIf } from '@angular/common';
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import { LabelComponent, TextComponent } from 'sx_lib_front';
 
 @Component({
   selector: 'sx-accordion-cards',
   templateUrl: './accordion-cards.component.html',
   styleUrls: ['./accordion-cards.component.scss'],
   standalone: true,
-  imports: []
+  imports: [NgClass, NgIf, LabelComponent, TextComponent]
 })
-// CardActionModule,
-//     LabelModule,
-//     BasicCardModule,
-//     TextModule
 export class AccordionCardsComponent implements OnInit {
   @Input() limiteCards: number = 2;
   @Input() widthCard: string = '100%';
