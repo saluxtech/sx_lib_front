@@ -7,3 +7,5 @@ export * from './pegar-ano-mes-util';
 export * from './pegar-idade-mes-dia.util';
 export * from './pesquisa-autocomplete.util';
 export * from './scroll-first-input-error.util';
+export * from './paciente.model';
+export * from './idade.model';

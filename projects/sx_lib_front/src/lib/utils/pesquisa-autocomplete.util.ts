@@ -33,7 +33,7 @@ export function pesquisaAutoCompleteEFiltro(lista: any[], atributo: string, pesq
 }
 
 export function pesquisaAutoCompleteTagEFiltro(lista: {Codigo:number, Nome:string}[], atributo: string, pesquisa: string): {Codigo:number, Nome:string}[] {
-  const valoresFiltrados = lista.filter(item => {
+  const valoresFiltrados = lista.filter((item: any) => {
     const valorAtributo = item[atributo].toUpperCase();
     const pesquisaFormatada = pesquisa.toUpperCase();
     return valorAtributo.includes(pesquisaFormatada);

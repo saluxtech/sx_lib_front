@@ -24,3 +24,4 @@ export * from './select';
 export * from './autocomplete';
 export * from './autocomplete-tag';
 export * from './badge-card-action';
+export * from './text-area';

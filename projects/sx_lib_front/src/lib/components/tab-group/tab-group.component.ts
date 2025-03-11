@@ -8,16 +8,15 @@ import {
   Renderer2,
 } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { TextModule } from '../text/text.module';
 import { CommonModule } from '@angular/common';
-import { IconSvgComponent, Tab } from 'sx_lib_front';
+import { IconSvgComponent, Tab, TextComponent } from 'sx_lib_front';
 
 
 @Component({
   selector: 'sx-tab-group',
   templateUrl: './tab-group.component.html',
   styleUrls: ['./tab-group.component.scss'],
-  imports: [CommonModule, TextModule, MatTabsModule, IconSvgComponent],
+  imports: [CommonModule, TextComponent, MatTabsModule, IconSvgComponent],
   providers: []
 })
 export class TabGroupComponent {
