@@ -7,12 +7,9 @@ import { StorageEnum } from '../../enums/storage.enum';
 })
 export class AuthService {
   private jwtSubject = new BehaviorSubject<string | null>(this.loadToken());
+  public jwt$ = this.jwtSubject.asObservable();
 
   constructor() {}
-
-  private loadToken(): string | null {
-    return sessionStorage.getItem(StorageEnum.JWT_TOKEN);
-  }
 
   setToken(token: string | null): void {
     if (token) {
@@ -26,5 +23,21 @@ export class AuthService {
 
   getToken(): string | null {
     return this.jwtSubject.value || this.loadToken();
+  }
+
+  getUserRoles(): string[] {
+    const token = this.getToken();
+    if (!token) {
+      return [];
+    }
+
+    const payload = token.split('.')[1];
+    const decodedPayload = atob(payload);
+    const parsedPayload = JSON.parse(decodedPayload);
+    return parsedPayload.roles;
+  }
+
+  private loadToken(): string | null {
+    return sessionStorage.getItem(StorageEnum.JWT_TOKEN);
   }
 }

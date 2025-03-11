@@ -1,0 +1,55 @@
+<div #verMais
+    class="accordion mt-3"
+    [style.background-color]="background"
+    [style.width]="widthCard + '%'"
+    >
+      <div class="header row">
+            <div class="col-lg-2 col-md-3 d-flex align-items-center" *ngFor="let item of arrayHeader">
+              <sx-label>{{ data[item.header]}} {{item?.complementoHeader}}</sx-label>
+            </div>
+            <div
+              [ngClass]="'header-accordion-btn col-md-12 col-lg-' + (12 - arrayHeader?.length! * 2)">
+              <button
+                type="button"
+                class="btn btn-link no-hover"
+                (click)="verMaisOuMenos()">
+                <img
+                  [style.transform]="mostrandoTodosValores ? 'rotate(90deg)' : 'rotate(270deg)'"
+                  class="ml-1"
+                  [src]="'assets/img/icons/menu/chevron-left.svg'"
+                  alt=""
+                  width="25"/>
+              </button>
+            </div>
+      </div>
+      <div class="accordion-content row" *ngIf="mostrandoTodosValores">
+        <ng-container *ngFor="let item of data[arrayHeader[0].lista]; let i = index">
+          <div class="card-container m-0 row" [style.backgroundColor]="i%2==0 ? '#ffffff' : '#ECECEC'">
+            <div class="col-lg-2 col-md-3" *ngFor="let header of arrayHeader">
+              <sx-label type="title" [color]="header.validarData ? validarData(item[header.value]) : 'default'">
+                {{ header?.label }}
+              </sx-label>
+              <sx-pipe-display
+                [value]="item[header.value] + ' ' + [header.complementoValue]"
+                [pipe]="header?.pipe!"
+                [color]="header.validarData ? validarData(item[header.value]) : 'default'"
+              ></sx-pipe-display>
+            </div>
+            <div class="ajuste-estoque">
+              <img
+                  class="change-edit"
+                  [src]="'assets/img/icons/change-edit.svg'"
+                  alt=""
+                  width="25"/>
+                  
+              <button
+                (click)="openAjusteEstoque(data, data.Lotes[i])"
+                class="item-menu d-flex justify-content-between"
+              >
+                Ajustar estoque
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+</div>
