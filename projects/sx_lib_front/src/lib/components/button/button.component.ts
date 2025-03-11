@@ -7,7 +7,6 @@ import { sxButtonColorType, sxButtonSizeType, sxButtonTypeType as sxButtonVariat
   selector: 'sx-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
-  standalone: true,
   imports: [NgStyle, LoaderComponent]
 })
 export class ButtonComponent implements OnInit {

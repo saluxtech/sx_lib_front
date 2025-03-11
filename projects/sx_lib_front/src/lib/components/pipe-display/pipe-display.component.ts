@@ -6,7 +6,6 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
   selector: 'sx-pipe-display',
   templateUrl: './pipe-display.component.html',
   styleUrls: ['./pipe-display.component.scss'],
-  standalone: true,
   imports: [LabelComponent, CurrencyPipe, DatePipe]
 })
 export class PipeDisplayComponent { 

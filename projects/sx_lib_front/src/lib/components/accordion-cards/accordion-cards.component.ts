@@ -6,7 +6,6 @@ import { LabelComponent, TextComponent } from 'sx_lib_front';
   selector: 'sx-accordion-cards',
   templateUrl: './accordion-cards.component.html',
   styleUrls: ['./accordion-cards.component.scss'],
-  standalone: true,
   imports: [NgClass, NgIf, LabelComponent, TextComponent]
 })
 export class AccordionCardsComponent implements OnInit {

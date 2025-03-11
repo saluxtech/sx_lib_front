@@ -11,7 +11,6 @@ import { NgClass, NgStyle } from "@angular/common";
   selector: "sx-basic-card",
   templateUrl: "./basic-card.component.html",
   styleUrls: ["./basic-card.component.scss"],
-  standalone: true,
   imports: [NgStyle, NgClass]
 })
 export class BasicCardComponent {

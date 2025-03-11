@@ -18,7 +18,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   selector: 'sx-display-value',
   templateUrl: './display-value.component.html',
   styleUrls: ['./display-value.component.scss'],
-  standalone: true,
   imports: [NgIf, MatTooltipModule, LabelComponent, NgFor, NgClass, BadgesComponent]
 })
 export class DisplayValueComponent implements OnChanges, AfterViewInit {

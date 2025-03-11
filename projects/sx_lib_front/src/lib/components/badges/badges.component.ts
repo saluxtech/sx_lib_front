@@ -5,7 +5,6 @@ import { badgesType } from './bagdges.type';
   selector: 'sx-badges',
   templateUrl: './badges.component.html',
   styleUrls: ['./badges.component.scss'],
-  standalone: true,
 })
 export class BadgesComponent implements OnInit{
   @Input() type: badgesType = 'default';

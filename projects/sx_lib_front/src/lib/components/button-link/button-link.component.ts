@@ -12,7 +12,6 @@ import {
   selector: "-button-link",
   templateUrl: "./button-link.component.html",
   styleUrls: ["./button-link.component.scss"],
-  standalone: true,
   imports: [IconSvgComponent, NgIf, RouterLink]
 })
 export class ButtonLinkComponent implements OnInit {

@@ -5,7 +5,6 @@ import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'sx-text',
-  standalone: true,
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss'],
   imports: [MatTooltipModule, NgClass]

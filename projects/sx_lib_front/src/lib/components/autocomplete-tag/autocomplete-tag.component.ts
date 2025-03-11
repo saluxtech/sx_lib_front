@@ -51,7 +51,6 @@ interface ResultTemplateContext {
 
 @Component({
   selector: 'sx-autocomplete-tag',
-  standalone: true,
   templateUrl: './autocomplete-tag.component.html',
   styleUrls: ['./autocomplete-tag.component.scss'],
   encapsulation: ViewEncapsulation.None,
