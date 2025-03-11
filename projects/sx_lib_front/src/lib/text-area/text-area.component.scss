@@ -1,0 +1,117 @@
+@use "../colors/ds-colors" as *;
+@use "../fonts/fonts.scss" as *;
+
+.sx-textarea-container {
+  width: 100%;
+  height: fit-content;
+  padding: 0;
+  border-radius: 4px;
+
+  .textarea-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 16px 16px 16px;
+    border: 2px solid transparent !important;
+    border-radius: 4px;
+
+    &.sx-textarea-color-light {
+      background: $color-support-150;
+    }
+
+    &.sx-textarea-color-dark {
+      background-color: $color-support-150;
+    }
+
+    &.sx-textarea-color-white {
+      background: $color-support-100;
+    }
+
+    &.border {
+      border: 2px solid $color-primary-300 !important;
+    }
+
+    .button-container {
+      width: 100%;
+      height: fit-content;
+      gap: 24px;
+      border-bottom: 1px solid $color-support-200;
+
+      button {
+        background: none;
+        border: none;
+        outline: inherit;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        margin: 8px 0;
+        font-size: 16px;
+        line-height: 24px;
+        color: $color-support-500;
+        font: inherit;
+        cursor: pointer;
+
+        &:hover,
+        &.selected {
+          background-color: $color-support-200;
+        }
+      }
+    }
+
+    .text-area {
+      overflow: auto;
+      border: none;
+      resize: none;
+      padding: 16px 0 0 0;
+      width: 100%;
+      min-height: 48px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      font-family: $font-primary;
+      background: inherit;
+      color: $color-support-500;
+      outline: none;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        color: $color-support-300;
+      }
+    }
+  }
+
+  .string-count {
+    width: 100%;
+    text-align: end;
+    color: $color-support-300;
+  }
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strikethrough {
+  text-decoration-line: line-through;
+}
+
+[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+  color:$color-support-400;
+  display: inline-block;
+}
+
+.sx-textarea-color-light .text-area::before,
+.sx-textarea-color-dark .text-area::before {
+  color: $color-support-300;
+}

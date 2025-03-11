@@ -31,6 +31,7 @@ export * from './lib/select/select.component';
 export * from './lib/tab-group/tab-group.component';
 export * from './lib/text/text.component';
 export * from './lib/text/text.module';
+export * from './lib/text-area/text-area.component';
 export * from './lib/view-list/view-list.component';
 export * from './lib/view-list/view-list.module';
 
