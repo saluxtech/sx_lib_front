@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CardActionAbstract } from './card-action.abstract';
-import { BasicCardComponent } from 'sx_lib_front';
 import { NgClass, NgIf } from '@angular/common';
+import { BasicCardComponent } from '../basic-card/basic-card.component';
 
 @Component({
   selector: 'sx-card-action',

@@ -1,6 +1,6 @@
-import { badgesType } from "app/shared/design-system/components/sx-badges/model/bagdges.type";
+import { badgesType } from "sx_lib_front";
 
-export const statusBadgeSoap = (value) => {
+export const statusBadgeSoap = (value: any) => {
   let badgeLabel = '';
   let badgeType: badgesType = 'default';
 

@@ -1,12 +1,12 @@
 import { NgIf } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 import { Router, RouterLink } from "@angular/router";
-import { IconSvgComponent } from "sx_lib_front";
 import {
   ButtonLinkBoolean,
   ButtonLinkColor,
   ButtonLinkSize,
 } from "./button-link.types";
+import { IconSvgComponent } from "../icon-svg/icon-svg.component";
 
 @Component({
   selector: "-button-link",

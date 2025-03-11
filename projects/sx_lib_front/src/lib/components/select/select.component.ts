@@ -7,7 +7,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { LabelComponent, OptionModel, TagComponent, TextComponent } from 'sx_lib_front';
+import { LabelComponent } from '../label/label.component';
+import { TextComponent } from '../text/text.component';
+import { OptionModel } from '../../models/select.model';
+import { TagComponent } from '../tag/tag.component';
 
 @Component({
   selector: 'sx-select',

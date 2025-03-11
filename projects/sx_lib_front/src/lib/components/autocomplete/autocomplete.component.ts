@@ -34,9 +34,9 @@ import {
   switchMap,
   tap
 } from 'rxjs/operators';
-import { ViewModel } from '../display-value/model/view.model';
-import { DisplayValueComponent } from 'sx_lib_front';
+import { ViewModel } from '../display-value/view.model';
 import { NgClass, NgIf } from '@angular/common';
+import { DisplayValueComponent } from '../display-value';
 
 interface ResultTemplateContext {
 	result: any;

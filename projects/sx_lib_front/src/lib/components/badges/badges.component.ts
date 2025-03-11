@@ -1,10 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { badgesType } from './bagdges.type';
+import { NgIf, NgStyle } from '@angular/common';
+import { IconSvgComponent } from '../icon-svg/icon-svg.component';
 
 @Component({
   selector: 'sx-badges',
   templateUrl: './badges.component.html',
   styleUrls: ['./badges.component.scss'],
+  imports: [NgStyle, NgIf, IconSvgComponent]
 })
 export class BadgesComponent implements OnInit{
   @Input() type: badgesType = 'default';

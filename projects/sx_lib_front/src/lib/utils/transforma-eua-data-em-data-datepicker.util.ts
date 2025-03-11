@@ -1,4 +1,4 @@
-import {RangeDateDatepickerModel} from "../components/sx-datepicker/model/range-date-datepicker.model";
+import { RangeDateDatepickerModel } from "sx_lib_front";
 
 export function transformaEuaDataEmDataDatepickerUtil(dateString: string): RangeDateDatepickerModel {
   const date = new Date(dateString);

@@ -1,7 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CardTableModel } from './card-table.model';
 import { NgFor, NgIf } from '@angular/common';
-import { BadgesComponent, badgesType, LabelComponent, PipeDisplayComponent } from 'sx_lib_front';
+import { LabelComponent } from '../label/label.component';
+import { BadgesComponent } from '../badges/badges.component';
+import { PipeDisplayComponent } from '../pipe-display/pipe-display.component';
+import { badgesType } from '../badges/bagdges.type';
 
 @Component({
   selector: 'sx-card-table',

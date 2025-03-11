@@ -22,15 +22,15 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { LabelModule } from './../label/label.module';
-import { TextStyleEnum } from './../models/text-area.model';
-import { TextModule } from './../text/text.module';
+import { LabelComponent } from '../label/label.component';
+import { TextComponent } from '../text/text.component';
+import { TextStyleEnum } from '../../models/text-area.model';
 
 @Component({
   selector: 'sx-textarea',
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.scss'],
-  imports: [TextModule, LabelModule, FormsModule, ReactiveFormsModule],
+  imports: [TextComponent, LabelComponent, FormsModule, ReactiveFormsModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

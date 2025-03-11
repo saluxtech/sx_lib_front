@@ -19,7 +19,10 @@ import {
 } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { Subscription } from 'rxjs';
-import { LabelComponent, LoaderComponent, SxInputVariation, TextComponent } from 'sx_lib_front';
+import { TextComponent } from '../text/text.component';
+import { LoaderComponent } from '../loader/loader.component';
+import { LabelComponent } from '../label/label.component';
+import { SxInputVariation } from '../../models/input.model';
 
 
 @Component({
@@ -66,6 +69,7 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   @Input() variationLabel: SxInputVariation = 'label-input';
   @Input() limitWidth: boolean = false;
   @Input() textColor: string = '';
+  @Input() marginField: number = 0;
 
 
   @Output() changeValue: EventEmitter<any> = new EventEmitter<any>();

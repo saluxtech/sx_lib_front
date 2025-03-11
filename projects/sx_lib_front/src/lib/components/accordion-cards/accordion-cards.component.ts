@@ -1,6 +1,7 @@
 import { NgClass, NgIf } from '@angular/common';
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import { LabelComponent, TextComponent } from 'sx_lib_front';
+import { TextComponent } from '../text/text.component';
+import { LabelComponent } from '../label/label.component';
 
 @Component({
   selector: 'sx-accordion-cards',

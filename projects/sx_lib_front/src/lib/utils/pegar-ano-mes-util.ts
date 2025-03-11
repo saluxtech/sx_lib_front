@@ -1,6 +1,6 @@
-import * as moment from "moment";
+import moment from "moment";
 
-export const pegarAnoEMes = (data) => {
+export const pegarAnoEMes = (data: any) => {
 
   const mounth = moment().diff(data, 'months');
   const year = moment().diff(data, 'years');

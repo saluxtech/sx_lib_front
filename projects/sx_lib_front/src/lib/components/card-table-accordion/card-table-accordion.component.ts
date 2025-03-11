@@ -2,7 +2,9 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import moment from 'moment';
-import { ArrayHeader, LabelComponent, PipeDisplayComponent } from 'sx_lib_front';
+import { PipeDisplayComponent } from '../pipe-display/pipe-display.component';
+import { ArrayHeader } from '../../models/array-header.model';
+import { LabelComponent } from '../label/label.component';
 
 @Component({
   selector: 'sx-card-table-accordion',

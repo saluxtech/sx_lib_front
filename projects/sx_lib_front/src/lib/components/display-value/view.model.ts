@@ -1,4 +1,4 @@
-import { labelColorType, labelSizeType, labelType } from "sx_lib_front";
+import { labelColorType, labelSizeType, labelType } from "../label/label.type";
 import { ViewListModel } from "../view-list/view-list.model";
 
 export interface ViewModel {

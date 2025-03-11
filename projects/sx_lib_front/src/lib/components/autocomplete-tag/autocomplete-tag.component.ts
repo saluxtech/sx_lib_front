@@ -33,7 +33,7 @@ import {
   switchMap,
   tap
 } from 'rxjs/operators';
-import { ViewModel } from '../display-value/model/view.model';
+import { ViewModel } from '../display-value/view.model';
 import { NgFor, NgIf } from '@angular/common';
 
 interface AutoCompleteOptions {

@@ -1,9 +1,8 @@
-import {PacienteModel} from "../../../models/paciente.model";
-import {IdadeModel} from "../models/idade.model";
+import { IdadeModel } from "./idade.model";
+import { PacienteModel } from "../models/paciente.model";
 
-
-export function pegarIdadeMesesDias(): IdadeModel {
-  const paciente: PacienteModel = JSON.parse(sessionStorage.getItem("CD_PACIENTE"));
+export function pegarIdadeMesesDias(): IdadeModel | null {
+  const paciente: PacienteModel = JSON.parse(sessionStorage.getItem("CD_PACIENTE")!) || null;
   if (!paciente) return null;
   if (!paciente.IDADE) return null;
   const partes = paciente.IDADE.match(/(\d+)\s+ano(s)?\s+(\d+)\s+mes(es)?\s+(\d+)\s+dia(s)?/);
@@ -14,20 +13,20 @@ export function pegarIdadeMesesDias(): IdadeModel {
   return {anos, meses, dias}
 }
 
-export function pegarQuantidadeDeMeses(): number {
+export function pegarQuantidadeDeMeses(): number | null {
   const idade = pegarIdadeMesesDias();
   if (!idade) return null;
   return idade.meses + (idade.anos * 12);
 }
 
-export function pegarIdade(): number {
+export function pegarIdade(): number | null {
   const idade = pegarIdadeMesesDias();
   if (!idade) return null;
   return idade.anos;
 }
 
-export function pegarIdadeMesesDiasComparar(dataComparar: string): IdadeModel {
-  const paciente: PacienteModel = JSON.parse(sessionStorage.getItem("CD_PACIENTE"));
+export function pegarIdadeMesesDiasComparar(dataComparar: string): IdadeModel | null {
+  const paciente: PacienteModel = JSON.parse(sessionStorage.getItem("CD_PACIENTE")!);
   if (!paciente) return null;
   if (!paciente.DT_NASCIMENTO) return null;
   const dataNascimento = new Date(paciente.DT_NASCIMENTO);

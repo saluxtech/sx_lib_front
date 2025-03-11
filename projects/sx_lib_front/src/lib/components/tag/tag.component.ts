@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TextComponent } from '../text/text.component';
-import { IconSvgComponent } from 'sx_lib_front';
+import { IconSvgComponent } from '../icon-svg/icon-svg.component';
 
 type typeTagSiz = 'sm' | 'md' | 'lg' | ''
 @Component({
