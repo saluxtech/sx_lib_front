@@ -21,7 +21,6 @@ import { LabelComponent, OptionModel, TagComponent, TextComponent } from 'sx_lib
   ],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
-  standalone: true,
 })
 export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() options: OptionModel[] = [];

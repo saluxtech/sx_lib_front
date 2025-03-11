@@ -5,7 +5,6 @@ import { labelSizeType, labelType, labelColorType } from "./label.type";
   selector: "sx-label",
   templateUrl: "./label.component.html",
   styleUrls: ["./label.component.scss"],
-  standalone: true
 })
 export class LabelComponent {
   @Input() type: labelType = 'content';

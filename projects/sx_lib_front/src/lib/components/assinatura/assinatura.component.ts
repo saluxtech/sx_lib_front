@@ -13,7 +13,6 @@ export interface DadosProfissionalLogadoModel {
   selector: 'sx-assinatura',
   templateUrl: './assinatura.component.html',
   styleUrls: ['./assinatura.component.scss'],
-  standalone: true,
 })
 export class AssinaturaComponent {
   @Input()

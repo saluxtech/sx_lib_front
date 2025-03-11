@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'sx-card-title',
   templateUrl: './card-title.component.html',
   styleUrls: ['./card-title.component.scss'],
-  standalone: true
 })
 export class CardTitleComponent {
 

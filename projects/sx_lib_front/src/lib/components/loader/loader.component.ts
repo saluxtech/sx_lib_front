@@ -5,7 +5,6 @@ import { Component, Input, OnInit } from "@angular/core";
   selector: "sx-loader",
   templateUrl: "loader.component.html",
   styleUrls: ["loader.component.scss"],
-  standalone: true,
   imports: [NgStyle]
 })
 export class LoaderComponent implements OnInit {

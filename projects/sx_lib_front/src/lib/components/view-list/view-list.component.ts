@@ -7,7 +7,6 @@ import { DisplayValueComponent } from 'sx_lib_front';
   selector: 'sx-view-list',
   templateUrl: './view-list.component.html',
   styleUrls: ['./view-list.component.scss'],
-  standalone: true,
   imports: [NgIf, NgFor, DisplayValueComponent]
 })
 export class ViewListComponent implements OnChanges {

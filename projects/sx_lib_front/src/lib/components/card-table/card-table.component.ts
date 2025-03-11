@@ -7,7 +7,6 @@ import { BadgesComponent, badgesType, LabelComponent, PipeDisplayComponent } fro
   selector: 'sx-card-table',
   templateUrl: './card-table.component.html',
   styleUrls: ['./card-table.component.scss'],
-  standalone: true,
   imports: [NgFor, LabelComponent, BadgesComponent, NgIf, PipeDisplayComponent]
 })
 export class CardTableComponent {

@@ -13,7 +13,6 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: 'accordion.component.html',
   styleUrls: ['accordion.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  standalone: true,
   imports: [
     NgbAccordionModule,
   ]

@@ -57,7 +57,6 @@ interface AutoCompleteOptions {
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

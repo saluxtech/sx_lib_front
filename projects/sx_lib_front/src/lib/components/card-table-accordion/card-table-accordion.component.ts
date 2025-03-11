@@ -8,7 +8,6 @@ import { ArrayHeader, LabelComponent, PipeDisplayComponent } from 'sx_lib_front'
   selector: 'sx-card-table-accordion',
   templateUrl: './card-table-accordion.component.html',
   styleUrls: ['./card-table-accordion.component.scss'],
-  standalone: true,
   imports: [LabelComponent, PipeDisplayComponent, NgClass, NgFor, NgIf]
 })
 export class CardTableAccordionComponent { 

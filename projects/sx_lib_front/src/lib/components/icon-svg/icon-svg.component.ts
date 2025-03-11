@@ -5,7 +5,6 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'sx-icon-svg',
   templateUrl: './icon-svg.component.html',
   styleUrls: ['./icon-svg.component.scss'],
-  standalone: true,
   imports: [NgStyle]
 })
 export class IconSvgComponent implements OnInit {

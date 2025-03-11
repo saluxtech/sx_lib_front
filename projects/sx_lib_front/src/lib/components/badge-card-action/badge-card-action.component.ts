@@ -8,7 +8,6 @@ import { NgIf } from '@angular/common';
   selector: 'sx-badge-card-action',
   templateUrl: './badge-card-action.component.html',
   styleUrls: ['./badge-card-action.component.scss'],
-  standalone: true,
   imports: [BasicCardComponent, BadgesComponent, LabelComponent, NgIf, TextComponent]
 })
 export class BadgeCardActionComponent implements OnInit, OnChanges {

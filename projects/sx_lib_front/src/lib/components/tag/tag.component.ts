@@ -7,7 +7,6 @@ type typeTagSiz = 'sm' | 'md' | 'lg' | ''
   selector: 'sx-tag',
   templateUrl: './tag.component.html',
   styleUrls: ['./tag.component.scss'],
-  standalone: true,
   imports: [TextComponent, IconSvgComponent]
 })
 export class TagComponent {

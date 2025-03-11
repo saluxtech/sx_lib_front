@@ -48,5 +48,4 @@ export class CheckboxComponent implements ControlValueAccessor {
   onMark(event: any) {
     this.checkboxChange.emit(event.checked);
   }
-
 }

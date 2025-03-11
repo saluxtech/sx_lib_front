@@ -7,7 +7,6 @@ import { NgClass, NgIf } from '@angular/common';
   selector: 'sx-card-action',
   templateUrl: './card-action.component.html',
   styleUrls: ['./card-action.component.scss'],
-  standalone: true,
   imports: [BasicCardComponent, NgClass, NgIf]
 })
 export class CardActionComponent extends CardActionAbstract {
