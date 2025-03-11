@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'dateInput', standalone: false })
+@Pipe({ name: 'dateInput', standalone: true })
 export class DateInputPipe implements PipeTransform {
   transform(value: string): any {
     if (value?.length != 8) return '';
