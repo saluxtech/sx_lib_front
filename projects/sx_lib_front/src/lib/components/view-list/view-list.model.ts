@@ -1,4 +1,4 @@
-import { ViewModel } from "../display-value/model/view.model";
+import { ViewModel } from "../display-value/view.model";
 
 export interface ViewListModel extends ViewModel {
     prop: string | string[];

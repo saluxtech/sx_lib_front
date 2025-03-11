@@ -1,5 +1,5 @@
-@use "../colors/ds-colors" as *;
-@use "../fonts/fonts.scss" as *;
+@use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/fonts/fonts.scss" as *;
 
 * {
   font-family: $font-primary;

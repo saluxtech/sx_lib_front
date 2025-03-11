@@ -1,4 +1,5 @@
-@use "../colors/ds-colors" as *;
+@use "../../design/colors/ds-colors.scss" as *;
+
 :host {
   display: block;
 }

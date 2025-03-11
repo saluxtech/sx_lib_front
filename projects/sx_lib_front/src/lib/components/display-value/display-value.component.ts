@@ -8,7 +8,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { ViewModel } from './model/view.model';
+import { ViewModel } from './view.model';
 import { CurrencyPipe, DatePipe, NgClass, NgFor, NgIf } from "@angular/common";
 import { cpfCnpjPipe } from '../../pipes/cpf-cnpj.pipe';
 import { BadgesComponent, LabelComponent, TruncatePipe } from 'sx_lib_front';
