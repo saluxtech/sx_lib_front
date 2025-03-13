@@ -9,3 +9,5 @@ export * from './pesquisa-autocomplete.util';
 export * from './scroll-first-input-error.util';
 export * from '../models/paciente.model';
 export * from './idade.model';
+export * from './object-helper';
+export * from './utils';
