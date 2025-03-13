@@ -1,9 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { LoaderComponent } from 'sx_lib_front';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { LoaderComponent, LoaderService } from 'sx_lib_front';
 
 const meta: Meta<LoaderComponent> = {
   title: 'Loader',
   component: LoaderComponent,
+  decorators: [
+    moduleMetadata({
+      providers: [LoaderService],
+    }),
+  ],
   tags: ['autodocs'],
 };
 
@@ -42,13 +47,34 @@ export const Primary: Story = {
         defaultValue: { summary: '20' },
       },
     },
+    backDrop: {
+      description: 'Exibir backdrop',
+      control: 'boolean',
+      type: 'boolean',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'true' },
+      },
+    },
   },
   args: {
     color: 'primary',
     text: '',
     size: 20,
+    backDrop: true,
   },
-  render: (args: any) => ({    
-    template: `<sx-loader [color]="'${args.color}'" [text]="'${args.text}'" [size]="'${args.size}'"></sx-loader>`
-  })
+  render: (args: any) => {
+    const loaderService = new LoaderService();
+    loaderService.showLoader();
+    return {
+      template: `
+      <div [style.width.px]="200" [style.height.px]="200">
+        <sx-loader [color]="'${args.color}'" [text]="'${args.text}'" [size]="'${args.size}'" [backDrop]="${args.backDrop}"></sx-loader>
+      </div>
+      `,
+      props: {
+        loaderService,
+      },
+    };
+  },
 };

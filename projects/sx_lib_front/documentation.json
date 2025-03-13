@@ -108,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<LoaderComponent>",
-                "defaultValue": "{\r\n  title: 'Loader',\r\n  component: LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+                "defaultValue": "{\r\n  title: 'Loader',\r\n  component: LoaderComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      providers: [LoaderService],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -228,7 +228,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>`\r\n  })\r\n}"
+                "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => {\r\n    const loaderService = new LoaderService();\r\n    loaderService.showLoader();\r\n    return {\r\n      template: `\r\n      <div style=\"height: 300px; width: 300px;\">\r\n        <sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>\r\n      </div>\r\n      `,\r\n      props: {\r\n        loaderService,\r\n      },\r\n    };\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -591,7 +591,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<LoaderComponent>",
-                    "defaultValue": "{\r\n  title: 'Loader',\r\n  component: LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+                    "defaultValue": "{\r\n  title: 'Loader',\r\n  component: LoaderComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      providers: [LoaderService],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -601,7 +601,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => ({    \r\n    template: `<sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>`\r\n  })\r\n}"
+                    "defaultValue": "{\r\n  name: 'Loader',\r\n  argTypes: {\r\n    color: {\r\n      description: 'Cor do loader',\r\n      control: 'radio',\r\n      options: ['primary', 'secondary', 'support'],\r\n      type: 'string',\r\n      defaultValue: 'primary',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: 'primary' },\r\n      },\r\n    },\r\n    text: {\r\n      description: 'Texto do loader',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n    size: {\r\n      description: 'Tamanho do loader',\r\n      control: 'number',\r\n      type: 'number',\r\n      table: {\r\n        type: { summary: 'number' },\r\n        defaultValue: { summary: '20' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    color: 'primary',\r\n    text: '',\r\n    size: 20,\r\n  },\r\n  render: (args: any) => {\r\n    const loaderService = new LoaderService();\r\n    loaderService.showLoader();\r\n    return {\r\n      template: `\r\n      <div style=\"height: 300px; width: 300px;\">\r\n        <sx-loader [color]=\"'${args.color}'\" [text]=\"'${args.text}'\" [size]=\"'${args.size}'\"></sx-loader>\r\n      </div>\r\n      `,\r\n      props: {\r\n        loaderService,\r\n      },\r\n    };\r\n  },\r\n}"
                 }
             ],
             "projects/sx_lib_front/src/stories/select.stories.ts": [
