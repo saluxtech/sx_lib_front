@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, catchError, Observable } from 'rxjs';
 import { StorageEnum } from '../../enums/storage.enum';
+import { HttpClient } from '@angular/common/http';
+import { Utils } from '../../utils';
+import { Environment } from '../enviroment/environment.service';
+import { Usuario } from '../../models/usuario/usuario.interface';
+import { Login } from '../../models/login/login.interface';
+import { UsuarioResponse } from 'sx_lib_front';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +15,23 @@ export class AuthService {
   private jwtSubject = new BehaviorSubject<string | null>(this.loadToken());
   public jwt$ = this.jwtSubject.asObservable();
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  login(login: Login): Observable<UsuarioResponse> {
+    return this.http.post<UsuarioResponse>(`${Environment.apiUrl}/${Environment.version}/auth/login`, login)
+      .pipe(
+        catchError(Utils.handleErrorMessage)
+      );
+  }
+
+  logout(): void {
+    this.setToken(null);
+    sessionStorage.removeItem(StorageEnum.USUARIO);
+  }
+
+  setUser(user: Usuario): void {
+    sessionStorage.setItem(StorageEnum.USUARIO, JSON.stringify(user));
+  }
 
   setToken(token: string | null): void {
     if (token) {
