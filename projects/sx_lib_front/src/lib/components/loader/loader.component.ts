@@ -1,18 +1,19 @@
-import { NgStyle } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { AsyncPipe, NgStyle } from "@angular/common";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { LoaderService } from "../../services/loader/loader.service";
 
 @Component({
   selector: "sx-loader",
   templateUrl: "loader.component.html",
   styleUrls: ["loader.component.scss"],
-  imports: [NgStyle]
+  imports: [NgStyle, AsyncPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoaderComponent implements OnInit {
-  @Input() color: "primary" | "secondary" | 'support' = "primary";
-  @Input() text: string | undefined;
-  @Input() size: number = 20
-  
-  constructor() {}
+export class LoaderComponent {
+  @Input() color: "primary" | "secondary" | 'support' = "support";
+  @Input() text: string = "Carregando...";
+  @Input() size: number = 40;
+  @Input() backDrop: boolean = true;
 
-  ngOnInit() {}
+  constructor(public loaderService: LoaderService) {}
 }

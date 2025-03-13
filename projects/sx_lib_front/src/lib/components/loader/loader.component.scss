@@ -1,4 +1,5 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/fonts/fonts.scss" as *;
 
 .loader {
   width: 100%;
@@ -8,28 +9,36 @@
   justify-content: center;
   align-items: center;
   flex-direction: column-reverse;
+  font-family: $font-primary;
+
+  .loader-text{
+    color: $color-support-100;
+    font-weight: 700;
+    font-size: 16px;
+  }
 }
+
 
 .loader::after {
   content: "";
   display: block;
-  width: var(--loader-size, 20px);  // Usar variáveis CSS para o tamanho
+  width: var(--loader-size, 20px); // Usar variáveis CSS para o tamanho
   height: var(--loader-size, 20px); // Usar variáveis CSS para o tamanho
-  border: 2px solid $color-primary-200;
+  border: 4px solid $color-primary-200;
   border-radius: 50%;
   border-top: 4px solid transparent;
   animation: spin 1s linear infinite;
 }
 
 .loader--primary::after {
-  border: 2px solid $color-primary-300;
+  border: 4px solid $color-primary-300;
   border-top-color: transparent;
-} 
+}
 
 .loader--secondary::after {
-  border: 2px solid $color-support-100;
+  border: 4px solid $color-support-100;
   border-top-color: transparent;
-} 
+}
 
 @keyframes spin {
   0% {
@@ -39,4 +48,14 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-support-500, 0.5);
+  z-index: 9998;
 }
