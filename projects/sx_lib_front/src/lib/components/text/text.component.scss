@@ -1,7 +1,8 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/fonts/fonts.scss" as *;
 
 .sx-body {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
   font-style: normal;
   margin: 4px 0;
 
@@ -12,7 +13,7 @@
   }
 
   &--body2 {
-    font-family: 'Jost', sans-serif;
+    font-family: $font-primary;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -79,7 +80,7 @@
   }
 
   &--body2-bold {
-    font-family: 'Montserrat';
+    font-family: $font-primary;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -132,7 +133,7 @@
   }
 
   &--h3-title {
-    font-family: 'Jost', sans-serif;
+    font-family: $font-primary;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -141,7 +142,7 @@
   }
 
   &--h4-title {
-    font-family: 'Montserrat';
+    font-family: $font-primary;
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;

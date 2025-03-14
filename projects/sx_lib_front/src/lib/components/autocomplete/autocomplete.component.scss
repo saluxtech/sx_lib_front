@@ -1,4 +1,5 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use '../../design/fonts/fonts.scss' as *;
 
 :host {
   display: block;
@@ -65,7 +66,7 @@ input.ng-invalid.ng-dirty {
 input {
   background-color: $color-support-100;
   color: $color-support-500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
   height: 45px;
   font-size: 16px;
   border-radius: 4px;
@@ -122,14 +123,14 @@ form label {
   left: 10px;
   top: 11px;
   color: $color-support-500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
 }
 
 .suffix {
   right: 11px;
   top: 11px;
   color: $color-support-500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
 }
 
 .padding-prefix {

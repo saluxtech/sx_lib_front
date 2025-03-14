@@ -1,4 +1,6 @@
 
+@use '../../design/fonts/fonts.scss' as *;
+
 .caixa-assinatura {
   display: flex;
   width: 293px;
@@ -30,12 +32,12 @@
 }
 
 .font-medium-assinatura {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
   font-size: 6px;
   word-spacing: 0.5px;
 }
 
 .font-small-assinatura {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
   font-size: 5px;
 }
