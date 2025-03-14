@@ -8,7 +8,7 @@
 </sx-label>
 }
 
-<div class="select-container">
+<div [class.opened]="showOptions" class="select-container">
   <input
     type="text"
     autocomplete="off"
@@ -22,11 +22,9 @@
   @if(showOptions){
     <div class="options">
     @for(opt of displayOptions; track opt.value ){
-    <p (mousedown)="selectItem(opt)">
-      {{ opt.label }}
-    </p>
+      <p (mousedown)="selectItem(opt)" [innerHTML]="highlight(opt.label)"></p>
     }
-  </div>
+    </div>
   } 
   
   @if(multiple){ 
