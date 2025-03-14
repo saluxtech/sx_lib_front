@@ -1,7 +1,8 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/fonts/fonts.scss" as *;
 
 .sx-label {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
   font-size: 14px;
   margin: 0;
   white-space: pre-line;
@@ -15,31 +16,32 @@
   }
 
   &--title {
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-primary;
     font-size: 14px;
     font-weight: 600;
   }
 
   &--title2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-primary;
     font-size: 16px;
     color:$color-support-500 !important;
   }
 
   &--body1-bold {
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-primary;
     font-size: 16px!important;
     font-weight: 600;
     color: $color-support-500 !important;
   }
 
   &--body2-bold-pdf {
-    font-family: "Montserrat-Bold", sans-serif;
+    font-family: $font-primary;
+    font-weight: 600;
     font-size: 14px;
   }
 
   &--body2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: $font-primary;
     font-size: 14px;
   }
 
@@ -93,7 +95,7 @@
 }
 
 .ds-label-body-regular {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
   font-size: 14px;
   font-weight: 400;
 }
@@ -147,7 +149,7 @@
 }
 
 .title-pdf {
-  font-family: 'Montserrat-Bold', sans-serif;
+  font-family: $font-primary;
   font-weight: bold;
   word-spacing: 0.5px;
   letter-spacing: 0.1px;

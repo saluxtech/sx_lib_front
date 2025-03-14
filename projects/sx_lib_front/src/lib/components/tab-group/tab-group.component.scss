@@ -1,5 +1,6 @@
 @use "@angular/material" as mat;
 @use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/fonts/fonts.scss" as *;
 
 // Customize the entire app. Change :root to your selector if you want to scope the styles.
 :host {
@@ -19,7 +20,7 @@
 
 :host ::ng-deep {
   * {
-    font-family: "Montserrat", sans-serif !important;
+    font-family: $font-primary !important;
   }
 
   .mdc-tab-indicator--active, .cdk-focused {

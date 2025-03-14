@@ -1,7 +1,8 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use '../../design/fonts/fonts.scss' as *;
 
 button {
-  font-family: "Montserrat", sans-serif;
+  font-family: $font-primary;
   background: none;
   min-width: 70px;
 }

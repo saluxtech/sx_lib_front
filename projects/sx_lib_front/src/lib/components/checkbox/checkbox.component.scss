@@ -1,7 +1,8 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use '../../design/fonts/fonts.scss' as *;
 
 *{
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
 }
 
 .checkbox-container {

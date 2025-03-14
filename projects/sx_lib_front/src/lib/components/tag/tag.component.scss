@@ -1,4 +1,5 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/fonts/fonts.scss" as *;
 
 .container-tag {
   width: fit-content;
@@ -10,7 +11,7 @@
 
   background-color: $color-primary-100;
   color: $color-primary-300;
-  font-family: 'Montserrat';
+  font-family: $font-primary;
 
   p {
     margin: 0;
