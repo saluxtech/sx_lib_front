@@ -126,4 +126,12 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
       this.formControl?.control?.hasValidator(Validators.required) ?? false
     );
   }
+
+  highlight(label: string): string {
+    if (!this.search) {
+      return label;
+    }
+    const regex = new RegExp(`(${this.search})`, 'gi');
+    return label.replace(regex, '<strong>$1</strong>');
+  }
 }
