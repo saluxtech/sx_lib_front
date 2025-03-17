@@ -1,0 +1,45 @@
+<aside class="side-menu" [class.side-menu--collapsed]="isMenuClosed()">
+  <nav class="side-menu__nav">
+    <ul class="side-menu__list">
+      @for(menu of menuItems; track menu){
+      <li class="side-menu__item">
+        <a
+          class="side-menu__link"
+          [routerLink]="menu.route"
+          routerLinkActive="active"
+          [attr.title]="isMenuClosed() ? menu.label : null"
+        >
+          <div class="side-menu__icon">
+            <i [class]="menu.icon" aria-hidden="true"></i>
+          </div>
+          @if(!isMenuClosed()){
+          <span class="side-menu__label">{{ menu.label }}</span>
+          <i
+            class="fa-light fa-chevron-right side-menu__arrow"
+            aria-hidden="true"
+          ></i>
+          }
+        </a>
+      </li>
+      }
+    </ul>
+  </nav>
+  <hr class="side-menu__divider" />
+  <button
+    type="button"
+    class="side-menu__trigger"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="!isMenuClosed()"
+    [class.side-menu__trigger-]="!isMenuClosed()"
+  >
+    <i
+      class="fa-solid fa-chevrons-right side-menu__trigger-icon"
+      [class.side-menu__trigger-icon--rotate]="!isMenuClosed()"
+      aria-hidden="true"
+    ></i>
+
+    @if(!isMenuClosed()){
+    <span class="side-menu__trigger-text">Fechar Menu</span>
+    }
+  </button>
+</aside>

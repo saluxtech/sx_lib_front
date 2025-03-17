@@ -1,0 +1,42 @@
+@use "../../design/colors/ds-colors.scss" as *;
+
+
+// Side menu
+$side-menu-color-support-100: $color-support-100;
+$side-menu-color-support-200: $color-support-200;
+$side-menu-color-primary-100: $color-primary-100;
+$side-menu-color-primary-400: $color-primary-400;
+$side-menu-color-support-500: $color-support-500;
+
+$side-menu-width: 20rem;
+$side-menu-width-collapsed: 6.25rem;
+$side-menu-min-height: 100vh;
+$side-menu-padding: 2.5rem 1.5rem 1.5rem;
+$side-menu-collapsed-link-height: 3.25rem;
+$side-menu-collapsed-link-width: 3.25rem;
+$side-menu-link-padding: 1rem;
+$side-menu-link-font-size: 0.875rem;
+$side-menu-icon-size: 1.5rem;
+$side-menu-icon-box-height: 1.9rem;
+$side-menu-icon-box-width: 1.9rem;
+$side-menu-label-max-height: 3.125rem;
+$side-menu-arrow-font-size: 1.25rem;
+$side-menu-arrow-font-weight: 700;
+$side-menu-divider-height: 0.125rem;
+$side-menu-divider-margin: 1.5rem 0;
+$side-menu-trigger-padding: 1rem;
+$side-menu-trigger-margin-top: 1rem;
+$side-menu-trigger-font-size: 0.875rem;
+$side-menu-trigger-icon-font-size: 1.25rem;
+$side-menu-trigger-icon-margin: auto;
+
+$side-menu-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.08);
+
+$side-menu-border-radius: 0 0.5rem 0.5rem 0;
+$side-menu-link-border-radius: 0.375rem;
+$side-menu-divider-border-radius: 0.5rem;
+$side-menu-trigger-border-radius: 0.375rem;
+
+$side-menu-transition: all 0.3s ease;
+$side-menu-link-transition: background-color 0.2s;
+$side-menu-trigger-icon-transition: transform 0.3s ease;
