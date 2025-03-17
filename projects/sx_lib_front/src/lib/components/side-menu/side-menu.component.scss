@@ -1,0 +1,135 @@
+@use "../../design/mixins/flex.mixin.scss" as *;
+@use "../../design/tokens/ds-tokens.scss" as *;
+
+.side-menu {
+  @include flex(column, space-between);
+  border-radius: $side-menu-border-radius;
+  background: $side-menu-color-support-100;
+  box-shadow: $side-menu-box-shadow;
+  width: $side-menu-width;
+  min-height: $side-menu-min-height;
+  padding: $side-menu-padding;
+  transition: $side-menu-transition;
+  overflow: hidden;
+
+  &--collapsed {
+    width: $side-menu-width-collapsed;
+    .side-menu__link {
+      @include flex(row, center, center, 1rem);
+      height: $side-menu-collapsed-link-height;
+      width: $side-menu-collapsed-link-width;
+    }
+  }
+
+  &__nav {
+    flex: 1;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 0.5rem;
+    flex: 1;
+  }
+
+  &__link {
+    @include flex(row, flex-start, center, 1rem);
+    padding: $side-menu-link-padding;
+    color: $side-menu-color-primary-400;
+    border-radius: $side-menu-link-border-radius;
+    transition: $side-menu-link-transition;
+    font-size: $side-menu-link-font-size;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $side-menu-color-support-200;
+    }
+
+    &:active,
+    &.active {
+      background-color: $side-menu-color-primary-100;
+    }
+  }
+
+  &__icon {
+    @include flex(row, center, center);
+    height: $side-menu-icon-box-height;
+    width: $side-menu-icon-box-width;
+    flex-shrink: 0;
+
+    i {
+      font-size: $side-menu-icon-size;
+    }
+  }
+
+  &__label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    opacity: 1;
+    visibility: visible;
+    max-height: $side-menu-label-max-height;
+  }
+
+  &__arrow {
+    font-size: $side-menu-arrow-font-size;
+    font-weight: $side-menu-arrow-font-weight;
+
+    opacity: 1;
+    visibility: visible;
+    max-height: $side-menu-label-max-height;
+  }
+
+  &__divider {
+    height: $side-menu-divider-height;
+    border: none;
+    border-radius: $side-menu-divider-border-radius;
+    background-color: $side-menu-color-support-200;
+    margin: $side-menu-divider-margin;
+  }
+
+  &__trigger {
+    @include flex(row, flex-start, center, 1rem);
+    padding: $side-menu-trigger-padding;
+    margin-top: $side-menu-trigger-margin-top;
+    color: $side-menu-color-support-500;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: $side-menu-trigger-border-radius;
+    transition: $side-menu-link-transition;
+
+    &:--rotate {
+      justify-content: center;
+    }
+
+    &:hover {
+      background-color: $side-menu-color-support-200;
+    }
+
+    &-icon {
+      font-size: $side-menu-trigger-icon-font-size;
+      color: $side-menu-color-primary-400;
+      transition: $side-menu-trigger-icon-transition;
+      margin: $side-menu-trigger-icon-margin;
+      &--rotate {
+        transform: rotate(180deg);
+        margin: 0;
+      }
+    }
+  }
+
+  &__trigger-text {
+    font-size: $side-menu-trigger-font-size;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    max-height: $side-menu-label-max-height;
+  }
+}
