@@ -27,3 +27,5 @@ export * from './badge-card-action';
 export * from './text-area';
 export * from './badge-card-action';
 export * from './side-menu';
+export * from './toolbar';
+export * from './avatar';

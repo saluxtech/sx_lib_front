@@ -1,0 +1,17 @@
+@use "../../design/colors/ds-colors.scss" as *;
+
+:host {
+    header {
+        padding: 1rem 2.5rem;
+        background-color: $color-primary-300;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .avatar__container {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+    }
+}

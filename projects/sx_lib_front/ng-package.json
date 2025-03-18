@@ -4,7 +4,8 @@
   "assets": [
     "src/lib/design/colors/ds-colors.scss",
     "src/lib/design/fonts/fonts.scss",
-    "src/lib/design/fonts/jost.scss"
+    "src/lib/design/fonts/jost.scss",
+    "src/lib/design/images/*"
   ],
   "lib": {
     "entryFile": "src/public-api.ts"

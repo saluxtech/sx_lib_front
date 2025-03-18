@@ -14,6 +14,8 @@ import { UsuarioResponse } from 'sx_lib_front';
 export class AuthService {
   private jwtSubject = new BehaviorSubject<string | null>(this.loadToken());
   public jwt$ = this.jwtSubject.asObservable();
+  private userSubject = new BehaviorSubject<Usuario>(JSON.parse(sessionStorage.getItem(StorageEnum.USUARIO) || '{}'));
+  public user$ = this.userSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -31,6 +33,7 @@ export class AuthService {
 
   setUser(user: Usuario): void {
     sessionStorage.setItem(StorageEnum.USUARIO, JSON.stringify(user));
+    this.userSubject.next(user);
   }
 
   setToken(token: string | null): void {
