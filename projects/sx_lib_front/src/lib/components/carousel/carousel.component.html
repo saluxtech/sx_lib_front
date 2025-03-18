@@ -1,0 +1,36 @@
+<div class="container-carousel">
+  <div class="custom-container position-relative mx-auto overflow-hidden">
+    <div class="position-relative">
+      @for (slide of carouselItems; track $index) {
+      <div
+        class="box-carousel-item position-absolute opacity-0 w-100"
+        [class.opacity-100]="$index === currentIndex"
+      >
+        <img class="w-100" [src]="slide.uri" [alt]="slide.title" />
+      </div>
+      } @if (currentIndex > 0) {
+      <i
+        class="fa-light fa-chevron-left box-carousel-control __arrow prev"
+        (click)="prevSlide()"
+        aria-hisdden="true"
+      ></i>
+      } @if (currentIndex < carouselItems.length -1) {
+
+      <i
+        class="fa-light fa-chevron-right box-carousel-control __arrow next"
+        (click)="nextSlide()"
+        aria-hisdden="true"
+      ></i>
+      }
+    </div>
+  </div>
+  <div class="circle-controls mt-3 d-flex gap-2 justify-content-center">
+    @for (slide of carouselItems; track $index) {
+    <div
+      class="circle bg-primary-400 rounded-circle"
+      [class.active]="$index === currentIndex"
+      (click)="selectItem($index)"
+    ></div>
+    }
+  </div>
+</div>
