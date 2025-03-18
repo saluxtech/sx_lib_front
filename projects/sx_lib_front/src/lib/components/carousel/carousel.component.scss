@@ -1,0 +1,56 @@
+@use "../../design/colors/ds-colors.scss" as *;
+
+.container-carousel {
+  max-width: 1008px;
+
+  .custom-container {
+    height: 400px;
+
+    .box-carousel-item {
+      transition: opacity 0.5s ease-in-out;
+
+      img {
+        border-radius: 0.5rem;
+        height: 400px;
+      }
+    }
+
+    .box-carousel-control {
+      position: absolute;
+      top: 202px;
+      background-color: transparent;
+      color: $color-support-100;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+
+      &__arrow {
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      &.prev {
+        left: 1rem;
+      }
+
+      &.next {
+        right: 1rem;
+      }
+    }
+  }
+}
+
+.circle-controls {
+  .circle {
+    transition: background-color 0.5s ease-in-out;
+    background-color: $color-support-100;
+    border: 1px solid $color-support-300;
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: pointer;
+
+    &.active {
+      background-color: $color-primary-400;
+    }
+  }
+}

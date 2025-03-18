@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "carouselItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "CarouselItem[]",
+                "defaultValue": "[\r\n  {\r\n    uri: 'img/carousel/banner-default.jpg',\r\n    title: 'Slide 1',\r\n    description: 'Descrição do Slide 1',\r\n  },\r\n  {\r\n    uri: 'img/carousel/banner-default.jpg',\r\n    title: 'Slide 2',\r\n    description: 'Descrição do Slide 2',\r\n  },\r\n  {\r\n    uri: 'img/carousel/banner-default.jpg',\r\n    title: 'Slide 3',\r\n    description: 'Descrição do Slide 3',\r\n  },\r\n]"
+            },
+            {
                 "name": "checkIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -29,6 +39,16 @@
                 "deprecationMessage": "",
                 "type": "IconeModel",
                 "defaultValue": "{\r\n  iconeSize: '24',\r\n  path_d:\r\n    'M13.0312 11.9219L15.3086 13.6836C15.7812 14.0273 15.8672 14.6719 15.5234 15.1445C15.3086 15.4023 15.0078 15.5312 14.707 15.5312C14.4922 15.5312 14.2773 15.4883 14.1055 15.3594L11.3555 13.2969C11.0977 13.082 10.9688 12.7812 10.9688 12.4375V7.28125C10.9688 6.72266 11.3984 6.25 12 6.25C12.5586 6.25 13.0312 6.72266 13.0312 7.28125V11.9219ZM11.957 0.75C18.0586 0.75 22.9141 5.69141 22.9141 11.75C22.9141 17.8516 18.0156 22.75 11.957 22.75C5.85547 22.75 0.957031 17.8516 0.957031 11.75C0.957031 5.69141 5.85547 0.75 11.957 0.75ZM12 20.6875C16.8984 20.6875 20.9375 16.6914 20.9375 11.75C20.9375 6.85156 16.8984 2.8125 12 2.8125C7.05859 2.8125 3.0625 6.85156 3.0625 11.75C3.0625 16.6914 7.05859 20.6875 12 20.6875Z',\r\n  path_fill: '#50688C',\r\n}"
+            },
+            {
+                "name": "menuItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "SideMenuItem[]",
+                "defaultValue": "[\r\n  {\r\n    label: 'Atendimento e Pacientes',\r\n    icon: 'fa-solid fa-user-injured',\r\n    route: '/assistencial/pacientes',\r\n  },\r\n  {\r\n    label: 'Faturamento Hospitalar',\r\n    icon: 'fa-solid fa-file-invoice-dollar',\r\n    route: '/assistencial/baa',\r\n  },\r\n  {\r\n    label: 'Suprimentos Médicos',\r\n    icon: 'fa-solid fa-warehouse',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'Gestão Financeira',\r\n    icon: 'fa-light fa-file-invoice',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'Suporte e Apoio',\r\n    icon: 'fa-light fa-handshake-angle',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'Estratégia e Planejamento',\r\n    icon: 'fa-light fa-chart-waterfall',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'WEB',\r\n    icon: 'fa-light fa-globe-pointer',\r\n    route: '/settings',\r\n  },\r\n]"
             },
             {
                 "name": "meta",
@@ -69,6 +89,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
                 "defaultValue": "{\r\n  title: 'Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CarouselComponent>",
+                "defaultValue": "{\r\n  title: 'Carousel',\r\n  component: CarouselComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -128,7 +158,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SideMenuComponent>",
-                "defaultValue": "{\r\n  title: 'SideMenu',\r\n  component: SideMenuComponent,\r\n  tags: ['autodocs'],\r\n}"
+                "defaultValue": "{\r\n  title: 'SideMenu',\r\n  component: SideMenuComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [RouterModule, CommonModule],\r\n      providers: [\r\n        {\r\n          provide: ActivatedRoute,\r\n          useValue: {\r\n            params: of({}),\r\n            snapshot: {\r\n              paramMap: {\r\n                get: () => null,\r\n              },\r\n            },\r\n          },\r\n        },\r\n      ],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -204,6 +234,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Primary',\r\n  args: {\r\n    carouselItems,\r\n  },\r\n  argTypes: {\r\n    carouselItems: {\r\n      control: {\r\n        type: 'object',\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -258,7 +298,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  name: 'CheckBox',\r\n}"
+                "defaultValue": "{\r\n  name: 'Primary',\r\n  args: {\r\n    menuItems,\r\n  },\r\n  argTypes: {\r\n    menuItems: {\r\n      control: {\r\n        type: 'object',\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -322,6 +362,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
                 "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CarouselComponent>",
+                "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -407,6 +458,38 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/sx_lib_front/src/stories/carousel.stories.ts": [
+                {
+                    "name": "carouselItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CarouselItem[]",
+                    "defaultValue": "[\r\n  {\r\n    uri: 'img/carousel/banner-default.jpg',\r\n    title: 'Slide 1',\r\n    description: 'Descrição do Slide 1',\r\n  },\r\n  {\r\n    uri: 'img/carousel/banner-default.jpg',\r\n    title: 'Slide 2',\r\n    description: 'Descrição do Slide 2',\r\n  },\r\n  {\r\n    uri: 'img/carousel/banner-default.jpg',\r\n    title: 'Slide 3',\r\n    description: 'Descrição do Slide 3',\r\n  },\r\n]"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CarouselComponent>",
+                    "defaultValue": "{\r\n  title: 'Carousel',\r\n  component: CarouselComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Primary',\r\n  args: {\r\n    carouselItems,\r\n  },\r\n  argTypes: {\r\n    carouselItems: {\r\n      control: {\r\n        type: 'object',\r\n      },\r\n    },\r\n  },\r\n}"
+                }
+            ],
             "projects/sx_lib_front/src/stories/tab-group.stories.ts": [
                 {
                     "name": "checkIcon",
@@ -457,6 +540,38 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\r\n  {\r\n    label: 'Aprazamento',\r\n    icone: clockIcon,\r\n  },\r\n  {\r\n    label: 'Checagem',\r\n    icone: checkIcon,\r\n  },\r\n]"
+                }
+            ],
+            "projects/sx_lib_front/src/stories/side-menu.stories.ts": [
+                {
+                    "name": "menuItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SideMenuItem[]",
+                    "defaultValue": "[\r\n  {\r\n    label: 'Atendimento e Pacientes',\r\n    icon: 'fa-solid fa-user-injured',\r\n    route: '/assistencial/pacientes',\r\n  },\r\n  {\r\n    label: 'Faturamento Hospitalar',\r\n    icon: 'fa-solid fa-file-invoice-dollar',\r\n    route: '/assistencial/baa',\r\n  },\r\n  {\r\n    label: 'Suprimentos Médicos',\r\n    icon: 'fa-solid fa-warehouse',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'Gestão Financeira',\r\n    icon: 'fa-light fa-file-invoice',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'Suporte e Apoio',\r\n    icon: 'fa-light fa-handshake-angle',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'Estratégia e Planejamento',\r\n    icon: 'fa-light fa-chart-waterfall',\r\n    route: '/settings',\r\n  },\r\n  {\r\n    label: 'WEB',\r\n    icon: 'fa-light fa-globe-pointer',\r\n    route: '/settings',\r\n  },\r\n]"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SideMenuComponent>",
+                    "defaultValue": "{\r\n  title: 'SideMenu',\r\n  component: SideMenuComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [RouterModule, CommonModule],\r\n      providers: [\r\n        {\r\n          provide: ActivatedRoute,\r\n          useValue: {\r\n            params: of({}),\r\n            snapshot: {\r\n              paramMap: {\r\n                get: () => null,\r\n              },\r\n            },\r\n          },\r\n        },\r\n      ],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Primary',\r\n  args: {\r\n    menuItems,\r\n  },\r\n  argTypes: {\r\n    menuItems: {\r\n      control: {\r\n        type: 'object',\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ],
             "projects/sx_lib_front/src/stories/accordion.stories.ts": [
@@ -667,28 +782,6 @@
                     "defaultValue": "{\r\n  args: {\r\n    options: optionsTiposEnderecos,\r\n    label: 'Select',\r\n  },\r\n  render: (args: any) => {\r\n    const formGroup = new FormGroup({\r\n      selectControl: new FormControl(''),\r\n    });\r\n\r\n    return {\r\n      props: {\r\n        ...args,\r\n        formGroup,\r\n      },\r\n      template: `\r\n        <div style=\"max-width: 70%; height: 300px;\">\r\n          <form [formGroup]=\"formGroup\">\r\n            <sx-select\r\n              [label]=\"label\"\r\n              [options]=\"options\"\r\n              formControlName=\"selectControl\"\r\n            ></sx-select>\r\n          </form>\r\n        </div>\r\n      `,\r\n    };\r\n  },\r\n}"
                 }
             ],
-            "projects/sx_lib_front/src/stories/side-menu.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<SideMenuComponent>",
-                    "defaultValue": "{\r\n  title: 'SideMenu',\r\n  component: SideMenuComponent,\r\n  tags: ['autodocs'],\r\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  name: 'CheckBox',\r\n}"
-                }
-            ],
             "projects/sx_lib_front/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -751,6 +844,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
                     "file": "projects/sx_lib_front/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/sx_lib_front/src/stories/carousel.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CarouselComponent>",
+                    "file": "projects/sx_lib_front/src/stories/carousel.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -986,6 +1092,46 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "carouselItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/carousel.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/sx_lib_front/src/stories/checkbox.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1141,6 +1287,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "menuItems",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
