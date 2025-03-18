@@ -1,27 +1,21 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input,
-  OnInit,
+  Input
 } from '@angular/core';
 import { CarouselItem } from './carousel.type';
 
 @Component({
   selector: 'sx-carousel',
   standalone: true,
-  imports: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss'],
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent {
   @Input() carouselItems: CarouselItem[] = [];
 
   currentIndex = 0;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   selectItem(index: number) {
     this.currentIndex = index;
