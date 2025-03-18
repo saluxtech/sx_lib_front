@@ -1,8 +1,9 @@
 @use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/spacing/ds-tokens.scss" as *;
 
 :host {
     header {
-        padding: 1rem 2.5rem;
+        padding: $spacing-sm $spacing-lg-2;
         background-color: $color-primary-300;
         display: flex;
         justify-content: space-between;
@@ -10,7 +11,7 @@
 
         .avatar__container {
             display: flex;
-            gap: 4rem;
+            gap: $spacing-xxl;
             align-items: center;
         }
     }
