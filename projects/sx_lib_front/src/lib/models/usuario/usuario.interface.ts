@@ -11,4 +11,5 @@ export interface Usuario {
     cD_CBO: string;
     validade: string;
     jwtToken: string;
+    nm_funcionario: string;
 }

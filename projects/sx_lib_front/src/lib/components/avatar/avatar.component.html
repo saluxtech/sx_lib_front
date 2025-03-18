@@ -1,0 +1,13 @@
+@if(usuario) {
+    <div class="d-flex gap-2">
+        <i class="fa-solid fa-circle-user"></i>
+        <div class="d-flex flex-column">
+            <sx-text [color]="'white'" [variation]="'body1-bold'">
+                {{ usuario.nm_funcionario }}
+            </sx-text>
+            <sx-text [color]="'white'" [variation]="'body2-bold'">
+                {{ usuario.cD_Funcionario }}
+            </sx-text>
+        </div>
+    </div>
+}

@@ -1,0 +1,12 @@
+<header>
+    <div class="d-flex align-items-center gap-4">
+        <img height="40" width="40" [src]="img" />
+        <sx-text [variation]="'h3-title'" [color]="'white'">
+            {{ title }}
+        </sx-text>
+    </div>
+    <div class="avatar__container">
+        <sx-avatar [usuario]="usuario$ | async"></sx-avatar>
+        <i (click)="logout.emit()" class="fa-solid fa-arrow-right-from-bracket"></i>
+    </div>
+</header>
