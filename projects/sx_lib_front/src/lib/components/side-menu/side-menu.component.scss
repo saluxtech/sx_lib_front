@@ -7,7 +7,7 @@
   background: $side-menu-color-support-100;
   box-shadow: $side-menu-box-shadow;
   width: $side-menu-width;
-  min-height: $side-menu-min-height;
+  min-height: calc($side-menu-min-height - $toolbar-height);
   padding: $side-menu-padding;
   transition: $side-menu-transition;
   overflow: hidden;

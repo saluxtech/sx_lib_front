@@ -1,0 +1,10 @@
+@use '../../design/tokens/ds-tokens.scss' as *;
+@use '../../design/colors/ds-colors.scss' as *;
+
+:host {
+    i {
+        font-size: $spacing-lg-2;
+        color: $color-support-100;
+        cursor: pointer;
+    }
+}
