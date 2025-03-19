@@ -4,15 +4,27 @@
 :host {
     header {
         padding: $spacing-sm $spacing-lg-2;
-        background-color: $color-primary-300;
+        background-color: $color-primary-400;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-bottom: 4px solid $color-primary-500;
+
+        img {
+            height: $spacing-lg-2;
+            width: $spacing-ultraxxl;
+        }
 
         .avatar__container {
             display: flex;
             gap: $spacing-xxl;
             align-items: center;
+
+            i {
+                font-size: $spacing-md;
+                color: $color-support-100;
+                cursor: pointer;
+            }
         }
     }
 }

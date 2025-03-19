@@ -8,14 +8,13 @@ import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'sx-toolbar',
-  imports: [TextComponent, AvatarComponent, AsyncPipe],
+  imports: [AvatarComponent, AsyncPipe],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss'
 })
 export class ToolbarComponent implements OnInit {
   @Input({ required: true }) img!: string;
   @Output() logout = new EventEmitter<void>();
-  title = 'SX Horizon';
   usuario$: Observable<Usuario> = of();
   private authService = inject(AuthService);
 
