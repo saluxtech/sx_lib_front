@@ -7,7 +7,7 @@
           class="side-menu__link"
           [routerLink]="menu.route"
           routerLinkActive="active"
-          [attr.title]="isMenuClosed() ? menu.label : null"
+          [attr.title]="menu.label"
         >
           <div class="side-menu__icon">
             <i [class]="menu.icon" aria-hidden="true"></i>
@@ -24,10 +24,10 @@
       }
     </ul>
   </nav>
-  <hr class="side-menu__divider" />
+  <hr class="side-menu__divider d-none d-md-flex" />
   <button
     type="button"
-    class="side-menu__trigger"
+    class="side-menu__trigger d-none d-md-flex"
     (click)="toggleMenu()"
     [attr.aria-expanded]="!isMenuClosed()"
     [class.side-menu__trigger-]="!isMenuClosed()"
