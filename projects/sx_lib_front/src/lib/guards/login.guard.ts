@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
 
 @Injectable({
@@ -8,10 +8,11 @@ import { AuthService } from '../services/auth/auth.service';
 export class LoginGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(): boolean {
+  canActivate(route: ActivatedRouteSnapshot): boolean {
     if (this.authService.isAuthenticaded()) {
-      this.router.navigate(['/sistema/home']);
-      return false;
+        const redirectTo = route.data['redirectTo'];
+        this.router.navigate([redirectTo]);
+        return false;
     }
     return true;
   }
