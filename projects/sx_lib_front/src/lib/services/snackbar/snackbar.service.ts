@@ -1,6 +1,6 @@
 import { inject, Injectable } from "@angular/core";
 import {  MatSnackBar } from "@angular/material/snack-bar";
-import { DuracaoEnum } from "sx_lib_front";
+import { DuracaoEnum } from "../../enums/duracao.enum";
 
 @Injectable({
     providedIn: 'root'
