@@ -1,5 +1,6 @@
 import { inject, Injectable } from "@angular/core";
 import {  MatSnackBar } from "@angular/material/snack-bar";
+import { DuracaoEnum } from "sx_lib_front";
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,7 @@ export class SnackbarService {
 
     public open(message: string, action: string) {
         this.snackbar.open(message, action, {
-            duration: 3000
+            duration: DuracaoEnum.TEMPO_SNACKBAR
         });
     }
 }
