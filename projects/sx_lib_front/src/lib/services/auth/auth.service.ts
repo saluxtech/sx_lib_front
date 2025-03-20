@@ -62,6 +62,10 @@ export class AuthService {
     return parsedPayload.roles;
   }
 
+  isAuthenticaded(): boolean {
+    return !!this.getToken();
+  }
+
   private loadToken(): string | null {
     return sessionStorage.getItem(StorageEnum.JWT_TOKEN);
   }

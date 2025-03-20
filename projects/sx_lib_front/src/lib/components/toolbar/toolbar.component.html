@@ -1,6 +1,8 @@
 <header>
     <div class="d-flex align-items-center gap-4">
-        <img [src]="img" />
+        <a [routerLink]="['/sistema/home']">
+            <img [src]="img" alt="Imagem Logo" />
+        </a>
     </div>
     <div class="avatar__container">
         <sx-avatar [usuario]="usuario$ | async"></sx-avatar>

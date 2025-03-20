@@ -5,10 +5,11 @@ import { AvatarComponent } from '../avatar/avatar.component';
 import { TextComponent } from '../text/text.component';
 import { AsyncPipe } from '@angular/common';
 import { AuthService } from '../../services/auth/auth.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'sx-toolbar',
-  imports: [AvatarComponent, AsyncPipe],
+  imports: [AvatarComponent, AsyncPipe, RouterLink],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss'
 })
