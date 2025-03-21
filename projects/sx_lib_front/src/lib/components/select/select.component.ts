@@ -1,5 +1,13 @@
+import { KeyEnum } from './../../models/keyboard.model';
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  signal,
+} from '@angular/core';
 import {
   ControlValueAccessor,
   FormsModule,
@@ -20,7 +28,7 @@ import { TagComponent } from '../tag/tag.component';
     NgClass,
     LabelComponent,
     TagComponent,
-    TextComponent
+    TextComponent,
   ],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
@@ -35,15 +43,32 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   @Input() limitWidth: boolean = false;
   @Output() change = new EventEmitter<any>();
 
-  showOptions = false;
+  showOptions = signal(false);
   value: any = '';
   search = '';
   selectedOptions: OptionModel[] = [];
+  protected selectedIndex: number = -1;
   private onChange: (value: any) => void = () => {};
   private onTouched: () => void = () => {};
 
   constructor(public formControl: NgControl) {
     this.formControl.valueAccessor = this;
+  }
+
+  protected selectOptionWithArrows(event: KeyboardEvent) {
+    if (event.key === KeyEnum.ArrowDown) {
+      this.selectedIndex =
+        (this.selectedIndex + 1) % this.displayOptions.length;
+      event.preventDefault();
+    } else if (event.key === KeyEnum.ArrowUp) {
+      this.selectedIndex =
+        (this.selectedIndex - 1 + this.displayOptions.length) %
+        this.displayOptions.length;
+      event.preventDefault();
+    } else if (event.key === KeyEnum.Enter && this.selectedIndex >= 0) {
+      this.selectItem(this.displayOptions[this.selectedIndex]);
+      event.preventDefault();
+    }
   }
 
   writeValue(value: any): void {
@@ -66,7 +91,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   }
 
   onSearch(): void {
-    this.showOptions = true;
+    this.showOptions.set(true);
   }
 
   selectItem(option: OptionModel): void {
@@ -80,7 +105,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   singleSelection(option: OptionModel): void {
     this.search = option.label;
     this.value = option.value;
-    this.showOptions = false;
+    this.showOptions.set(false);
     this.onChange(this.value);
     this.onTouched();
   }
@@ -89,7 +114,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
     if (!this.value.find((item: any) => item == option.value)) {
       this.value.push(option.value);
       this.selectedOptions.push(option);
-      this.showOptions = false;
+      this.showOptions.set(false);
       this.onChange(this.value);
       this.onTouched();
     }
@@ -102,11 +127,9 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
     this.onTouched();
   }
 
-  onBlur(): void {
-    setTimeout(() => {
-      this.showOptions = false;
-      this.onTouched();
-    }, 10);
+  focusout(): void {
+    this.showOptions.set(false);
+    this.onTouched();
   }
 
   get hasErrors(): boolean {
