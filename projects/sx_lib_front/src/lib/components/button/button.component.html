@@ -6,12 +6,13 @@
   (click)="handleClick.emit()"
 >
   <div class="sx-button-alignment">
-    <ng-content></ng-content>
-
     @if(isLoading) {
-      <div>
-        <sx-loader [color]="loaderColor" [size]="iconLoaderSize"></sx-loader>
+      <div class="d-flex gap-4">
+        <span>{{ loadingText }}</span>
+        <sx-loader [color]="loaderColor" [backDrop]="false" [size]="iconLoaderSize"></sx-loader>
       </div>
+    } @else {
+      <ng-content></ng-content>
     }
   </div>
 </button>
