@@ -8,32 +8,33 @@
 </sx-label>
 }
 
-<div [class.opened]="showOptions" class="select-container">
+<div [class.opened]="showOptions()" class="select-container">
   <input
     type="text"
     autocomplete="off"
     autofill="off"
     [placeholder]="placeholder"
-    (blur)="onBlur()"
+    (focusout)="focusout()"
     (focus)="onSearch()"
+    (keydown)="selectOptionWithArrows($event)"
     [ngClass]="{ 'sx-input-color-dark': theme === 'dark', error: hasErrors }"
     [(ngModel)]="search"
   />
-  @if(showOptions){
-    <div class="options">
+  @if(showOptions()){
+  <div class="options">
     @for(opt of displayOptions; track opt.value ){
-      <p (mousedown)="selectItem(opt)" [innerHTML]="highlight(opt.label)"></p>
+    <p
+      (mousedown)="selectItem(opt)"
+      [innerHTML]="highlight(opt.label)"
+      [class.selected]="selectedIndex === $index"
+    ></p>
     }
-    </div>
-  } 
-  
-  @if(multiple){ 
-    @for(item of selectedOptions; track item.value){
-    <div class="d-flex justify-content-start mt-2">
-      <sx-tag [label]="item.label" (onSelectTag)="removeItem($index)" />
-    </div>
-    } 
-  } 
+  </div>
+  } @if(multiple){ @for(item of selectedOptions; track item.value){
+  <div class="d-flex justify-content-start mt-2">
+    <sx-tag [label]="item.label" (onSelectTag)="removeItem($index)" />
+  </div>
+  } }
 </div>
 
 @if(hasErrors) {
