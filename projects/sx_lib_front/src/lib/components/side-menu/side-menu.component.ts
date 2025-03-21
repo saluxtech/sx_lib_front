@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { GridSizesPx } from './../../models/grid.model';
+import { SideMenuItem } from './../../models/side-menu.model';
+
 
 @Component({
   selector: 'sx-side-menu',
@@ -17,7 +19,7 @@ import { GridSizesPx } from './../../models/grid.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuComponent implements OnInit {
-  @Input({ required: true }) menuItems: any[] = [];
+  @Input({ required: true }) menuItems: SideMenuItem[] | null = [];
   protected isMenuClosed = signal(false);
 
   @HostListener('window:resize', ['$event'])
