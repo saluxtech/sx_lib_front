@@ -86,6 +86,14 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
   ngOnInit(): void {
+    this.getParams();
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach((subscripition) => subscripition.unsubscribe());
+  }
+
+  getParams() {
     this.originalType = this.type;
     if (
       this.controlContainer.control &&
@@ -101,10 +109,6 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
       this.value = value;
     });
     this.subscriptions.push(subscripition);
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.forEach((subscripition) => subscripition.unsubscribe());
   }
 
   writeValue(value: any): void {
