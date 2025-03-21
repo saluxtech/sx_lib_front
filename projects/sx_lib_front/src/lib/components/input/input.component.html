@@ -1,32 +1,37 @@
 @if(label){
-<sx-label>
-  {{ label }}
-
-  @if(isRequired) {
-  <span class="required-suffix">*</span>
-  }
-</sx-label>
+  <sx-label>
+    {{ label }}
+    @if(isRequired) {
+    <span class="required-suffix">*</span>
+    }
+  </sx-label>
 }
 
-<div class="input-container">
+<div class="input-container" [style.--focus-color]="focusColor">
   @if(prefix){
   <span
     class="
-      prefix sx-input-color-{{ theme }} 
-      {{prefixIcon ? 'padding-prefix-icon' : ''}}
+      prefix sx-input-color-{{ theme }}
+      {{ prefixIcon ? 'padding-prefix-icon' : '' }}
     "
   >
     <ng-content select="[prefix]"></ng-content>
+    @if(leftIcon){
+      <i
+        class="{{ leftIcon }} icon-prefix"
+        [style.color]="focusColor"
+      ></i>
+    }
   </span>
   }
 
   <div>
     <input
       class="
-        sx-input-color-{{ theme }} 
-        {{ height }} 
+        sx-input-color-{{ theme }}
+        {{ height }}
         {{ prefix ? 'padding-prefix' : '' }}
-        {{ suffix ? 'padding-suffix' : '' }} 
+        {{ suffix ? 'padding-suffix' : '' }}
         {{ prefixIcon ? 'padding-prefix-icon' : '' }}
       "
       [ngStyle]="textColor ? { color: textColor } : null"
@@ -52,10 +57,27 @@
       "
     >
       <ng-content select="[suffix]"></ng-content>
+
+      @if(originalType === 'password'){
+      <i
+        class="fa-solid"
+        [class.fa-eye]="!showPassword"
+        [class.fa-eye-slash]="showPassword"
+        [style.color]="focusColor"
+        (click)="togglePassword()"
+      ></i>
+      }
+      @else if(type === 'text' && value){
+      <i
+        class="fa-solid fa-xmark icon-suffix"
+        [style.color]="focusColor"
+        (click)="clearInput()"
+      ></i>
+      }
     </span>
     }
   </div>
-  
+
   @if(isLoading){
   <div class="loading">
     <sx-loader></sx-loader>
@@ -64,7 +86,7 @@
 </div>
 
 @if((control?.touched || control?.dirty) && control?.invalid){
-<sx-text [variation]="'body2'" color="feedback-error-200">
-  {{ errorMessage }}
-</sx-text>
+  <sx-text [variation]="'body2'" color="feedback-error-200">
+    {{ errorMessage }}
+  </sx-text>
 }

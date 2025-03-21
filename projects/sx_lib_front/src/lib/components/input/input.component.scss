@@ -3,12 +3,11 @@
 
 .required-suffix {
   color: $color-error-200;
-  margin-left: 2px; // Adicione um pequeno espaço entre o label e o asterisco
+  margin-left: 2px;
 }
 
 .input-container {
   position: relative;
-  /* outros estilos necessários */
 }
 
 input {
@@ -22,13 +21,8 @@ input {
   width: 100%;
   border: 1px solid transparent;
   outline: none;
-  
-  &.padding-prefix-icon {
-    padding-left: 50px;
-  }
-
   &:focus {
-    border: 2px solid $color-primary-300;
+    border: 2px solid var(--focus-color, $color-primary-300);
   }
 }
 
@@ -59,7 +53,6 @@ form label {
 .prefix,
 .suffix {
   position: absolute;
-  /* ajuste top, left, right conforme necessário */
 }
 
 .prefix {
@@ -67,7 +60,6 @@ form label {
   top: 11px;
   color: $color-support-500;
   font-family: $font-primary;
-
   &.padding-prefix-icon {
     left: 15px;
   }
@@ -81,10 +73,8 @@ form label {
 
 .padding-prefix {
   padding-left: 35px;
-
   &.padding-prefix-icon {
     padding-left: 50px;
-
     &::placeholder {
       color: $color-support-300;
     }
@@ -111,4 +101,12 @@ form label {
 
 .sx-input-placeholder-light2::placeholder {
   color: $color-support-300;
+}
+
+.icon-suffix {
+  cursor: pointer;
+}
+
+.icon-prefix {
+  margin-right: 4px;
 }
