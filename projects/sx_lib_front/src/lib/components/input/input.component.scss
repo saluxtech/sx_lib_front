@@ -1,9 +1,10 @@
 @use "../../design/colors/ds-colors.scss" as *;
 @use "../../design/fonts/fonts.scss" as *;
+@use "../../design/tokens/ds-tokens.scss" as *;
 
 .required-suffix {
   color: $color-error-200;
-  margin-left: 2px;
+  margin-left: $spacing-xxs;
 }
 
 .input-container {
@@ -108,5 +109,5 @@ form label {
 }
 
 .icon-prefix {
-  margin-right: 4px;
+  margin-right: $spacing-xs;
 }
