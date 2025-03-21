@@ -19,11 +19,10 @@ import {
 } from '@angular/forms';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { Subscription } from 'rxjs';
-import { TextComponent } from '../text/text.component';
-import { LoaderComponent } from '../loader/loader.component';
-import { LabelComponent } from '../label/label.component';
 import { SxInputVariation } from '../../models/input.model';
-
+import { LabelComponent } from '../label/label.component';
+import { LoaderComponent } from '../loader/loader.component';
+import { TextComponent } from '../text/text.component';
 
 @Component({
   selector: 'sx-input',
@@ -36,7 +35,7 @@ import { SxInputVariation } from '../../models/input.model';
     NgClass,
     TextComponent,
     LoaderComponent,
-    LabelComponent
+    LabelComponent,
   ],
   providers: [
     TitleCasePipe,
@@ -45,7 +44,7 @@ import { SxInputVariation } from '../../models/input.model';
       useExisting: forwardRef(() => InputComponent),
       multi: true,
     },
-    provideNgxMask()
+    provideNgxMask(),
   ],
 })
 export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
@@ -70,13 +69,14 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   @Input() limitWidth: boolean = false;
   @Input() textColor: string = '';
   @Input() marginField: number = 0;
-
-
+  @Input() leftIcon: string = '';
+  @Input() focusColor: string = '';
   @Output() changeValue: EventEmitter<any> = new EventEmitter<any>();
 
   control: FormControl = new FormControl();
-  validators = Validators;
   value: string = '';
+  originalType: string = '';
+  showPassword: boolean = false;
 
   onChange: any = () => {};
   onTouch: any = () => {};
@@ -86,6 +86,7 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
 
   ngOnInit(): void {
+    this.originalType = this.type;
     if (
       this.controlContainer.control &&
       this.controlContainer.control.get(this.formControlName)
@@ -93,26 +94,17 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
       this.control = this.controlContainer.control.get(
         this.formControlName
       ) as FormControl;
+      this.value = this.control.value;
     }
     const subscripition = this.control.valueChanges.subscribe((value) => {
       this.changeValue.emit(value);
+      this.value = value;
     });
     this.subscriptions.push(subscripition);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscriptions.forEach((subscripition) => subscripition.unsubscribe());
-  }
-
-  get placeholderColor(): string {
-    switch (this.theme) {
-      case 'light-2':
-        return 'red';
-      case 'dark':
-        return 'white';
-      default:
-        return 'grey';
-    }
   }
 
   writeValue(value: any): void {
@@ -143,8 +135,17 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   setDisabledState?(isDisabled: boolean): void {}
 
   get isRequired(): boolean {
-    return (
-      this.control?.hasValidator(Validators.required) ?? false
-    );
+    return this.control?.hasValidator(Validators.required) ?? false;
+  }
+
+  clearInput(): void {
+    this.control.setValue('');
+    this.value = '';
+    this.onChange('');
+  }
+
+  togglePassword(): void {
+    this.showPassword = !this.showPassword;
+    this.type = this.showPassword ? 'text' : 'password';
   }
 }
