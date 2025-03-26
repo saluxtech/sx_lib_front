@@ -1,7 +1,9 @@
 import { HttpErrorResponse } from "@angular/common/http";
 import { throwError } from "rxjs";
 import { FormControl } from "@angular/forms";
-import { IDataFormatada } from "sx_lib_front";
+import { OptionModel } from "../models/select.model";
+import { AccessObjectPipe } from "../pipes/access-object.pipe";
+import { IDataFormatada } from "../models/paciente/data-formatada.interface";
 
 export class Utils {
   static calcularIdade (dataNascimento: Date): IDataFormatada {
@@ -38,4 +40,19 @@ export class Utils {
     }
     return '-';
   }
+
+  static selectOptionMap = (
+    data: any[],
+    valueKey: string,
+    labelKey: string,
+    disabledKey?: string,
+  ): OptionModel[] =>
+    data?.map((x) => ({
+      value: new AccessObjectPipe().transform(x, valueKey),
+      label: new AccessObjectPipe().transform(x, labelKey),
+      disabled: disabledKey
+        ? new AccessObjectPipe().transform(x, disabledKey)
+        : false,
+    }));
+  
 }
