@@ -1,0 +1,74 @@
+<div class="container">
+  <div [formGroup]="form">
+    @for(elementsRow of dynamicFields; track elementsRow) {
+    <div class="row gy-2 gx-3 mb-5" [style]="{ height: '72px' }">
+      @for(field of elementsRow.itemsRow.fields; track field) {
+      <div class="col-{{ field.size || 'auto' }}">
+        <div class="d-flex"></div>
+        <div class="input-group w-100">
+          @switch(field.type) {
+            @case('select') {
+              <sx-select
+                [formControlName]="field.name"
+                [label]="field.label"
+                [options]="field.options"
+                [placeholder]="field.placeholder"
+                ></sx-select>
+            }
+            @case('text') {
+              <sx-input
+                [formControlName]="field.name"
+                placeholder="Digite..."
+                [label]="field.label"
+              />
+            }
+            @case('date') {
+              <sx-input
+                [formControlName]="field.name"
+                placeholder="Digite..."
+                [label]="field.label"
+              />
+            }
+            @case('number') {
+              <sx-input
+                [formControlName]="field.name"
+                placeholder="Digite..."
+                [label]="field.label"
+              />
+            }
+            @case('button') {
+              <sx-button
+                (click)="field.action!($event)"
+                [formControlName]="field.name"
+                >
+                {{ field.label }}
+              </sx-button>
+            }
+            <!-- @case('textarea') {
+              <sx-textarea
+                [formControlName]="field.name"
+                placeholder="Digite..."
+                [label]="field.label"
+              />
+            }
+            @case('checkbox') {
+              <sx-checkbox
+                [formControlName]="field.name"
+                [label]="field.label"
+              />
+            }
+            @case('radio') {
+              <sx-radio
+                [formControlName]="field.name"
+                [label]="field.label"
+                [options]="field.options"
+              />
+            } -->
+          }
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>
