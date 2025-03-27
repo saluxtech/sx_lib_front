@@ -9,6 +9,7 @@ export * from './range-date-datepicker.model';
 export * from './login/login.interface';
 export * from './paciente';
 export * from './usuario';
-export * from './side-menu.model'
-export * from './grid.model'
-export * from './keyboard.model'
+export * from './side-menu.model';
+export * from './grid.model';
+export * from './keyboard.model';
+export * from './snackbar';
