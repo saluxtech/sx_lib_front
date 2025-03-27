@@ -4,7 +4,7 @@ import { OptionModel } from '../../models';
 import { DynamicGetService } from '../../services/dynamic-get/dynamic-get.service';
 import { SelectComponent } from '../select';
 import { DynamicSelectParser } from './dynamic-select.parser';
-import { FetchSelectResourceType } from './types';
+import { ApiResourceType } from './types';
 
 @Component({
   selector: 'sx-fetch-select',
@@ -14,7 +14,7 @@ import { FetchSelectResourceType } from './types';
   standalone: true,
 })
 export class FetchSelectComponent implements OnInit {
-  @Input() resourceType!: FetchSelectResourceType;
+  @Input() resourceType!: ApiResourceType;
   @Input() label = '';
   @Input() apiPageSize = 500;
 

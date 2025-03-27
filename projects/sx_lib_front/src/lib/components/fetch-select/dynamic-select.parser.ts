@@ -1,10 +1,10 @@
 import { OptionModel } from '../../models';
 import {
+  ApiResourceType,
   BarreirasComunicacao,
   CoresPele,
   EstadosCivis,
   Etnias,
-  FetchSelectResourceType,
   GrausInstrucao,
   GrausParentesco,
   NacionalidadesSus,
@@ -126,38 +126,38 @@ export class DynamicSelectParser {
   }
 
   static getParser(
-    resourceType: FetchSelectResourceType
+    resourceType: ApiResourceType
   ): (data: any) => OptionModel[] {
     switch (resourceType) {
-      case FetchSelectResourceType.PLANOS_SAUDE:
+      case ApiResourceType.PLANOS_SAUDE:
         return this.parsePlanosSaude;
-      case FetchSelectResourceType.TIPOS_PLANOS_FILTROS:
+      case ApiResourceType.TIPOS_PLANOS_FILTROS:
         return this.parseTiposPlanosFiltros;
-      case FetchSelectResourceType.BARREIRAS_COMUNICACAO:
+      case ApiResourceType.BARREIRAS_COMUNICACAO:
         return this.parseBarreirasComunicacao;
-      case FetchSelectResourceType.CORES_PELE:
+      case ApiResourceType.CORES_PELE:
         return this.parseCoresPele;
-      case FetchSelectResourceType.ESTADOS_CIVIS:
+      case ApiResourceType.ESTADOS_CIVIS:
         return this.parseEstadosCivis;
-      case FetchSelectResourceType.ETNIAS:
+      case ApiResourceType.ETNIAS:
         return this.parseEtnias;
-      case FetchSelectResourceType.GRAUS_INSTRUCAO:
+      case ApiResourceType.GRAUS_INSTRUCAO:
         return this.parseGrausInstrucao;
-      case FetchSelectResourceType.GRAUS_PARENTESCO:
+      case ApiResourceType.GRAUS_PARENTESCO:
         return this.parseGrausParentesco;
-      case FetchSelectResourceType.NACIONALIDADES_SUS:
+      case ApiResourceType.NACIONALIDADES_SUS:
         return this.parseNacionalidadesSus;
-      case FetchSelectResourceType.NIVEIS_VIP:
+      case ApiResourceType.NIVEIS_VIP:
         return this.parseNiveisVip;
-      case FetchSelectResourceType.RELIGIOES:
+      case ApiResourceType.RELIGIOES:
         return this.parseReligioes;
-      case FetchSelectResourceType.TIPOS_FONES:
+      case ApiResourceType.TIPOS_FONES:
         return this.parseTiposFones;
-      case FetchSelectResourceType.TIPOS_LOGRADOUROS:
+      case ApiResourceType.TIPOS_LOGRADOUROS:
         return this.parseTiposLogradouros;
-      case FetchSelectResourceType.UNIDADES_FEDERATIVAS:
+      case ApiResourceType.UNIDADES_FEDERATIVAS:
         return this.parseUnidadesFederativas;
-      case FetchSelectResourceType.UNIDADES_SAUDE:
+      case ApiResourceType.UNIDADES_SAUDE:
         return this.parseUnidadesSaude;
       default:
         throw new Error(`Parser não implementado para ${resourceType}`);

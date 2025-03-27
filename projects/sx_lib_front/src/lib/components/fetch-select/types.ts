@@ -1,6 +1,6 @@
 import { OptionModel } from "../../models";
 
-export enum FetchSelectResourceType {
+export enum ApiResourceType {
   PLANOS_SAUDE = 'planos-saude',
   TIPOS_PLANOS_FILTROS = 'tipos-planos-filtros',
   BARREIRAS_COMUNICACAO = 'barreiras-comunicacao',
