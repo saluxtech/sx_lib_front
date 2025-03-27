@@ -3,7 +3,7 @@ import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 import { DuracaoEnum } from "../../enums/duracao.enum";
 import { SnackbarPosition } from "../../enums/snackbar-position.enum";
 import { SnackbarType } from "../../enums/snackbar-type.enum";
-import { SnackbarPositionInterface } from "../../models/snackbar/snackbar-position.model";
+import { SnackbarPositionInterface, SnackbarPositions } from "../../models/snackbar/snackbar-position.model";
 import { SnackbarOptionsInterface } from "../../models/snackbar/snackbar-options.model";
 import { SnackbarComponent } from "../../components/snackbar/snackbar.component";
 
@@ -41,17 +41,6 @@ export class SnackbarService {
     }
 
     private getPosition(position: SnackbarPosition = SnackbarPosition.CENTER): SnackbarPositionInterface {
-        const positions = {
-            [SnackbarPosition.TOP_LEFT]: { horizontalPosition: 'start' as const, verticalPosition: 'top' as const },
-            [SnackbarPosition.TOP_CENTER]: { horizontalPosition: 'center' as const, verticalPosition: 'top' as const },
-            [SnackbarPosition.TOP_RIGHT]: { horizontalPosition: 'end' as const, verticalPosition: 'top' as const },
-            [SnackbarPosition.BOTTOM_LEFT]: { horizontalPosition: 'start' as const, verticalPosition: 'bottom' as const },
-            [SnackbarPosition.BOTTOM_CENTER]: { horizontalPosition: 'center' as const, verticalPosition: 'bottom' as const },
-            [SnackbarPosition.BOTTOM_RIGHT]: { horizontalPosition: 'end' as const, verticalPosition: 'bottom' as const },
-            [SnackbarPosition.CENTER_LEFT]: { horizontalPosition: 'start' as const, verticalPosition: 'bottom' as const },
-            [SnackbarPosition.CENTER]: { horizontalPosition: 'center' as const, verticalPosition: 'bottom' as const },
-            [SnackbarPosition.CENTER_RIGHT]: { horizontalPosition: 'end' as const, verticalPosition: 'bottom' as const }
-        };
-        return positions[position];
+        return SnackbarPositions[position];
     }
 }
