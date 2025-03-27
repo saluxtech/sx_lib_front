@@ -20,3 +20,9 @@ export interface  HttpResponseData<T> {
   StatusCode: number;
   Success: boolean;
 }
+
+export interface HttpResponseApi<T> {
+  data: {
+    [key: number]: T;
+  };
+}
