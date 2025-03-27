@@ -1,0 +1,86 @@
+@use '../../design/colors/ds-colors.scss' as *;
+@use '../../design/tokens/ds-tokens.scss' as *;
+
+
+:host {
+  display: block;
+}
+
+::ng-deep .mdc-snackbar__surface {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  min-width: auto !important;
+  background-color: none !important;
+  box-shadow: none !important;
+}
+
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: transparent;
+  --mat-mdc-snack-bar-button-color: transparent;
+  --mdc-snackbar-supporting-text-color: transparent;
+}
+
+.snackbar-container {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm;
+  border-radius: 4px;
+  min-width: 344px;
+  
+  .action {
+    color: $color-support-500;
+    align-self: flex-start;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: $spacing-sm;
+  }
+
+  mat-icon {
+    font-size: $spacing-md;
+    height: $spacing-md;
+    width: $spacing-md;
+  }
+}
+
+.success-snackbar {
+  background-color: $color-feedback-sucess-100;
+  color: $color-support-500;
+  border: 1px solid $color-feedback-sucess-200;
+}
+
+.error-snackbar {
+  background-color: $color-error-100;
+  color: $color-support-500;
+  border: 1px solid $color-error-200;
+}
+
+.warn-snackbar {
+  background-color: $color-feedback-alert-100;
+  color: $color-support-500;
+  border: 1px solid $color-health-yellow;
+}
+
+.info-snackbar {
+  background-color: $color-primary-100;
+  color: $color-support-500;
+  border: 1px solid $color-primary-200;
+}
+
+.icon-error {
+  color: $color-error-200;
+}
+
+.icon-success {
+  color: $color-feedback-sucess-200;
+}
+
+.icon-warn {
+  color: $color-health-yellow;
+}
+
+.icon-info {
+  color: $color-primary-200;
+}
