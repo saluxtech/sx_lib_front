@@ -13,7 +13,7 @@ import { ValidatorFn } from '@angular/forms';
 import { SelectComponent } from '../../components';
 
 @Component({
-  selector: 'app-dynamic-form',
+  selector: 'sx-dynamic-form',
   imports: [ReactiveFormsModule, InputComponent, ButtonComponent, SelectComponent],
   templateUrl: './dynamic-form.component.html',
   styleUrl: './dynamic-form.component.scss',
