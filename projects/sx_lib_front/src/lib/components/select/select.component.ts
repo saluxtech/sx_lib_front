@@ -16,6 +16,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { ChangesEnum } from '../../enums/changes.enum';
 import { OptionModel } from '../../models/select.model';
 import { LabelComponent } from '../label/label.component';
 import { TagComponent } from '../tag/tag.component';
@@ -83,7 +84,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['options']?.currentValue) {
+    if (changes[ChangesEnum.OPTIONS]?.currentValue) {
       const option = this.getSelectedOption();
       if (option) {
         this.singleSelection(option);
