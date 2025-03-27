@@ -1,12 +1,13 @@
-import { KeyEnum } from './../../models/keyboard.model';
 import { NgClass } from '@angular/common';
 import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   OnInit,
   Output,
   signal,
+  SimpleChanges,
 } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -15,10 +16,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { LabelComponent } from '../label/label.component';
-import { TextComponent } from '../text/text.component';
 import { OptionModel } from '../../models/select.model';
+import { LabelComponent } from '../label/label.component';
 import { TagComponent } from '../tag/tag.component';
+import { TextComponent } from '../text/text.component';
+import { KeyEnum } from './../../models/keyboard.model';
 
 @Component({
   selector: 'sx-select',
@@ -33,7 +35,7 @@ import { TagComponent } from '../tag/tag.component';
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
 })
-export class SelectComponent implements ControlValueAccessor, OnInit {
+export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input() options: OptionModel[] = [];
   @Input() label: string = '';
   @Input() placeholder: string = 'Selecione...';
@@ -55,27 +57,16 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
     this.formControl.valueAccessor = this;
   }
 
-  protected selectOptionWithArrows(event: KeyboardEvent) {
-    if (event.key === KeyEnum.ArrowDown) {
-      this.selectedIndex =
-        (this.selectedIndex + 1) % this.displayOptions.length;
-      event.preventDefault();
-    } else if (event.key === KeyEnum.ArrowUp) {
-      this.selectedIndex =
-        (this.selectedIndex - 1 + this.displayOptions.length) %
-        this.displayOptions.length;
-      event.preventDefault();
-    } else if (event.key === KeyEnum.Enter && this.selectedIndex >= 0) {
-      this.selectItem(this.displayOptions[this.selectedIndex]);
-      event.preventDefault();
-    }
-  }
-
   writeValue(value: any): void {
-    const option = this.options.find((item) => item.value == value);
+    this.value = value;
+    const option = this.getSelectedOption();
     if (option) {
       this.singleSelection(option);
     }
+  }
+
+  getSelectedOption(): OptionModel | undefined {
+    return this.options.find((item) => item.value == this.value);
   }
 
   registerOnChange(fn: (value: any) => void): void {
@@ -88,6 +79,15 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit(): void {
     if (this.multiple) this.value = [];
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['options']?.currentValue) {
+      const option = this.getSelectedOption();
+      if (option) {
+        this.singleSelection(option);
+      }
+    }
   }
 
   onSearch(): void {
@@ -130,6 +130,22 @@ export class SelectComponent implements ControlValueAccessor, OnInit {
   focusout(): void {
     this.showOptions.set(false);
     this.onTouched();
+  }
+
+  protected selectOptionWithArrows(event: KeyboardEvent) {
+    if (event.key === KeyEnum.ArrowDown) {
+      this.selectedIndex =
+        (this.selectedIndex + 1) % this.displayOptions.length;
+      event.preventDefault();
+    } else if (event.key === KeyEnum.ArrowUp) {
+      this.selectedIndex =
+        (this.selectedIndex - 1 + this.displayOptions.length) %
+        this.displayOptions.length;
+      event.preventDefault();
+    } else if (event.key === KeyEnum.Enter && this.selectedIndex >= 0) {
+      this.selectItem(this.displayOptions[this.selectedIndex]);
+      event.preventDefault();
+    }
   }
 
   get hasErrors(): boolean {
