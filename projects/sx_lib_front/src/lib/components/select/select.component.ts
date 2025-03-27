@@ -24,6 +24,7 @@ import { KeyEnum } from './../../models/keyboard.model';
 
 @Component({
   selector: 'sx-select',
+  standalone: true,
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -65,7 +66,7 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
     }
   }
 
-  getSelectedOption(): OptionModel | undefined {
+  getSelectedOption() {
     return this.options.find((item) => item.value == this.value);
   }
 
