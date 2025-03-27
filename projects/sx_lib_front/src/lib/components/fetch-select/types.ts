@@ -16,6 +16,7 @@ export enum ApiResourceType {
   TIPOS_LOGRADOUROS = 'tipos-logradouros',
   UNIDADES_FEDERATIVAS = 'unidades-federativas',
   UNIDADES_SAUDE = 'unidades-saude',
+  DEFAULT = 'DEFAULT'
 }
 
 export type ParserFunction = (data: any) => OptionModel[];

@@ -128,39 +128,28 @@ export class DynamicSelectParser {
   static getParser(
     resourceType: ApiResourceType
   ): (data: any) => OptionModel[] {
-    switch (resourceType) {
-      case ApiResourceType.PLANOS_SAUDE:
-        return this.parsePlanosSaude;
-      case ApiResourceType.TIPOS_PLANOS_FILTROS:
-        return this.parseTiposPlanosFiltros;
-      case ApiResourceType.BARREIRAS_COMUNICACAO:
-        return this.parseBarreirasComunicacao;
-      case ApiResourceType.CORES_PELE:
-        return this.parseCoresPele;
-      case ApiResourceType.ESTADOS_CIVIS:
-        return this.parseEstadosCivis;
-      case ApiResourceType.ETNIAS:
-        return this.parseEtnias;
-      case ApiResourceType.GRAUS_INSTRUCAO:
-        return this.parseGrausInstrucao;
-      case ApiResourceType.GRAUS_PARENTESCO:
-        return this.parseGrausParentesco;
-      case ApiResourceType.NACIONALIDADES_SUS:
-        return this.parseNacionalidadesSus;
-      case ApiResourceType.NIVEIS_VIP:
-        return this.parseNiveisVip;
-      case ApiResourceType.RELIGIOES:
-        return this.parseReligioes;
-      case ApiResourceType.TIPOS_FONES:
-        return this.parseTiposFones;
-      case ApiResourceType.TIPOS_LOGRADOUROS:
-        return this.parseTiposLogradouros;
-      case ApiResourceType.UNIDADES_FEDERATIVAS:
-        return this.parseUnidadesFederativas;
-      case ApiResourceType.UNIDADES_SAUDE:
-        return this.parseUnidadesSaude;
-      default:
-        throw new Error(`Parser não implementado para ${resourceType}`);
+    const resourceMap: any = {
+      [ApiResourceType.PLANOS_SAUDE]: this.parsePlanosSaude,
+      [ApiResourceType.TIPOS_PLANOS_FILTROS]: this.parseTiposPlanosFiltros,
+      [ApiResourceType.BARREIRAS_COMUNICACAO]: this.parseBarreirasComunicacao,
+      [ApiResourceType.CORES_PELE]: this.parseCoresPele,
+      [ApiResourceType.ESTADOS_CIVIS]: this.parseEstadosCivis,
+      [ApiResourceType.ETNIAS]: this.parseEtnias,
+      [ApiResourceType.GRAUS_INSTRUCAO]: this.parseGrausInstrucao,
+      [ApiResourceType.GRAUS_PARENTESCO]: this.parseGrausParentesco,
+      [ApiResourceType.NACIONALIDADES_SUS]: this.parseNacionalidadesSus,
+      [ApiResourceType.NIVEIS_VIP]: this.parseNiveisVip,
+      [ApiResourceType.RELIGIOES]: this.parseReligioes,
+      [ApiResourceType.TIPOS_FONES]: this.parseTiposFones,
+      [ApiResourceType.TIPOS_LOGRADOUROS]: this.parseTiposLogradouros,
+      [ApiResourceType.UNIDADES_FEDERATIVAS]: this.parseUnidadesFederativas,
+      [ApiResourceType.UNIDADES_SAUDE]: this.parseUnidadesSaude,
+    };
+
+    if (!resourceMap.hasOwnProperty(resourceType)) {
+      throw new Error(`Parser não implementado para ${resourceType}`);
     }
+
+    return resourceMap[resourceType].bind(this);
   }
 }
