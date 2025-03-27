@@ -16,6 +16,7 @@ export * from './card-title';
 export * from './carousel';
 export * from './checkbox';
 export * from './display-value';
+export * from './fetch-select';
 export * from './icon-svg';
 export * from './input';
 export * from './label';
