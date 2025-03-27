@@ -12,27 +12,27 @@
                 [formControlName]="field.name"
                 [label]="field.label"
                 [options]="field.options"
-                [placeholder]="field.placeholder"
+                [placeholder]="field?.placeholder ?? 'Selecione'"
                 ></sx-select>
             }
             @case('text') {
               <sx-input
                 [formControlName]="field.name"
-                placeholder="Digite..."
+                [placeholder]="field?.placeholder ?? 'Digite...'"
                 [label]="field.label"
               />
             }
             @case('date') {
               <sx-input
                 [formControlName]="field.name"
-                placeholder="Digite..."
+                [placeholder]="field?.placeholder ?? 'Digite...'"
                 [label]="field.label"
               />
             }
             @case('number') {
               <sx-input
                 [formControlName]="field.name"
-                placeholder="Digite..."
+                [placeholder]="field?.placeholder ?? 'Digite...'"
                 [label]="field.label"
               />
             }
@@ -44,26 +44,9 @@
                 {{ field.label }}
               </sx-button>
             }
-            <!-- @case('textarea') {
-              <sx-textarea
-                [formControlName]="field.name"
-                placeholder="Digite..."
-                [label]="field.label"
-              />
-            }
-            @case('checkbox') {
-              <sx-checkbox
-                [formControlName]="field.name"
-                [label]="field.label"
-              />
-            }
-            @case('radio') {
-              <sx-radio
-                [formControlName]="field.name"
-                [label]="field.label"
-                [options]="field.options"
-              />
-            } -->
+          }
+          @if(field.error) {
+            <mat-error>{{ field.error }}</mat-error>
           }
         </div>
       </div>

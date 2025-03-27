@@ -3,6 +3,8 @@ export interface Field {
     name: string;
     label: string;
     size?: number;
+    placeholder?: string;
+    errorMessage?: string;
     validators?: {
       required?: boolean;
       minLength?: number;
