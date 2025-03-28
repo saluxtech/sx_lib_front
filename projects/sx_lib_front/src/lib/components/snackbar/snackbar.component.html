@@ -1,11 +1,13 @@
 <div class="snackbar-container" [ngClass]="data.type">
   @if(data.icon) {
-    <mat-icon [ngClass]="{
-      'icon-error': type() === SnackbarType.ERROR,
-      'icon-success': type() === SnackbarType.SUCCESS,
-      'icon-warn': type() === SnackbarType.WARN,
-      'icon-info': type() === SnackbarType.INFO
-    }">{{data.icon}}</mat-icon>
+    <i class="fa-solid {{data.icon}}"
+      [ngClass]="{
+        'icon-error': type() === SnackbarType.ERROR,
+        'icon-success': type() === SnackbarType.SUCCESS,
+        'icon-warn': type() === SnackbarType.WARN,
+        'icon-info': type() === SnackbarType.INFO
+      }"
+    ></i>
   }
   <div class="d-flex flex-column align-items-center">
     <sx-text [variation]="'body1-bold'" [color]="'title-comum'">{{ data.title }}</sx-text>
@@ -14,6 +16,6 @@
     }
   </div>
   <button class="action" (click)="close()">
-    <mat-icon>{{data.action}}</mat-icon>
+    <i class="fa-solid {{data.action}}"></i>
   </button>
 </div>
