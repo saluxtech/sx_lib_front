@@ -5,3 +5,4 @@ export * from './tipo.enum';
 export * from './duracao.enum';
 export * from './snackbar-position.enum';
 export * from './snackbar-type.enum';
+export * from './icons.enum';
