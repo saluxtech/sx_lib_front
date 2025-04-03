@@ -13,3 +13,4 @@ export * from './side-menu.model';
 export * from './grid.model';
 export * from './keyboard.model';
 export * from './snackbar';
+export * from './breadcrumbs.model';

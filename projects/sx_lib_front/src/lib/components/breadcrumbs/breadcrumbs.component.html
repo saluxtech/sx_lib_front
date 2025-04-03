@@ -1,0 +1,14 @@
+<div class="breadcrumb-container">
+    @for (breadcrumb of breadcrumbs; track breadcrumb?.path; let last = $last) {
+        <sx-text 
+            [variation]="'h4-title'" 
+            [class.active]="breadcrumb?.isActive"
+            [routerLink]="breadcrumb?.isActive ? null : [breadcrumb?.path]"
+            [color]="breadcrumb?.isActive ? 'primary-400' : 'support-400'">
+            {{ breadcrumb?.label }}
+        </sx-text>
+        @if (!last) {
+            <i class="fa-solid {{ IconsEnum.CHEVRON_RIGHT }}"></i>
+        }
+    }
+</div>

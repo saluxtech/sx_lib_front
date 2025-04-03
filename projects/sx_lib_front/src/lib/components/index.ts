@@ -29,4 +29,4 @@ export * from './text';
 export * from './text-area';
 export * from './toolbar';
 export * from './view-list';
-
+export * from './breadcrumbs';
