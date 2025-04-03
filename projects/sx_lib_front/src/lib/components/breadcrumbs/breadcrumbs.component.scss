@@ -1,0 +1,27 @@
+@use "../../design/colors/ds-colors.scss" as *;
+@use '../../design/fonts/fonts.scss' as *;
+@use "../../design/tokens/ds-tokens.scss" as *;
+
+
+.breadcrumb-container {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xxs;
+    
+    sx-text {
+        cursor: pointer;
+    }
+
+    sx-text.active {
+        cursor: default;
+    }
+    
+    i {
+        font-size: $side-menu-trigger-icon-font-size;
+        font-weight: $font-weight-black;
+    }
+}
+
+
+
+

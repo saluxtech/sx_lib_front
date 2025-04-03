@@ -21,4 +21,5 @@ export type SxTextColor =
   | 'support-400'
   | 'feedback-error-200'
   | 'white'
+  | 'primary-400'
   | 'primary-300';
