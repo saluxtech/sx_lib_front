@@ -1,8 +1,12 @@
 <div class="container-fluid">
-    <div class="d-flex gap-4">
+    <div class="d-flex flex-wrap align-items-center gap-3">
         @for (button of buttons; track button.icon) {
-            <sx-button [isWithIcon]="true" [size]="'sm'" (click)="handleClick(button.event!)">
-                <i class="fa-solid {{ button.icon }}"></i>
+            <sx-button [variation]="button.variation!" [hasPorcentageWidth]="'100'" [isWithIcon]="true" [size]="'sm'" (click)="handleClick(button.event!)">
+                <div class="d-flex gap-2 align-items-center" >
+                    <i class="fa-solid {{ button.icon }}"></i>
+                    <span>{{ button.label }}</span>
+                </div>
+                
             </sx-button>
         }
     </div>
