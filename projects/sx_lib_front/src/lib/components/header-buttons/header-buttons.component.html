@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div class="d-flex gap-4">
+        @for (button of buttons; track button.icon) {
+            <sx-button [isWithIcon]="true" [size]="'sm'" (click)="handleClick(button.event!)">
+                <i class="fa-solid {{ button.icon }}"></i>
+            </sx-button>
+        }
+    </div>
+</div>
