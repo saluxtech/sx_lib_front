@@ -62,6 +62,10 @@ export class AuthService {
     return parsedPayload.roles;
   }
 
+  getCodHostipal(): number {
+    return this.userSubject.value?.cd_hospital || 0;
+  }
+
   isAuthenticaded(): boolean {
     return !!this.getToken();
   }

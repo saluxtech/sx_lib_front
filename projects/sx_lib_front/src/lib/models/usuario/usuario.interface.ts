@@ -3,6 +3,7 @@ export interface Usuario {
     message: string;
     email: string;
     cD_Funcionario: string;
+    cd_hospital: number;
     cpf: string;
     cD_MEDICO: number;
     dS_CATEGORIA: string;
