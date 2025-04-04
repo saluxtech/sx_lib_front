@@ -30,3 +30,4 @@ export * from './text-area';
 export * from './toolbar';
 export * from './view-list';
 export * from './breadcrumbs';
+export * from './header-buttons';

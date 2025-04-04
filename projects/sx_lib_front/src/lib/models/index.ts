@@ -14,3 +14,4 @@ export * from './grid.model';
 export * from './keyboard.model';
 export * from './snackbar';
 export * from './breadcrumbs.model';
+export * from './button-list.model';
