@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { HeaderButtons } from '../../enums/header-buttons.enum';
-import { ButtonList } from '../../models';
+import { HeaderButtonEvent } from '../../enums/header-buttons.enum';
 import { ButtonComponent } from '../button/button.component';
+import { HeaderButton } from '../../models/header-button.model';
 
 @Component({
   selector: 'sx-header-buttons',
@@ -10,10 +10,11 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './header-buttons.component.scss'
 })
 export class HeaderButtonsComponent {
-  @Input() buttons: ButtonList[] = [];
-  @Output() emitButton = new EventEmitter<HeaderButtons>();
+  @Input() buttons: HeaderButton[] = [];
+  @Input() backButton: HeaderButton | null = null;
+  @Output() emitButton = new EventEmitter<HeaderButtonEvent>();
 
-  protected handleClick(button: HeaderButtons) {
+  protected handleClick(button: HeaderButtonEvent) {
     this.emitButton.emit(button);
   }
 }
