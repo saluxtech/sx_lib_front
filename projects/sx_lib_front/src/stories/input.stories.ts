@@ -1,4 +1,4 @@
-import { FormsModule, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { provideNgxMask } from 'ngx-mask';
 import { InputComponent } from 'sx_lib_front';
@@ -43,7 +43,7 @@ const meta: Meta<InputComponent> = {
       control: 'select', 
       options: [
         'body1', 'body1-bold', 'body2', 'body2-bold-pdf', 'caption', 
-        'h3-title', 'label-input', 'caption-bold'
+        'h3-title', 'h4-title', 'label-input', 'caption-bold'
       ], 
       description: 'Variação do label' 
     },
