@@ -46,6 +46,7 @@
       [dropSpecialCharacters]="dropSpecialCharacters"
       [readonly]="isReadonly"
       [value]="value"
+      (blur)="onBlur()"
     />
     @if(suffix){
     <span
