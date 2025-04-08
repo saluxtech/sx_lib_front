@@ -72,6 +72,7 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   @Input() leftIcon: string = '';
   @Input() focusColor: string = '';
   @Output() changeValue: EventEmitter<any> = new EventEmitter<any>();
+  @Output() blur: EventEmitter<any> = new EventEmitter<any>();
 
   control: FormControl = new FormControl();
   value: string = '';
@@ -151,5 +152,9 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   togglePassword(): void {
     this.showPassword = !this.showPassword;
     this.type = this.showPassword ? 'text' : 'password';
+  }
+
+  onBlur(): void {
+    this.blur.emit(this.value);
   }
 }
