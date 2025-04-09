@@ -11,7 +11,7 @@
             }
         </div>
         <div class="d-flex flex-wrap gap-3">
-            @for (button of buttons; track button.icon) {
+            @for (button of buttons; track $index) {
                 <sx-button [variation]="button.variation!" [hasPorcentageWidth]="'100'" [isWithIcon]="true" [size]="'sm'" (click)="handleClick(button.event!)">
                     <div class="d-flex gap-2 align-items-center" >
                         <i class="fa-solid {{ button.icon }}"></i>
