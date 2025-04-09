@@ -36,9 +36,9 @@ export class ButtonComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['isLoading']?.currentValue) {
-      this.loaderService.showLoader();
+      this.loaderService.showLoaderButton();
     } else {
-      this.loaderService.hideLoader();
+      this.loaderService.hideLoaderButton();
     }
   }
 

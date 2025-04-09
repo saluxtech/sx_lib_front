@@ -9,3 +9,14 @@
   }
 </div>
 }
+
+@if((loaderService.loaderButtonState$ | async) && !backDrop){
+  <div 
+    class="loader loader--{{ color }}"
+    [ngStyle]="{ '--loader-size.px': size }"
+  >
+  </div>
+  @if(text) {
+    <p class="mt-2 loader-text">{{ text }}</p>
+  }
+}
