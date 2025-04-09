@@ -1,0 +1,24 @@
+@use "../../design/colors/ds-colors.scss" as *;
+@use "../../design/mixins/flex.mixin.scss" as *;
+
+$spinner-diameter: 3rem;
+
+:host {
+  @include flex(column, center, center);
+}
+
+.spinner {
+  display: inline-block;
+  width: $spinner-diameter;
+  height: $spinner-diameter;
+  border: 0.4rem solid $color-support-200;
+  border-top-color: $color-primary-500;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
