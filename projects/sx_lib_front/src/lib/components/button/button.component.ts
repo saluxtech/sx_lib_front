@@ -3,6 +3,7 @@ import { Component, EventEmitter, inject, Input, OnChanges, OnInit, Output, Simp
 import { LoaderComponent } from '../loader';
 import { sxButtonColorType, sxButtonSizeType, sxButtonTypeType as sxButtonVariationType } from "./button.types";
 import { LoaderService } from '../../services/loader/loader.service';
+import { ChangesEnum } from '../../enums/changes.enum';
 
 @Component({
   selector: 'sx-button',
@@ -35,7 +36,7 @@ export class ButtonComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes['isLoading']?.currentValue) {
+    if(changes[ChangesEnum.IS_LOADING]?.currentValue) {
       this.loaderService.showLoaderButton();
     } else {
       this.loaderService.hideLoaderButton();
@@ -49,5 +50,4 @@ export class ButtonComponent implements OnInit, OnChanges {
       this.loaderColor = 'primary';
     }
   }
-
 }
