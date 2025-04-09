@@ -31,3 +31,4 @@ export * from './toolbar';
 export * from './view-list';
 export * from './breadcrumbs';
 export * from './header-buttons';
+export * from './spinner';
