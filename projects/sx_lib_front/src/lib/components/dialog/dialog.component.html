@@ -1,0 +1,11 @@
+<div class="dialog-modal">
+    <sx-text class="pt-3 d-flex align-items-start" mat-dialog-title [variation]="'h3-title'">{{data.title}}</sx-text>
+    <mat-dialog-content>
+       <sx-text [variation]="'body3'">{{data.message}}</sx-text>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <sx-button color="cancel" mat-button [mat-dialog-close]="false">{{data.buttons.cancel}}</sx-button>
+        <sx-button mat-button [mat-dialog-close]="true">{{data.buttons.confirm}}</sx-button>
+    </mat-dialog-actions>
+</div>
