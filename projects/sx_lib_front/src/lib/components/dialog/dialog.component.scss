@@ -1,0 +1,10 @@
+@use '../../design/tokens/ds-tokens.scss' as *;
+
+.dialog-modal{
+    justify-content: center;
+    align-items: center;
+
+    mat-dialog-actions {
+        gap: $spacing-sm;
+    }
+}
