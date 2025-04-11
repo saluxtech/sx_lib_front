@@ -50,6 +50,15 @@ $input-height: 45px;
   &.opened::after {
     transform: translateY(-50%) rotate(180deg);
   }
+
+  .reset-search {
+    position: absolute;
+    color: $color-support-500;
+    font-weight: 400;
+    right: 38px;
+    top: 30%;
+    cursor: pointer;
+  }
 }
 
 .options {
