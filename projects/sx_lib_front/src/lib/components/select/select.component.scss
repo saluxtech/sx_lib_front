@@ -1,5 +1,6 @@
 @use "../../design/colors/ds-colors.scss" as *;
 @use "../../design/fonts/fonts.scss" as *;
+@use "../../design/tokens/ds-tokens.scss" as *;
 
 * {
   font-family: $font-primary;
@@ -54,8 +55,8 @@ $input-height: 45px;
   .reset-search {
     position: absolute;
     color: $color-support-500;
-    font-weight: 400;
-    right: 38px;
+    font-weight: $font-weight-normal;
+    right: $spacing-lg-2;
     top: 30%;
     cursor: pointer;
   }
