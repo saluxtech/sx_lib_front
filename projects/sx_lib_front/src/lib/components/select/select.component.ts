@@ -92,6 +92,11 @@ export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges 
     }
   }
 
+  onReset(){
+    this.search = '';
+    this.value = '';
+  }
+
   onSearch(): void {
     this.showOptions.set(true);
   }

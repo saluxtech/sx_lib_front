@@ -9,8 +9,12 @@
 }
 
 <div [class.opened]="showOptions()" class="select-container">
+  @if (search) {
+  <div class="reset-search">
+    <i class="fa-solid fa-xmark icon-suffix" (click)="onReset()"></i>
+  </div>
+  }
   <input
-    type="text"
     autocomplete="off"
     autofill="off"
     [placeholder]="placeholder"
