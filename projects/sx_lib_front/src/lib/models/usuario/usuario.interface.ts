@@ -13,4 +13,5 @@ export interface Usuario {
     validade: string;
     jwtToken: string;
     nm_funcionario: string;
+    sc_cognome: string;
 }
