@@ -14,9 +14,7 @@ import { UsuarioResponse } from 'sx_lib_front';
 export class AuthService {
   private jwtSubject = new BehaviorSubject<string | null>(this.loadToken());
   public jwt$ = this.jwtSubject.asObservable();
-  private userSubject = new BehaviorSubject<Usuario>(
-    JSON.parse(sessionStorage.getItem(StorageEnum.USUARIO) || '{}')
-  );
+  private userSubject = new BehaviorSubject<Usuario>(this.loadUser());
   public user$ = this.userSubject.asObservable();
 
   constructor(private http: HttpClient) {}
@@ -41,10 +39,7 @@ export class AuthService {
   }
 
   getUser(): Usuario {
-    return (
-      this.userSubject.value ||
-      JSON.parse(sessionStorage.getItem(StorageEnum.USUARIO) || '{}')
-    );
+    return this.userSubject.value;
   }
 
   setToken(token: string | null): void {
@@ -83,5 +78,15 @@ export class AuthService {
 
   private loadToken(): string | null {
     return sessionStorage.getItem(StorageEnum.JWT_TOKEN);
+  }
+
+  private loadUser(): Usuario {
+    try {
+      const user = sessionStorage.getItem(StorageEnum.USUARIO);
+      return user ? JSON.parse(user) : ({} as Usuario);
+    } catch (error) {
+      console.error('Erro ao carregar o usuário do sessionStorage:', error);
+      return {} as Usuario;
+    }
   }
 }
