@@ -9,21 +9,25 @@ import { Login } from '../../models/login/login.interface';
 import { UsuarioResponse } from 'sx_lib_front';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private jwtSubject = new BehaviorSubject<string | null>(this.loadToken());
   public jwt$ = this.jwtSubject.asObservable();
-  private userSubject = new BehaviorSubject<Usuario>(JSON.parse(sessionStorage.getItem(StorageEnum.USUARIO) || '{}'));
+  private userSubject = new BehaviorSubject<Usuario>(
+    JSON.parse(sessionStorage.getItem(StorageEnum.USUARIO) || '{}')
+  );
   public user$ = this.userSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
   login(login: Login): Observable<UsuarioResponse> {
-    return this.http.post<UsuarioResponse>(`${Environment.apiUrl}/${Environment.version}/auth/login`, login)
-      .pipe(
-        catchError(Utils.handleErrorMessage)
-      );
+    return this.http
+      .post<UsuarioResponse>(
+        `${Environment.apiUrl}/${Environment.version}/auth/login`,
+        login
+      )
+      .pipe(catchError(Utils.handleErrorMessage));
   }
 
   logout(): void {
@@ -34,6 +38,13 @@ export class AuthService {
   setUser(user: Usuario): void {
     sessionStorage.setItem(StorageEnum.USUARIO, JSON.stringify(user));
     this.userSubject.next(user);
+  }
+
+  getUser(): Usuario {
+    return (
+      this.userSubject.value ||
+      JSON.parse(sessionStorage.getItem(StorageEnum.USUARIO) || '{}')
+    );
   }
 
   setToken(token: string | null): void {
