@@ -4,7 +4,7 @@ import {
   FormsModule,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
-import { Editor, NgxEditorModule } from 'ngx-editor';
+import { Editor, NgxEditorModule, Toolbar } from 'ngx-editor';
 
 
 @Component({
@@ -23,12 +23,22 @@ import { Editor, NgxEditorModule } from 'ngx-editor';
 export class TextEditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
   @Input() placeholder: string = '';
   @Output() valueChangeHtml = new EventEmitter<string>();
+  editor!: Editor;
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['code', 'blockquote'],
+    ['ordered_list', 'bullet_list'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['link', 'image'],
+    ['text_color', 'background_color'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+  ]; 
 
   html = '';
-  editor!: Editor;
 
   ngOnInit(): void {
-    this.editor = new Editor()
+    this.editor = new Editor();
   }
 
   ngOnDestroy(): void {
