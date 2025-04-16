@@ -5,4 +5,5 @@ export interface HeaderButton {
     event?: HeaderButtonEvent;
     variation?: 'raised' | 'stroked' | 'ghost';
     label?: string;
+    disabled?: boolean;
 }
