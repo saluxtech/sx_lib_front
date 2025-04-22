@@ -1,0 +1,5 @@
+<div class="w-100 pl-2 pr-2 d-flex flex-column gap-1 variable-list">
+    @for(variavel of variaveis; track $index) {
+        <sx-button  [size]="'sm'" (handleClick)="selectedVariable.emit(variavel.value)" class="list-btn">{{variavel.value}}</sx-button>
+    }
+</div>
