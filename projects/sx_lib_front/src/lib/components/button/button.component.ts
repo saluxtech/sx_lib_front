@@ -24,6 +24,7 @@ export class ButtonComponent implements OnInit, OnChanges {
   @Input() hasWidth: string = 'auto';
   @Input() hasPorcentageWidth: string = 'auto';
   @Input() iconLoaderSize: number = 20;
+  @Input() customClass: string = '';
   @Output() handleClick = new EventEmitter<any>();
   loaderColor: "primary" | "secondary" = 'primary';
 

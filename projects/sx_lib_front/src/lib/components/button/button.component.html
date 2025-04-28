@@ -1,7 +1,7 @@
 <button
   [type]="type"
   [ngStyle]="hasPorcentageWidth !== '' ? { 'width': hasPorcentageWidth + '%; !important' } : { 'width': hasWidth + 'px' }"
-  class="sx-button {{ variation }} {{ color }} {{ size }} position-relative {{isLoading && 'sx-button--loading'}}"
+  class="sx-button {{ variation }} {{ color }} {{ size }} {{customClass}} position-relative {{isLoading && 'sx-button--loading'}}"
   [disabled]="disabled"
   (click)="handleClick.emit()"
 >
