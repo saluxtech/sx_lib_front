@@ -1,21 +1,23 @@
+@use "../../design/tokens/ds-tokens.scss" as *;
 @use "../../design/colors/ds-colors.scss" as *;
 
 .basic-card {
   width: fit-content;
   height: fit-content;
-  border-radius: 8px;
-  padding: 24px;
-  gap: 24px;
-  background: #ffffff;
+  border-radius: $spacing-xs;
+  padding: $spacing-md;
+  gap: $spacing-md;
+  background: $color-support-100;
   width: 100%;
-  // margin-bottom: 20px;
-  
+  box-shadow: 0px 4px 4px 0px $color-box-shadown;
+
+
   &--gray {
     background: $color-support-150;
   }
 
   &--white {
-    background: #ffffff;
+    background: $color-support-100;
   }
 
   &--blue {
@@ -24,8 +26,8 @@
 
   &--blue-notification {
     background-color: $color-primary-100;
-    padding: 24px;
-    border-radius: 8px;
+    padding: $spacing-md;
+    border-radius: $spacing-xs;
     border: solid 2px $color-primary-200;
     margin-bottom: 30px;
   }
@@ -34,16 +36,24 @@
     padding: 0;
   }
 
+  &--p-xs {
+    padding: $spacing-xs;
+  }
+
   &--p-sm {
-    padding: 8px;
+    padding: $spacing-sm;
   }
 
   &--p-md {
-    padding: 16px;
+    padding: $spacing-md;
   }
 
   &--p-lg {
-    padding: 24px;
+    padding: $spacing-lg;
+  }
+
+  &--p-xl {
+    padding: $spacing-xl;
   }
 
   &--mb-0 {
@@ -51,26 +61,34 @@
   }
 
   &--mb-sm {
-    margin-bottom: 8px;
+    margin-bottom: $spacing-sm;
   }
 
   &--mb-md {
-    margin-bottom: 16px;
+    margin-bottom: $spacing-md;
   }
 
   &--mb-lg {
-    margin-bottom: 24px;
+    margin-bottom: $spacing-lg;
   }
 
   &--mb-default {
-    margin-bottom: 20px;
+    margin-bottom: $spacing-md;
+  }
+
+  &--radius-xs {
+    border-radius: $spacing-xs;
   }
 
   &--radius-sm {
-    border-radius: 4px;
+    border-radius: $spacing-sm;
+  }
+
+  &--radius-sm-2 {
+    border-radius: $spacing-sm-2;
   }
 
   &--radius-md {
-    border-radius: 8px;
+    border-radius: $spacing-md;
   }
 }

@@ -15,9 +15,9 @@ import { NgClass, NgStyle } from "@angular/common";
 })
 export class BasicCardComponent {
   @Input() colorVariation: BasicCardColorVariation = 'white';
-  @Input() padding: BasicCardPadding = 'lg';
+  @Input() padding: BasicCardPadding = 'sm';
   @Input() margingBottom: BasicCardMargingBottom = 'default'
-  @Input() radius: BasicCardRadius = 'md';
+  @Input() radius: BasicCardRadius = 'xs';
   @Input() width100: boolean = false;
   @Input() basicCardWidth!: string;
   @Input() basicCardHeight: string | undefined;
