@@ -18,6 +18,8 @@ export class TextComponent implements AfterViewInit {
 
   @Input() whithTooltip: boolean = false;
 
+  @Input() customClass: string = '';
+
   tooltipContent: string = '';
 
   constructor(private el: ElementRef) {}
