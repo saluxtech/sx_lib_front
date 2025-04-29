@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [provideHttpClient()],\r\n}"
+            },
+            {
                 "name": "carouselItems",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -164,6 +174,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SpinnerComponent>",
+                "defaultValue": "{\r\n  title: 'Spinner',\r\n  component: SpinnerComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/sx_lib_front/src/stories/tab-group.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -299,6 +319,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  name: 'Primary',\r\n  args: {\r\n    menuItems,\r\n  },\r\n  argTypes: {\r\n    menuItems: {\r\n      control: {\r\n        type: 'object',\r\n      },\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/sx_lib_front/src/stories/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  name: 'Spinner',\r\n  argTypes: {\r\n    mensagem: {\r\n      description: 'Mensagem do spinner',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    mensagem: 'Carregando...',\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -448,6 +478,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<SpinnerComponent>",
+                "file": "projects/sx_lib_front/src/stories/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TabGroupComponent>",
                 "file": "projects/sx_lib_front/src/stories/tab-group.stories.ts",
                 "deprecated": false,
@@ -458,6 +499,28 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/sx_lib_front/.storybook/preview.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [provideHttpClient()],\r\n}"
+                },
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  }\r\n\r\n}"
+                }
+            ],
             "projects/sx_lib_front/src/stories/carousel.stories.ts": [
                 {
                     "name": "carouselItems",
@@ -782,16 +845,26 @@
                     "defaultValue": "{\r\n  args: {\r\n    options: optionsTiposEnderecos,\r\n    label: 'Select',\r\n  },\r\n  render: (args: any) => {\r\n    const formGroup = new FormGroup({\r\n      selectControl: new FormControl(''),\r\n    });\r\n\r\n    return {\r\n      props: {\r\n        ...args,\r\n        formGroup,\r\n      },\r\n      template: `\r\n        <div style=\"max-width: 70%; height: 300px;\">\r\n          <form [formGroup]=\"formGroup\">\r\n            <sx-select\r\n              [label]=\"label\"\r\n              [options]=\"options\"\r\n              formControlName=\"selectControl\"\r\n            ></sx-select>\r\n          </form>\r\n        </div>\r\n      `,\r\n    };\r\n  },\r\n}"
                 }
             ],
-            "projects/sx_lib_front/.storybook/preview.ts": [
+            "projects/sx_lib_front/src/stories/spinner.stories.ts": [
                 {
-                    "name": "preview",
+                    "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/sx_lib_front/.storybook/preview.ts",
+                    "file": "projects/sx_lib_front/src/stories/spinner.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  }\r\n\r\n}"
+                    "type": "Meta<SpinnerComponent>",
+                    "defaultValue": "{\r\n  title: 'Spinner',\r\n  component: SpinnerComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/sx_lib_front/src/stories/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  name: 'Spinner',\r\n  argTypes: {\r\n    mensagem: {\r\n      description: 'Mensagem do spinner',\r\n      control: 'text',\r\n      type: 'string',\r\n      table: {\r\n        type: { summary: 'string' },\r\n        defaultValue: { summary: '' },\r\n      },\r\n    },\r\n  },\r\n  args: {\r\n    mensagem: 'Carregando...',\r\n  },\r\n}"
                 }
             ]
         },
@@ -941,6 +1014,19 @@
                     "kind": 183
                 }
             ],
+            "projects/sx_lib_front/src/stories/spinner.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SpinnerComponent>",
+                    "file": "projects/sx_lib_front/src/stories/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/sx_lib_front/src/stories/tab-group.stories.ts": [
                 {
                     "name": "Story",
@@ -961,6 +1047,16 @@
         "count": 0,
         "status": "low",
         "files": [
+            {
+                "filePath": "projects/sx_lib_front/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
             {
                 "filePath": "projects/sx_lib_front/.storybook/preview.ts",
                 "type": "variable",
@@ -1323,6 +1419,36 @@
             },
             {
                 "filePath": "projects/sx_lib_front/src/stories/side-menu.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/sx_lib_front/src/stories/spinner.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
