@@ -1,3 +1,5 @@
+import { OptionModel } from "sx_lib_front";
+
 export interface Field {
     type: FieldType;
     name: string;
@@ -12,6 +14,8 @@ export interface Field {
     };
     fields?: Field[];
     value?: any;
+    options: OptionModel[];
+    error: string;
     action?: (event: any) => any;
 }
 

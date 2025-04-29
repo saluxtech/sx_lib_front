@@ -8,3 +8,4 @@ export * from './snackbar-type.enum';
 export * from './icons.enum';
 export * from './header-buttons.enum';
 export * from './variaveis.enum'
+export * from './pesquisa-baa.enum'

@@ -1,0 +1,23 @@
+@use "../../design/colors/ds-colors.scss" as *;
+@use '../../design/fonts/fonts.scss' as *;
+
+:host {
+  .container {
+    width: 70vw;
+  }
+
+  .is-clicked {
+    font-weight: bold;
+  }
+
+  .table-container {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
+
+input[type="text"]:disabled {
+    border: 2px solid $color-support-300;
+    background-color: $color-support-200;
+    cursor: not-allowed;
+  }

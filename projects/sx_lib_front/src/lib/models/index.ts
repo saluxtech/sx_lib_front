@@ -15,4 +15,5 @@ export * from './keyboard.model';
 export * from './snackbar';
 export * from './breadcrumbs.model';
 export * from './header-button.model';
-export * from './dialog'
+export * from './dialog';
+export * from './paciente-baa-movimentavel'
