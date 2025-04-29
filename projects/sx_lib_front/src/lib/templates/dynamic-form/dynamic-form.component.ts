@@ -11,10 +11,11 @@ import { InputComponent } from '../../components/input/input.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { ValidatorFn } from '@angular/forms';
 import { SelectComponent } from '../../components';
+import { MatError } from '@angular/material/form-field';
 
 @Component({
   selector: 'sx-dynamic-form',
-  imports: [ReactiveFormsModule, InputComponent, ButtonComponent, SelectComponent],
+  imports: [ReactiveFormsModule, InputComponent, ButtonComponent, SelectComponent, MatError],
   templateUrl: './dynamic-form.component.html',
   styleUrl: './dynamic-form.component.scss',
   providers: [
