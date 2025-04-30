@@ -76,7 +76,7 @@ export class SnackbarService {
 
     private getConfig(position?: SnackbarPosition, type: SnackbarType = SnackbarType.DEFAULT): MatSnackBarConfig {
         return {
-            duration: DuracaoEnum.TEMPO_SNACKBAR,
+            duration: 999999999,
             ...this.getPosition(position)
         };
     }
