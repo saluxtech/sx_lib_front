@@ -24,10 +24,10 @@
 .snackbar-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: $spacing-xs;
   padding: $spacing-sm;
   border-radius: 4px;
-  min-width: 344px;
   
   .action {
     color: $color-support-500;
