@@ -33,6 +33,7 @@
         {{ prefix ? 'padding-prefix' : '' }}
         {{ suffix ? 'padding-suffix' : '' }}
         {{ prefixIcon ? 'padding-prefix-icon' : '' }}
+        {{toUppercase ? 'to-uppercase' : ''}}
       "
       [ngStyle]="textColor ? { color: textColor } : null"
       [ngClass]="{
