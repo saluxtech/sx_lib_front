@@ -1,19 +1,23 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { OptionModel } from '../../models/select.model';
-import { ButtonComponent } from "../button/button.component";
 import { VariaveisEnum } from '../../enums/variaveis.enum';
+import { OptionModel } from '../../models/select.model';
+import { VariablesButtonListComponent } from '../variables-button-list/variables-button-list.component';
 
 @Component({
   selector: 'sx-variables',
-  imports: [ButtonComponent],
+  imports: [VariablesButtonListComponent],
   templateUrl: './variables.component.html',
-  styleUrl: './variables.component.scss'
+  styleUrl: './variables.component.scss',
 })
 export class VariablesComponent {
   @Output() selectedVariable: EventEmitter<string> = new EventEmitter<string>();
 
-  variaveis: OptionModel[] = Object.values(VariaveisEnum).map(value => ({
+  variaveis: OptionModel[] = Object.values(VariaveisEnum).map((value) => ({
     label: value,
     value: value,
   }));
+
+  onSelectedVariable(event: string){
+    this.selectedVariable.emit(event)
+  }
 }

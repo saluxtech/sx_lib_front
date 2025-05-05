@@ -1,0 +1,10 @@
+<div class="w-100 pl-2 pr-2 d-flex flex-column gap-1 button-list">
+  @for(item of buttonList; track $index) {
+  <sx-button
+    [size]="'sm'"
+    (handleClick)="selectItem.emit(item.value)"
+    class="list-btn"
+    >{{ item.value }}</sx-button
+  >
+  }
+</div>
