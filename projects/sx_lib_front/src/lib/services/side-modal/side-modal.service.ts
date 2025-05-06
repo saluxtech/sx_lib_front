@@ -15,7 +15,7 @@ export class SideModalService {
         });
     }
 
-    closeSideBar(){
+    closeSideBar() {
       return this.offCanvas.dismiss();
     }
 }
