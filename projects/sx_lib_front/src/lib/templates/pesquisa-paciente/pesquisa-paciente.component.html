@@ -1,4 +1,5 @@
-<div class="container p-32">
+<sx-basic-card>
+  <div class="container p-32">
     <form class="d-flex flex-column gap-2" [formGroup]="form">
         <div class="d-flex justify-content-between align-items-center">
             <div class="">
@@ -17,20 +18,22 @@
                 Pesquisar
             </sx-button>
         </div>
-        <div class="d-flex">
-            <label for="">Nr. Baa:</label>
-            <sx-input 
+        <div class="d-flex flex-column">
+            <sx-label for="">Nr. Baa:</sx-label>
+            <div class="d-flex align-items-center gap-2">
+              <sx-input 
                 type="text" 
                 formControlName="pl_nr_baa"
             ></sx-input>
-            <p>/</p>
+            <p class="m-0">/</p>
             <sx-input 
                 type="text"
                 formControlName="pl_ano_baa"
             >
             </sx-input>
+            </div>
         </div>
-        <div class="d-flex justify-content-between gap-4">
+        <div class="d-flex justify-content-between gap-4 mt-1">
             <div class="d-flex flex-column">
                     <sx-label>Tipo Pesquisa:</sx-label>
                 <div class="d-flex">
@@ -107,7 +110,7 @@
         </div>  
     </form>
     @if(list.length) {
-        <div class="mat-elevation-z8 table-container">
+        <div class="mat-elevation-z8 table-container mt-1">
             <table mat-table [dataSource]="list" [class.mat-table-scrollable]="true" class="w-100">
               <ng-container matColumnDef="baa">
                 <th mat-header-cell *matHeaderCellDef>
@@ -164,7 +167,7 @@
             </table>
           </div>
         }
-        <div class="d-flex justify-content-center gap-4">
+        <div class="d-flex justify-content-center gap-4 mt-1">
             <sx-button 
                 [disabled]="!clickedRow"
                 (click)="addPatientToForm(clickedRow)" >
@@ -176,3 +179,4 @@
             </sx-button>
         </div>
 </div>
+</sx-basic-card>

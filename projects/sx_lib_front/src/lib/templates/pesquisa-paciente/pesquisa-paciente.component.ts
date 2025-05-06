@@ -6,7 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ButtonComponent, InputComponent, LabelComponent } from '../../components';
+import { BasicCardComponent, ButtonComponent, InputComponent, LabelComponent } from '../../components';
 import { PesquisaBaaEnum } from '../../enums/pesquisa-baa.enum';
 import { PacienteBaaMovimentavel } from '../../models/paciente-baa-movimentavel/paciente-baa-movimentavel.interface';
 import { OptionModel } from '../../models/select.model';
@@ -21,7 +21,8 @@ import { OptionModel } from '../../models/select.model';
     DatePipe,
     MatTableModule,
     MatPaginatorModule,
-    MatMenuModule
+    MatMenuModule,
+    BasicCardComponent
   ],
   templateUrl: './pesquisa-paciente.component.html',
   styleUrl: './pesquisa-paciente.component.scss'
