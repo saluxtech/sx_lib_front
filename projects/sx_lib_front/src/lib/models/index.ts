@@ -16,4 +16,5 @@ export * from './snackbar';
 export * from './breadcrumbs.model';
 export * from './header-button.model';
 export * from './dialog';
-export * from './paciente-baa-movimentavel'
+export * from './paciente-baa-movimentavel';
+export * from './baa-movimentavel';
