@@ -1,5 +1,5 @@
 {
-  "branches": ["main"],
+  "branches": ["main", "fix/HIS-1-actions"],
   "plugins": [
     ["@semantic-release/commit-analyzer", {
       "preset": "angular",
