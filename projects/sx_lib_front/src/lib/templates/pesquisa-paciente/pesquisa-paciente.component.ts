@@ -10,6 +10,7 @@ import { BasicCardComponent, ButtonComponent, InputComponent, LabelComponent } f
 import { PesquisaBaaEnum } from '../../enums/pesquisa-baa.enum';
 import { PacienteBaaMovimentavel } from '../../models/paciente-baa-movimentavel/paciente-baa-movimentavel.interface';
 import { OptionModel } from '../../models/select.model';
+import { BaaMovimentavel } from 'sx_lib_front';
 
 @Component({
   selector: 'sx-pesquisa-paciente',
@@ -31,7 +32,7 @@ export class PesquisaPacienteComponent implements OnInit {
   @Input() modelButton: OptionModel[] = [];
   @Input() list: PacienteBaaMovimentavel[] = [];
   @Input() isLoading: boolean = false;
-  @Output() search: EventEmitter<void> = new EventEmitter();
+  @Output() search: EventEmitter<BaaMovimentavel> = new EventEmitter();
   @Output() close:  EventEmitter<void> = new EventEmitter();
   @Output() select: EventEmitter<PacienteBaaMovimentavel> = new EventEmitter();
 
@@ -57,7 +58,7 @@ export class PesquisaPacienteComponent implements OnInit {
   }
 
   get(){
-    this.search.emit(this.form.getRawValue());
+    this.search.emit(this.form.getRawValue() as BaaMovimentavel);
   }
 
   closeModal() {
