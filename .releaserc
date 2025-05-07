@@ -1,0 +1,30 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    ["@semantic-release/commit-analyzer", {
+      "preset": "angular",
+      "releaseRules": [
+        {
+          "type": "fix",
+          "release": "patch"
+        },
+        {
+          "type": "feat",
+          "release": "minor"
+        },
+        {
+          "type": "BREAKING CHANGE",
+          "release": "major"
+        }
+      ],
+      "parserOpts": {
+        "headerPattern": "^([a-zA-Z]+)\\(([a-zA-Z0-9\\-]+)\\):\\s(.*)$",
+        "headerCorrespondence": ["type", "ticket", "subject"]
+      }
+    }],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/git",
+    "@semantic-release/npm"
+  ]
+}
