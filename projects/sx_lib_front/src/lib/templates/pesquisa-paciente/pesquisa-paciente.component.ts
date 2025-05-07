@@ -10,7 +10,7 @@ import { BasicCardComponent, ButtonComponent, InputComponent, LabelComponent } f
 import { PesquisaBaaEnum } from '../../enums/pesquisa-baa.enum';
 import { PacienteBaaMovimentavel } from '../../models/paciente-baa-movimentavel/paciente-baa-movimentavel.interface';
 import { OptionModel } from '../../models/select.model';
-import { BaaMovimentavel } from 'sx_lib_front';
+import { BaaMovimentavel } from '../../models/baa-movimentavel/baa-movimentavel.interface';
 
 @Component({
   selector: 'sx-pesquisa-paciente',
