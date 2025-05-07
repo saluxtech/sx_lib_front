@@ -20,3 +20,15 @@ export interface  HttpResponseData<T> {
   StatusCode: number;
   Success: boolean;
 }
+
+export interface Meta {
+  total: number;
+  page: number;
+  perPage: number;
+  totalPages: number | null;
+}
+export interface ApiResponseData<T> {
+  meta: Meta;
+  data: T;
+  errors: Record<string, any>;
+}
