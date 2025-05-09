@@ -6,4 +6,6 @@ export enum HeaderButtonEvent {
     CANCEL = 'cancel',
     CLOSE = 'close',
     BACK = 'back',
+    PRINT = 'print',
+    SEARCH = 'search',
 }
