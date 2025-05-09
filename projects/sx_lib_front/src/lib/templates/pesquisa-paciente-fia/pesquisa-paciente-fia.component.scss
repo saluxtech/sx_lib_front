@@ -1,0 +1,17 @@
+@use "../../design/colors/ds-colors.scss" as *;
+@use '../../design/fonts/fonts.scss' as *;
+
+:host {
+  .container {
+    width: 70vw;
+  }
+
+  .is-clicked {
+    font-weight: bold;
+  }
+
+  .table-container {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}

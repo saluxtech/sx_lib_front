@@ -9,3 +9,4 @@ export * from './icons.enum';
 export * from './header-buttons.enum';
 export * from './variaveis.enum'
 export * from './pesquisa-baa.enum'
+export * from './pesquisa-fia.enum'
