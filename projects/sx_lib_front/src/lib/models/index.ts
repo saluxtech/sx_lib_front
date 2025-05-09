@@ -18,3 +18,4 @@ export * from './header-button.model';
 export * from './dialog';
 export * from './paciente-baa-movimentavel';
 export * from './baa-movimentavel/baa-movimentavel.interface';
+export * from './http-request.model';

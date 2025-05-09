@@ -1,6 +1,6 @@
 {
   "name": "salux_ds_lib",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "author": "Salux Tech",
   "repository": {
     "type": "git",
@@ -65,5 +65,8 @@
     "storybook": "^8.5.2",
     "storybook-i18n": "^3.1.1",
     "typescript": "~5.7.2"
+  },
+  "resolutions": {
+    "tmp": "^0.2.1"
   }
 }
