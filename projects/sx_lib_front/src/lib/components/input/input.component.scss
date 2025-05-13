@@ -43,6 +43,10 @@ input:disabled {
   background-color: $color-support-100;
 }
 
+.icon-color-light {
+  color: $color-primary-400;
+}
+
 .sx-input-color-dark {
   background-color: $color-support-150;
 }
@@ -54,6 +58,7 @@ form label {
 .prefix,
 .suffix {
   position: absolute;
+  background-color: transparent;
 }
 
 .prefix {
@@ -110,6 +115,7 @@ form label {
 
 .icon-prefix {
   margin-right: $spacing-xs;
+  background-color: transparent;
 }
 
 .to-uppercase {

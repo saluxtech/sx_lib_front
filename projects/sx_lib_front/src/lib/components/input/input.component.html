@@ -18,8 +18,8 @@
     <ng-content select="[prefix]"></ng-content>
     @if(leftIcon){
       <i
-        class="{{ leftIcon }} icon-prefix"
-        [style.color]="focusColor"
+        class="{{ leftIcon }} icon-prefix icon-color-{{ theme }}"
+        [style.color]="iconColor ? iconColor : focusColor"
       ></i>
     }
   </span>

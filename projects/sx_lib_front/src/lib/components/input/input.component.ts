@@ -72,6 +72,7 @@ export class InputComponent implements ControlValueAccessor, OnInit, OnDestroy {
   @Input() leftIcon: string = '';
   @Input() focusColor: string = '';
   @Input() toUppercase: boolean = false;
+  @Input() iconColor: string = '';
   @Output() changeValue: EventEmitter<any> = new EventEmitter<any>();
   @Output() blur: EventEmitter<any> = new EventEmitter<any>();
 
