@@ -1,4 +1,4 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgClass } from '@angular/common';
 import { Component, DestroyRef, EventEmitter, inject, input, Input, OnInit, Output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -23,7 +23,8 @@ import { BaaMovimentavel } from '../../models/baa-movimentavel/baa-movimentavel.
     MatTableModule,
     MatPaginatorModule,
     MatMenuModule,
-    BasicCardComponent
+    BasicCardComponent,
+    NgClass
   ],
   templateUrl: './pesquisa-paciente.component.html',
   styleUrl: './pesquisa-paciente.component.scss'
@@ -37,7 +38,7 @@ export class PesquisaPacienteComponent implements OnInit {
   @Output() select: EventEmitter<PacienteBaaMovimentavel> = new EventEmitter();
 
   modalRef = input<NgbActiveModal>();
-  displayedColumns: string[] = ['baa', 'paciente', 'dtNascimento', 'entrada', 'saida'];
+  displayedColumns: string[] = ['baa', 'paciente', 'dtNascimento', 'entrada', 'saida', 'acao'];
   clickedRow: PacienteBaaMovimentavel | null = null;
   PesquisaBaa = PesquisaBaaEnum;
   

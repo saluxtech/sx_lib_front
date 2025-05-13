@@ -11,7 +11,12 @@
   }
 
   .table-container {
-    max-height: 50vh;
+    max-height: 40vh;
     overflow-y: auto;
+  }
+ 
+  ::ng-deep sx-basic-card>div:first-of-type {
+    max-height: 100vh !important;
+    overflow: auto;
   }
 }

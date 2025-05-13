@@ -1,15 +1,15 @@
 <sx-basic-card>
+  <div class="d-flex justify-content-end pe-auto">
+    <i class="fa-solid fa-xmark icon-suffix" (click)="closeModal()"></i>
+  </div>
   <div class="container p-3">
     <form class="d-flex flex-column gap-2" [formGroup]="form">
       <div class="d-flex justify-content-between align-items-center">
-        <div class="">
+        <div class="w-100">
           <sx-label>Paciente:</sx-label>
           <sx-input formControlName="ps_texto" type="text" pattern="[a-zA-Z\s]*">
           </sx-input>
         </div>
-        <sx-button [isLoading]="isLoading" [disabled]="!this.form.valid" (click)="get()" [type]="'submit'">
-          Pesquisar
-        </sx-button>
       </div>
       <div class="d-flex flex-column">
         <sx-label for="">Nr. Baa:</sx-label>
@@ -24,32 +24,32 @@
         <div class="d-flex flex-column">
           <sx-label>Tipo Pesquisa:</sx-label>
           <div class="d-flex">
-            <input type="radio" formControlName="ps_tipo_pesq" [value]="PesquisaBaa.EM_ABERTO" />
-            <label>BAA em aberto</label>
+            <input type="radio" id="baaEmAberto" formControlName="ps_tipo_pesq" [value]="PesquisaBaa.EM_ABERTO" />
+            <label for="baaEmAberto">BAA em aberto</label>
           </div>
 
           <div class="d-flex">
-            <input type="radio" formControlName="ps_tipo_pesq" [value]="PesquisaBaa.MOVIMENTAVEL"
+            <input type="radio" id="baaMovimentavel" formControlName="ps_tipo_pesq" [value]="PesquisaBaa.MOVIMENTAVEL"
               label="BAA movimentavel" />
-            <label for="">BAA movimentável</label>
+            <label for="baaMovimentavel">BAA movimentável</label>
           </div>
 
           <div class="d-flex">
-            <input type="radio" formControlName="ps_tipo_pesq" [value]="PesquisaBaa.TODOS_OS_PACIENTES"
+            <input type="radio" id="todosPacientes" formControlName="ps_tipo_pesq" [value]="PesquisaBaa.TODOS_OS_PACIENTES"
               label="Todos os pacientes" />
-            <label for="">Todos os pacientes</label>
+            <label for="todosPacientes">Todos os pacientes</label>
           </div>
         </div>
         <div class="d-flex flex-column">
           <sx-label>Selecionar por:</sx-label>
           <div class="d-flex">
-            <input type="radio" formControlName="ps_nome_ou_baa" [value]="PesquisaBaa.NOME_DO_PACIENTE" />
-            <label for="">Nome do Paciente</label>
+            <input type="radio" id="nomePaciente" formControlName="ps_nome_ou_baa" [value]="PesquisaBaa.NOME_DO_PACIENTE" />
+            <label for="nomePaciente">Nome do Paciente</label>
           </div>
 
           <div class="d-flex">
-            <input type="radio" formControlName="ps_nome_ou_baa" [value]="PesquisaBaa.NUMERO" />
-            <label for="">Número de BAA</label>
+            <input type="radio" id="numeroBaa" formControlName="ps_nome_ou_baa" [value]="PesquisaBaa.NUMERO" />
+            <label for="numeroBaa">Número de BAA</label>
           </div>
 
         </div>
@@ -57,14 +57,14 @@
           <sx-label>Selecionar em:</sx-label>
 
           <div class="d-flex">
-            <input type="radio" formControlName="ps_tipo_select" [value]="PesquisaBaa.APENAS_NO_INICIO"
+            <input type="radio" id="apenasInicio" formControlName="ps_tipo_select" [value]="PesquisaBaa.APENAS_NO_INICIO"
               label="Apenas no início" />
-            <label for="">Apenas no início</label>
+            <label for="apenasInicio">Apenas no início</label>
           </div>
 
           <div class="d-flex">
-            <input type="radio" formControlName="ps_tipo_select" [value]="PesquisaBaa.EM_QUALQUER_PARTE" />
-            <label for="">Em qualquer parte</label>
+            <input type="radio" id="qualquerParte" formControlName="ps_tipo_select" [value]="PesquisaBaa.EM_QUALQUER_PARTE" />
+            <label for="qualquerParte">Em qualquer parte</label>
           </div>
         </div>
       </div>
@@ -117,18 +117,32 @@
           </td>
         </ng-container>
 
+        <ng-container matColumnDef="acao">
+          <th mat-header-cell *matHeaderCellDef>Ação</th>
+          <td mat-cell *matCellDef="let row">
+            <i (click)="clickedRow = row" 
+              class="pe-auto"
+              [ngClass]="clickedRow === row 
+                ? 'fa-solid fa-circle-check'
+                : 'fa-regular fa-circle-check'"
+            ></i>
+          </td>
+        </ng-container>
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row (click)="clickedRow = row" [class.is-clicked]="clickedRow === row"
+        <tr mat-row class="pe-auto" (click)="clickedRow = row" [class.is-clicked]="clickedRow === row"
           *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
     }
-    <div class="d-flex justify-content-center gap-4 mt-1">
-      <sx-button [disabled]="!clickedRow" (click)="addPatientToForm(clickedRow)">
-        Ok
-      </sx-button>
-      <sx-button (click)="closeModal()">
-        Cancelar
+    <div class="d-flex justify-content-between gap-4 mt-2">
+      @if (clickedRow) {
+        <sx-button [disabled]="!clickedRow" (click)="addPatientToForm(clickedRow)">
+          Ok
+        </sx-button>
+      }
+      <sx-button [isLoading]="isLoading" [disabled]="!this.form.valid" (click)="get()" [type]="'submit'">
+        Pesquisar
       </sx-button>
     </div>
   </div>
