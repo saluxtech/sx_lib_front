@@ -39,6 +39,8 @@ export enum IconsEnum {
     SETTINGS = 'fa-cog',
     ACCOUNT = 'fa-user-circle',
     LOGOUT = 'fa-sign-out',
+    LOGIN = 'fa-user',
+    KEY = 'fa-key',
     
     // Notification icons
     NOTIFICATIONS = 'fa-bell',
@@ -133,5 +135,12 @@ export enum IconsEnum {
     POWER = 'fa-power-off',
     RESTART = 'fa-redo',
     UPDATE = 'fa-sync',
-    BUG = 'fa-bug'
+    BUG = 'fa-bug',
+
+    //Weather
+    TEMP = 'fa-temperature-half',
+
+    //Useful
+    REGULAR = 'fa-regular',
+    SOLID = 'fa-solid'
 }
