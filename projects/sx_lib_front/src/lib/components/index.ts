@@ -36,3 +36,4 @@ export * from './dialog';
 export * from './text-editor';
 export * from './variables';
 export * from './variables-button-list';
+export * from './weather-info';

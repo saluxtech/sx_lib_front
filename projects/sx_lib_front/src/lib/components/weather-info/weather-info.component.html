@@ -1,0 +1,32 @@
+<section>
+    <sx-basic-card>
+        <div class="d-flex flex-column gap-2">
+            <div class="d-flex flex-column gap-1">
+                <sx-text [variation]="'body1-bold'">{{ infos.city }}</sx-text>
+                <sx-text [variation]="'body2'">{{ infos.weekDay | titlecase  }}, {{ infos.formattedDate }}</sx-text>
+            </div>
+    
+            <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <i style="color: #4188f1" class="{{ iconsEnum.REGULAR }} {{ iconsEnum.SCHEDULE }}"></i>
+                    <sx-text [variation]="'h4-title'">{{ infos.hour }}</sx-text>
+                </div>
+    
+                <div class="d-flex align-items-center gap-2">
+                    <i style="color: #4188f1" class="{{iconsEnum.SOLID}} {{ iconsEnum.TEMP }}"></i>
+                    <sx-text [variation]="'h4-title'">{{ infos.temp }}</sx-text>
+                </div>
+            </div>
+        </div>
+    </sx-basic-card>
+
+    <sx-basic-card>
+        <div class="d-flex align-items-center gap-3">
+            <i class="{{iconsEnum.SOLID}} {{iconsEnum.MEDICAL}} fa-2x"></i>
+            <div class="d-flex flex-column">
+                <sx-text [variation]="'h4-title'">{{ infos.hospital }}</sx-text>
+                <sx-text [variation]="'body1'">Hospital</sx-text>
+            </div>
+        </div>
+    </sx-basic-card>
+</section>

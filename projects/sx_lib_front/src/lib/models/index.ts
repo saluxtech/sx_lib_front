@@ -21,3 +21,4 @@ export * from './tab-group.interface';
 export * from './text-area.model';
 export * from './text.model';
 export * from './usuario';
+export * from './weather-info';
