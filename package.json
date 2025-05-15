@@ -16,7 +16,8 @@
     "package": "ng build && cd dist/sx_lib_front && npm pack",
     "storybook": "ng run sx_lib_front:storybook",
     "build-storybook": "ng run sx_lib_front:build-storybook",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@angular/animations": "^19.1.0",
@@ -57,6 +58,7 @@
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "19.4.0",
     "eslint": "^9.26.0",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
