@@ -6,4 +6,6 @@ export interface HeaderButton {
     variation?: 'raised' | 'stroked' | 'ghost';
     label?: string;
     disabled?: boolean;
+    isLoading?: boolean;
+    loadingText?: string;
 }
