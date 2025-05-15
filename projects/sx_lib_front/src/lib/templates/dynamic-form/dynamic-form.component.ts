@@ -31,7 +31,7 @@ export class DynamicFormComponent {
   @Input({ required: true }) form!: FormGroup;
 
   static createForm(dynamicFields: DynamicItemsFormConfig[]): FormGroup {
-    const group: { [key: string]: FormControl } = {};
+    const group: Record<string, FormControl> = {};
 
     dynamicFields.forEach((row) => {
       row.itemsRow.fields.forEach((field) => {

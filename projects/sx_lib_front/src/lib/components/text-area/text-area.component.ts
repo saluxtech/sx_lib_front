@@ -50,32 +50,32 @@ export class TextareaComponent
   @ViewChild('textArea') textArea!: ElementRef;
   @ViewChild('textAreaContainer') textAreaContainer!: ElementRef;
 
-  @Input() cols: string = '';
-  @Input() rows: string = '';
+  @Input() cols = '';
+  @Input() rows = '';
   @Input() textareaHeight: string | null = null;
   @Input() textareaWidth: string | null = null;
-  @Input() label: string = '';
-  @Input() labelError: string = '';
-  @Input() placeholder: string = '';
+  @Input() label = '';
+  @Input() labelError = '';
+  @Input() placeholder = '';
   @Input() theme: 'light' | 'dark' | 'white' = 'light';
-  @Input() showCustomizeText: boolean = true;
-  @Input() disableMaxLength: boolean = false;
-  @Input() maxLength: number = 1000;
+  @Input() showCustomizeText = true;
+  @Input() disableMaxLength = false;
+  @Input() maxLength = 1000;
   @Output() blur = new EventEmitter<any>();
   @Input() required = false;
 
   control: FormControl = new FormControl('');
   controlFromOutside!: AbstractControl;
   subscriptions: Subscription[] = [];
-  stringCount: string = '0';
-  textAreaValue: string = '';
-  selectedArea: string = '';
-  textWithTag: string = '';
+  stringCount = '0';
+  textAreaValue = '';
+  selectedArea = '';
+  textWithTag = '';
   validators = Validators;
-  isBold: boolean = false;
-  isItalic: boolean = false;
-  isUnderline: boolean = false;
-  isStrikethrough: boolean = false;
+  isBold = false;
+  isItalic = false;
+  isUnderline = false;
+  isStrikethrough = false;
   textStyleEnum = TextStyleEnum;
 
   ngOnInit(): void {

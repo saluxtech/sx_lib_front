@@ -21,7 +21,7 @@ import { Editor, NgxEditorModule, Toolbar } from 'ngx-editor';
   styleUrl: './text-editor.component.scss'
 })
 export class TextEditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
-  @Input() placeholder: string = '';
+  @Input() placeholder = '';
   @Output() valueChangeHtml = new EventEmitter<string>();
   editor!: Editor;
   toolbar: Toolbar = [

@@ -11,7 +11,7 @@ import {
   Output,
   TemplateRef,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation, AfterViewInit
 } from '@angular/core';
 import {
   ControlContainer,
@@ -67,7 +67,7 @@ interface AutoCompleteOptions {
   schemas: [ NO_ERRORS_SCHEMA ],
   imports: [DisplayValueComponent, NgClass, NgIf, NgbTypeahead]
 })
-export class AutocompleteComponent implements ControlValueAccessor, OnInit {
+export class AutocompleteComponent implements ControlValueAccessor, OnInit, AfterViewInit {
   formater = (result: string): string => {
     if(!this.IsCodeDescription){
       return this.options?.find((item: any) => item?.CODIGO?.trim() == result)?.DESCRICAO || result;
@@ -77,18 +77,18 @@ export class AutocompleteComponent implements ControlValueAccessor, OnInit {
   }
   @Output() onSelectItem = new EventEmitter<any>();
   @Input() searchFunction: ((term: string) => Observable<any[]>) | any;
-  @Input() label: string = 'Selecione';
-  @Input() placeholder: string = '';
-  @Input() editable: boolean = false;
+  @Input() label = 'Selecione';
+  @Input() placeholder = '';
+  @Input() editable = false;
   @Input() theme: 'light' | 'dark' = 'light';
   @Input() inputFormatter: (item: any) => string = this.formater;
   @Input() resultFormatter: (item: any) => string = this.formater;
-  @Input() formControlName: string = 'defaultFormControlName';
+  @Input() formControlName = 'defaultFormControlName';
   @Input() resultTemplate: TemplateRef<ResultTemplateContext> | any;
   @Input() options: AutoCompleteOptions[] | any;
-  @Input() isLupa: boolean = false
-  @Input() IsCodeDescription: boolean = false;
-  @Input() limitOfCharactersToSearch: number = 2;
+  @Input() isLupa = false
+  @Input() IsCodeDescription = false;
+  @Input() limitOfCharactersToSearch = 2;
 
   @ViewChild('inputField') inputField: ElementRef | any;
   searching = false;

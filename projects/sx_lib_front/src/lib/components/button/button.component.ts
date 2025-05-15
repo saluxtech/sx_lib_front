@@ -17,14 +17,14 @@ export class ButtonComponent implements OnInit, OnChanges {
   @Input() variation: sxButtonVariationType = 'raised';
   @Input() color: sxButtonColorType = 'primary';
   @Input() size: sxButtonSizeType = 'md';
-  @Input() isLoading: boolean = false;
-  @Input() loadingText: string = 'Enviando...';
-  @Input() disabled: boolean = false;
-  @Input() isWithIcon: boolean = false;
-  @Input() hasWidth: string = 'auto';
-  @Input() hasPorcentageWidth: string = 'auto';
-  @Input() iconLoaderSize: number = 20;
-  @Input() customClass: string = '';
+  @Input() isLoading = false;
+  @Input() loadingText = 'Enviando...';
+  @Input() disabled = false;
+  @Input() isWithIcon = false;
+  @Input() hasWidth = 'auto';
+  @Input() hasPorcentageWidth = 'auto';
+  @Input() iconLoaderSize = 20;
+  @Input() customClass = '';
   @Output() handleClick = new EventEmitter<any>();
   loaderColor: "primary" | "secondary" = 'primary';
 

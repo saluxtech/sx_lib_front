@@ -9,8 +9,8 @@ import { labelSizeType, labelType, labelColorType } from "./label.type";
 export class LabelComponent {
   @Input() type: labelType = 'content';
   @Input() color: labelColorType = "default";
-  @Input() for: string = "";
+  @Input() for = "";
   @Input() size: labelSizeType = "default";
-  @Input() isPDF: boolean = false;
-  @Input() weight: string = ''
+  @Input() isPDF = false;
+  @Input() weight = ''
 }

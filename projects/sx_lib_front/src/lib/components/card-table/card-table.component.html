@@ -16,11 +16,11 @@
                 <sx-pipe-display 
                     [value]="data?.[header?.content!]"
                     [pipe]="header?.pipe!"
-                    *ngIf="header?.type == 'text' || header?.type == 'title'">
+                    *ngIf="header?.type === 'text' || header?.type === 'title'">
                 </sx-pipe-display>
                 <sx-badges
                     [type]="getType(data?.[header?.content!])"
-                    *ngIf="header?.type == 'badges' && data?.[header?.content!]">
+                    *ngIf="header?.type === 'badges' && data?.[header?.content!]">
                     {{data?.[header?.content!]}}
                 </sx-badges>
               </div>

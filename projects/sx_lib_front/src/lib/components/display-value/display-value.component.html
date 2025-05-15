@@ -1,6 +1,6 @@
 <div
     #textElement
-    *ngIf="view.type != 'divide'"
+    *ngIf="view.type !== 'divide'"
     class="container-text"
     [matTooltip]="showTooltip ? tooltipText : ''"
 >
@@ -19,12 +19,12 @@
             class="d-flex justify-content-{{view?.justifyContent ? view.justifyContent : 'start'}}"
             [ngClass]="{'margin-value': showIcon}"
         >
-            <ng-container *ngIf="view.type != 'badges'">
+            <ng-container *ngIf="view.type !== 'badges'">
                 <sx-label [size]="view.valueSize" color="black" [type]="view.valueType">
                     {{view.cantBreakLine ? valueFormatterTruncatedList[i] : itemValueFormatter}}
                 </sx-label>
             </ng-container>
-            <ng-container *ngIf="view.type == 'badges'">
+            <ng-container *ngIf="view.type === 'badges'">
                 <sx-badges type="sucess" class="mt-1">
                     {{view.cantBreakLine ? valueFormatterTruncatedList[i] : itemValueFormatter}}
                 </sx-badges>
@@ -32,7 +32,7 @@
         </div>
     </ng-container>
 </div>
-<div *ngIf="view.type == 'divide'">
+<div *ngIf="view.type === 'divide'">
     <h6 style="margin-bottom: -8px; text-transform: uppercase">
         {{view.label}} {{view?.usingIndexItem ? indexItem + 1 : null}}
     </h6>

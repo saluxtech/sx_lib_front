@@ -16,7 +16,7 @@ export interface HttpRequestData<T> {
 export interface  HttpResponseData<T> {
   Data: T;
   Error: any;
-  Messages: Array<{key: string, value: string}>;
+  Messages: {key: string, value: string}[];
   StatusCode: number;
   Success: boolean;
 }

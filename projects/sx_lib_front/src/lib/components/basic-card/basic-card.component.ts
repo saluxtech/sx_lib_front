@@ -18,9 +18,9 @@ export class BasicCardComponent {
   @Input() padding: BasicCardPadding = 'sm';
   @Input() margingBottom: BasicCardMargingBottom = 'default'
   @Input() radius: BasicCardRadius = 'xs';
-  @Input() width100: boolean = false;
+  @Input() width100 = false;
   @Input() basicCardWidth!: string;
   @Input() basicCardHeight: string | undefined;
-  @Input() paddingBottom: boolean = true;
-  @Input() borderColor: string = '';
+  @Input() paddingBottom = true;
+  @Input() borderColor = '';
 }
