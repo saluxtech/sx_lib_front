@@ -14,13 +14,13 @@ export class TextComponent implements AfterViewInit {
   
   @Input() variation: SxTextVariation = 'body1';
 
-  @Input() limitWidth: boolean = false;
+  @Input() limitWidth = false;
 
-  @Input() whithTooltip: boolean = false;
+  @Input() whithTooltip = false;
 
-  @Input() customClass: string = '';
+  @Input() customClass = '';
 
-  tooltipContent: string = '';
+  tooltipContent = '';
 
   constructor(private el: ElementRef) {}
 

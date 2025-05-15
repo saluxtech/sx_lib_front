@@ -20,10 +20,10 @@ export class ButtonLinkComponent implements OnInit {
   @Input() withArrow: ButtonLinkBoolean = false;
   @Input() onlyLeftArrow: ButtonLinkBoolean = false;
   @Input() onlyRightArrow: ButtonLinkBoolean = false;
-  @Input() text: string = "";
-  @Input() route: string = "";
-  @Input() isNavigateOn: boolean = true;
-  arrowAnimation: boolean = true;
+  @Input() text = "";
+  @Input() route = "";
+  @Input() isNavigateOn = true;
+  arrowAnimation = true;
 
   constructor(private router: Router) {}
 

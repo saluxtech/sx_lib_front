@@ -17,11 +17,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class CheckboxComponent implements ControlValueAccessor {
 
-  @Input() label: string = "";
-  @Input() disabled: boolean = false;
+  @Input() label = "";
+  @Input() disabled = false;
   @Output() checkboxChange = new EventEmitter<boolean>();
 
-  isChecked: boolean = false;
+  isChecked = false;
   id: string = 'sxCheckbox' + Math.random();
 
   onChange: any = () => {};

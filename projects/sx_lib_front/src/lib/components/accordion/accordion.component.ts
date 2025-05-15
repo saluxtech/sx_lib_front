@@ -18,19 +18,19 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
   ]
 })
 export class AccordionComponent implements OnInit {
-  @Input() title: string = 'Header text';
-  @Input() colorTitle: string = '#000';
-  @Input() subtitle: string = 'Subtitle text';
-  @Input() colorSubtitle: string = '#000';
+  @Input() title = 'Header text';
+  @Input() colorTitle = '#000';
+  @Input() subtitle = 'Subtitle text';
+  @Input() colorSubtitle = '#000';
 
-  @Input() titleB: string = '';
-  @Input() colorTitleB: string = '';
-  @Input() subtitleB: string = '';
-  @Input() colorSubtitleB: string = '';
+  @Input() titleB = '';
+  @Input() colorTitleB = '';
+  @Input() subtitleB = '';
+  @Input() colorSubtitleB = '';
 
-  @Input() pathIcon: string = '';
-  @Input() pathFillIcon: string = '';
-  @Input() viewBoxIcon: string = '';
+  @Input() pathIcon = '';
+  @Input() pathFillIcon = '';
+  @Input() viewBoxIcon = '';
 
   @Input() sizeTitle: 'normal' | 'small' = 'normal';
 

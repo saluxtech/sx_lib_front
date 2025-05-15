@@ -11,8 +11,8 @@ import { LoaderService } from "../../services/loader/loader.service";
 })
 export class LoaderComponent {
   @Input() color: "primary" | "secondary" | 'support' = "support";
-  @Input() text: string = "";
-  @Input() size: number = 40;
+  @Input() text = "";
+  @Input() size = 40;
   @Input({ required: true }) backDrop!: boolean;
 
   constructor(public loaderService: LoaderService) {}

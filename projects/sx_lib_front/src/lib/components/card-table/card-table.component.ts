@@ -18,7 +18,7 @@ export class CardTableComponent {
   @Input() arrayData: any;
 
   getType(value: any) {
-    const badgeType: {[key: string]: string} = {
+    const badgeType: Record<string, string> = {
       'Criação': 'sucess',
       'Alteração': 'alert',
       'Inativação': 'default',

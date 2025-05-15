@@ -39,19 +39,19 @@ import { KeyEnum } from './../../models/keyboard.model';
 })
 export class SelectComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input() options: OptionModel[] = [];
-  @Input() label: string = '';
-  @Input() placeholder: string = 'Selecione...';
-  @Input() errorMessage: string = 'Preencher esse campo.';
+  @Input() label = '';
+  @Input() placeholder = 'Selecione...';
+  @Input() errorMessage = 'Preencher esse campo.';
   @Input() multiple = false;
-  @Input() theme: string = 'dark';
-  @Input() limitWidth: boolean = false;
+  @Input() theme = 'dark';
+  @Input() limitWidth = false;
   @Output() change = new EventEmitter<any>();
 
   showOptions = signal(false);
   value: any = '';
   search = '';
   selectedOptions: OptionModel[] = [];
-  protected selectedIndex: number = -1;
+  protected selectedIndex = -1;
   private onChange: (value: any) => void = () => {};
   private onTouched: () => void = () => {};
 

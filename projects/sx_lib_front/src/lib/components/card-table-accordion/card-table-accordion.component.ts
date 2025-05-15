@@ -16,13 +16,13 @@ export class CardTableAccordionComponent {
 
   @Input() data: any = null;
   @Input() arrayHeader: ArrayHeader[] = [];
-  @Input() widthCard: number = 100;
-  @Input() background: string = '#fff';
+  @Input() widthCard = 100;
+  @Input() background = '#fff';
   @Input() componentToOpenDialog!: Component;
   
   @ViewChild('verMais') accordionCard!: ElementRef<HTMLInputElement>;
 
-  mostrandoTodosValores: boolean = false;
+  mostrandoTodosValores = false;
   unicVacina!: any;
 
   constructor(private modalService: NgbModal) {}

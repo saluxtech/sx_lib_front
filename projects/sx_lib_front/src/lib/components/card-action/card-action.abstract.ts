@@ -6,10 +6,10 @@ import { badgesType } from "../badges";
 @Directive()
 export abstract class CardActionAbstract implements OnInit {
 
-  @Input() icone: string = '';
-  @Input() pastaIcone: string = '';
+  @Input() icone = '';
+  @Input() pastaIcone = '';
   @Input() temaCard: BasicCardColorVariation = 'white';
-  @Input() iconeSecundario: string = '';
+  @Input() iconeSecundario = '';
   @Input() typeBadges: badgesType = 'alert';
   @Output() botaoAcao: EventEmitter<any> = new EventEmitter<any>();
   @Output() acaoSecundaria: EventEmitter<any> = new EventEmitter<any>();

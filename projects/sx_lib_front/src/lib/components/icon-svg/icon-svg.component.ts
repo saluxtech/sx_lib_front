@@ -8,10 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
   imports: [NgStyle]
 })
 export class IconSvgComponent implements OnInit {
-  @Input() iconeSize: string = '';
-  @Input() path_d: string = '';
-  @Input() path_fill: string = '';
-  @Input() viewBox: string = '0 0 24 24';
+  @Input() iconeSize = '';
+  @Input() path_d = '';
+  @Input() path_fill = '';
+  @Input() viewBox = '0 0 24 24';
 
   constructor() {}
 

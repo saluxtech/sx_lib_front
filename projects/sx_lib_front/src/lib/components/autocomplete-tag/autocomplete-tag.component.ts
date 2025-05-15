@@ -11,7 +11,7 @@ import {
   Output,
   TemplateRef,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation, AfterViewInit
 } from '@angular/core';
 import {
   ControlContainer,
@@ -64,20 +64,20 @@ interface ResultTemplateContext {
   schemas: [NO_ERRORS_SCHEMA],
   imports: [NgFor, NgIf, NgbTypeahead]
 })
-export class AutocompleteTagComponent implements ControlValueAccessor, OnInit {
+export class AutocompleteTagComponent implements ControlValueAccessor, OnInit, AfterViewInit {
   formater = (result: any): string => {
     return this.options?.find(item => item?.CODIGO?.trim() == result)?.DESCRICAO || result;
   }
   @Output() onSelectItem = new EventEmitter<any>();
   @Output() onRemoveTag = new EventEmitter<{item: string, index: number}>();
   @Input() searchFunction!: (term: string) => Observable<any[]>;
-  @Input() label: string = 'Selecione';
-  @Input() placeholder: string = '';
-  @Input() editable: boolean = false;
+  @Input() label = 'Selecione';
+  @Input() placeholder = '';
+  @Input() editable = false;
   @Input() theme: 'light' | 'dark' = 'light';
   @Input() inputFormatter: (item: any) => string = this.formater;
   @Input() resultFormatter: (item: any) => string = this.formater;
-  @Input() formControlName: string = 'defaultFormControlName';
+  @Input() formControlName = 'defaultFormControlName';
   @Input() resultTemplate!: TemplateRef<ResultTemplateContext>;
   @Input() options!: AutoCompleteOptions[];
   @Input() tagList!: string[];
@@ -101,7 +101,7 @@ export class AutocompleteTagComponent implements ControlValueAccessor, OnInit {
 
   constructor(private rf: ChangeDetectorRef) {}
 
-  isListEmpty: boolean = false
+  isListEmpty = false
   ngOnInit(): void {
     this.setControlFromOutside();
 

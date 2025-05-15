@@ -10,16 +10,16 @@ import { LabelComponent } from '../label/label.component';
   imports: [NgClass, NgIf, LabelComponent, TextComponent]
 })
 export class AccordionCardsComponent implements OnInit {
-  @Input() limiteCards: number = 2;
-  @Input() widthCard: string = '100%';
-  @Input() heightCard: number = 400;
+  @Input() limiteCards = 2;
+  @Input() widthCard = '100%';
+  @Input() heightCard = 400;
   @Input()
   quantidadeAtual!: number;
-  @Input() background: string = '#ECECEC';
+  @Input() background = '#ECECEC';
   @Input()
   footerText!: string;
 
-  mostrandoTodosValores: boolean = false;
+  mostrandoTodosValores = false;
 
   @ViewChild('verMais')
   accordionCard!: ElementRef<HTMLInputElement>;

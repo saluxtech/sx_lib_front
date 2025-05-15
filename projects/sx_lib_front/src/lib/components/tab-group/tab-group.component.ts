@@ -5,7 +5,7 @@ import {
   inject,
   Input,
   Output,
-  Renderer2,
+  Renderer2, AfterViewInit,
 } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
@@ -21,7 +21,7 @@ import { Tab } from '../../models/tab-group.interface';
   imports: [CommonModule, TextComponent, MatTabsModule, IconSvgComponent],
   providers: []
 })
-export class TabGroupComponent {
+export class TabGroupComponent implements AfterViewInit {
   
   private renderer = inject(Renderer2);
   private el = inject(ElementRef);
@@ -29,8 +29,8 @@ export class TabGroupComponent {
   @Input() tabs: Tab[] = [];
   @Output() changeIndex: EventEmitter<number> = new EventEmitter<number>();
 
-  selectedIndex: number = 0;
-  isIconHiden: boolean = false;
+  selectedIndex = 0;
+  isIconHiden = false;
 
   ngAfterViewInit(): void {
     this.varySizeLabelStyle();
@@ -42,15 +42,15 @@ export class TabGroupComponent {
   }
 
   varySizeLabelStyle(): void {
-    const valuePerPixel: number = 5;
+    const valuePerPixel = 5;
 
     const matTabLabels =
       this.el.nativeElement.querySelectorAll('.mat-tab-label');
 
     if (matTabLabels && matTabLabels.length > 0) {
       matTabLabels.forEach((label: HTMLElement, index: number) => {
-        let maxWidth: number = this.tabs[index].label.length * valuePerPixel;
-        let maxWidthPixel: string = maxWidth.toString() + 'px';
+        const maxWidth: number = this.tabs[index].label.length * valuePerPixel;
+        const maxWidthPixel: string = maxWidth.toString() + 'px';
 
         this.renderer.setStyle(label, 'maxWidth', maxWidthPixel);
       });

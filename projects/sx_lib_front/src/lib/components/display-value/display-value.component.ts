@@ -26,11 +26,11 @@ export class DisplayValueComponent implements OnChanges, AfterViewInit {
   @Input() view: ViewModel | any;
   @Input() value: any | any[];
   @Input() indexItem: number | any;
-  @Input() showValue: boolean = true;
+  @Input() showValue = true;
 
   @ViewChild('textElement') textElement: ElementRef | any;
-  showTooltip: boolean = false;
-  showIcon: boolean = false;
+  showTooltip = false;
+  showIcon = false;
 
   labelFormatterTruncated: string | any;
   valueFormatterList: string[] = [];
@@ -134,7 +134,7 @@ export class DisplayValueComponent implements OnChanges, AfterViewInit {
   getCharacterCount(isLabel: boolean) {
     const containerWidth = this.textElement.nativeElement.offsetWidth;
     const fontSize = parseFloat(window.getComputedStyle(this.textElement.nativeElement).fontSize);
-    let averageCharacterWidth = this.getAverageCharacterWidth(fontSize);
+    const averageCharacterWidth = this.getAverageCharacterWidth(fontSize);
     const availableCharacters = Math.floor(containerWidth / averageCharacterWidth);
     return isLabel ? (availableCharacters - 3) : (availableCharacters + 2);
   }

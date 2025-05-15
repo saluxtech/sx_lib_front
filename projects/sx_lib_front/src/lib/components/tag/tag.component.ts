@@ -10,7 +10,7 @@ type typeTagSiz = 'sm' | 'md' | 'lg' | ''
   imports: [TextComponent, IconSvgComponent]
 })
 export class TagComponent {
-  @Input() label: string = '';
+  @Input() label = '';
   @Input() tagSize: typeTagSiz = '';
   @Output() onSelectTag: EventEmitter<void> = new EventEmitter<void>();
   svgFill = '#50688C';

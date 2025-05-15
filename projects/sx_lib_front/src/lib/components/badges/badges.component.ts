@@ -12,9 +12,9 @@ import { IconSvgComponent } from '../icon-svg/icon-svg.component';
 export class BadgesComponent implements OnInit{
   @Input() type: badgesType = 'default';
   @Input() size: 'large' | 'small' = 'large';
-  @Input() withIcone: boolean = false;
+  @Input() withIcone = false;
   @Input() width: '100' | '50' | '' = '';
-  @Input() isPDF: boolean = false;
+  @Input() isPDF = false;
 
   @Input() paddingTop: number | undefined;
   @Input() paddingBottom: number | undefined;
@@ -25,7 +25,7 @@ export class BadgesComponent implements OnInit{
   @Input()
   dinamicWidth!: number;
 
-  styles: { [key: string]: string } = {};
+  styles: Record<string, string> = {};
 
   icon = {
     path_fill: '',

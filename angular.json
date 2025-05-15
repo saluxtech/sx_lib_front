@@ -38,7 +38,10 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/sx_lib_front/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"]
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         },
         "storybook": {
@@ -47,7 +50,12 @@
             "configDir": "projects/sx_lib_front/.storybook",
             "browserTarget": "sx_lib_front:build",
             "compodoc": true,
-            "compodocArgs": ["-e", "json", "-d", "projects/sx_lib_front"],
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/sx_lib_front"
+            ],
             "port": 6006
           }
         },
@@ -58,11 +66,32 @@
             "configDir": "projects/sx_lib_front/.storybook",
             "browserTarget": "sx_lib_front:build",
             "compodoc": true,
-            "compodocArgs": ["-e", "json", "-d", "projects/sx_lib_front"],
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/sx_lib_front"
+            ],
             "outputDir": "docs"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/sx_lib_front/**/*.ts",
+              "projects/sx_lib_front/**/*.html"
+            ],
+            "eslintConfig": "projects/sx_lib_front/eslint.config.js"
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false,
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

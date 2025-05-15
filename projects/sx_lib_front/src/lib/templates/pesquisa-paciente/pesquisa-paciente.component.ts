@@ -32,10 +32,10 @@ import { BaaMovimentavel } from '../../models/baa-movimentavel/baa-movimentavel.
 export class PesquisaPacienteComponent implements OnInit {
   @Input() modelButton: OptionModel[] = [];
   @Input() list: PacienteBaaMovimentavel[] = [];
-  @Input() isLoading: boolean = false;
-  @Output() search: EventEmitter<BaaMovimentavel> = new EventEmitter();
-  @Output() close:  EventEmitter<void> = new EventEmitter();
-  @Output() select: EventEmitter<PacienteBaaMovimentavel> = new EventEmitter();
+  @Input() isLoading = false;
+  @Output() search = new EventEmitter<BaaMovimentavel>();
+  @Output() close = new EventEmitter<void>();
+  @Output() select = new EventEmitter<PacienteBaaMovimentavel>();
 
   modalRef = input<NgbActiveModal>();
   displayedColumns: string[] = ['baa', 'paciente', 'dtNascimento', 'entrada', 'saida', 'acao'];

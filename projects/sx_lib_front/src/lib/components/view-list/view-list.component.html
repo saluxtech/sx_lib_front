@@ -1,6 +1,6 @@
 <div class="row" *ngIf="item">
     <ng-container *ngFor="let view of viewList; let indexView = index">
-        <ng-container *ngIf="view.type != 'arrayObject'">
+        <ng-container *ngIf="view.type !== 'arrayObject'">
             <div class="col-lg-{{view.columnLg}} col-sm-{{view.columnSm}}">
                 <sx-display-value
                     [value]="valueList[indexView]"
@@ -8,7 +8,7 @@
                 ></sx-display-value>
             </div>
         </ng-container>
-        <ng-container *ngIf="view.type == 'arrayObject'">
+        <ng-container *ngIf="view.type === 'arrayObject'">
             <ng-container *ngFor="let itemChild of item[view?.prop]; let i = index">
                 <ng-container *ngFor="let child of view.children">
                     <div class="col-lg-{{child.columnLg}} col-sm-{{child.columnSm}}">
