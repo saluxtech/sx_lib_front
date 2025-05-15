@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { BasicCardComponent } from '../basic-card/basic-card.component';
 import { TextComponent } from '../text/text.component';
 import { IWeatherInfo } from '../../models/weather-info/weather-info.interface';
-import { IconsEnum } from 'sx_lib_front';
+import { IconsEnum } from '../../enums/icons.enum';
 
 @Component({
   selector: 'sx-weather-info',
